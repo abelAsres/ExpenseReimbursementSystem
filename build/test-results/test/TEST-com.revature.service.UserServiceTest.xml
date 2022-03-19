@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.revature.service.UserServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-19T23:11:28" hostname="LAPTOP-HO6FK4NQ" time="0.485">
+  <properties/>
+  <testcase name="test_addUser()" classname="com.revature.service.UserServiceTest" time="0.485"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

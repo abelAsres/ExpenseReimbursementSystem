@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    //mockito is a testing framework for java that allows the creation of test double objects
+    testImplementation 'org.mockito:mockito-core:4.3.1'
+    implementation 'org.postgresql:postgresql:42.3.3'
+
+    implementation 'io.javalin:javalin:4.3.0'
+    //Basic data binding (mapping) functionality that allows for reading JSON content into Java Objects
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+}
+
+test {
+    useJUnitPlatform()
+}
