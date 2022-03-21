@@ -49,11 +49,12 @@ public class UserDAO {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            resultSet.next();
-
-            return new User(resultSet.getInt("id"),resultSet.getString("user_name"),resultSet.getString("ers_password"),
-                    resultSet.getString("user_first_name"), resultSet.getString("user_last_name"),resultSet.getString("user_email"),
-                    resultSet.getInt("user_role_id"),resultSet.getBytes("salt"));
+            if(resultSet.next()){
+                return new User(resultSet.getInt("id"),resultSet.getString("user_name"),resultSet.getString("ers_password"),
+                        resultSet.getString("user_first_name"), resultSet.getString("user_last_name"),resultSet.getString("user_email"),
+                        resultSet.getInt("user_role_id"),resultSet.getBytes("salt"));
+            }
+           return null;
         }
     }
 

@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group 'org.example'
@@ -19,8 +20,28 @@ dependencies {
     implementation 'io.javalin:javalin:4.3.0'
     //Basic data binding (mapping) functionality that allows for reading JSON content into Java Objects
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+
+    implementation 'ch.qos.logback:logback-classic:1.2.11'
 }
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }
+
+jacoco {
+    toolVersion = "0.8.7"
+    reportsDirectory = layout.buildDirectory.dir('JacocoReportDir')
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+
+

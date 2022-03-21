@@ -3,6 +3,7 @@ package com.revature.service;
 
 import com.revature.dao.UserDAO;
 import com.revature.dto.UserDTO;
+import com.revature.exception.UserNotFoundException;
 import com.revature.model.User;
 import com.revature.utility.HashUtility;
 
@@ -12,12 +13,10 @@ import java.util.List;
 
 public class UserService {
 
-    private HashUtility hashUtility;
     private UserDAO userDao;
 
     public UserService() {
         this.userDao = new UserDAO();
-        this.hashUtility = new HashUtility();
     }
 
     public UserService(UserDAO mockDao) {
@@ -45,18 +44,24 @@ public class UserService {
         return user;
     }*/
 
-    public User getUserById(String id) throws SQLException {
+    public User getUserById(String id) throws SQLException,UserNotFoundException{
         try{
             int userId = Integer.parseInt(id);
-            return userDao.getUserById(userId);
+            User user = userDao.getUserById(userId);
+
+            if (user == null){
+                throw new UserNotFoundException("User with id "+ id + " does not exist");
+            }
+            return user ;
         }catch (NumberFormatException e){
             throw new IllegalArgumentException("You did not provide a valid ID.  Try again!!!");
         }
     }
     public User addUser (UserDTO userDTO) throws SQLException, NoSuchAlgorithmException {
         validateUserDTO(userDTO);
+        userDTO.setSalt(HashUtility.createSalt());
         //hash and salt password
-        String hashSaltPassword = hashUtility.generateHashSaltPassword("SHA-512",userDTO.getPassword(),userDTO.getSalt());
+        String hashSaltPassword = HashUtility.generateHashSaltPassword("SHA-512",userDTO.getPassword(),userDTO.getSalt());
         userDTO.setPassword(hashSaltPassword);
         return userDao.addUser(userDTO);
     }

@@ -3,6 +3,7 @@ package com.revature.controller;
 //import com.revature.exception.AccountDoesNotBelongToClient;
 //import com.revature.exception.ClientAlreadyExistsException;
 //import com.revature.exception.ClientNotFoundException;
+import com.revature.exception.UserNotFoundException;
 import io.javalin.Javalin;
 import io.javalin.http.ExceptionHandler;
 import org.slf4j.Logger;
@@ -60,6 +61,13 @@ public class ExceptionController implements Controller{
         ctx.status(400);
         ctx.json(e.getMessage());
     };
+
+    private ExceptionHandler userNotfound = (e,ctx) -> {
+        logger.warn("User was not found. "+e.getMessage());
+        ctx.status(404);
+        ctx.json(e.getMessage());
+    };
+
     @Override
     public void mapEndPoints(Javalin app) {
        // app.exception(ClientNotFoundException.class,clientNotFound);
@@ -67,6 +75,7 @@ public class ExceptionController implements Controller{
         app.exception(SQLException.class,sqlException);
         app.exception(NullPointerException.class,nullPointerException);
         app.exception(NoSuchAlgorithmException.class,noSuchAlgorithmException);
+        app.exception(UserNotFoundException.class,userNotfound);
 
         //app.exception(ClientAlreadyExistsException.class,clientAlreadyExists);
         //app.exception(AccountDoesNotBelongToClient.class,accountDoesNotBelongToClient);

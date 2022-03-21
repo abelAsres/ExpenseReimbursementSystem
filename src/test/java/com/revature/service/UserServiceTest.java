@@ -2,11 +2,10 @@ package com.revature.service;
 
 import com.revature.dao.UserDAO;
 import com.revature.dto.UserDTO;
+import com.revature.exception.UserNotFoundException;
 import com.revature.model.User;
-import com.revature.utility.HashUtility;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.stubbing.OngoingStubbing;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -48,7 +47,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void test_getUserById() throws SQLException {
+    public void test_getUserById() throws SQLException, UserNotFoundException {
         UserDAO mockUserDAO = mock(UserDAO.class);
 
         byte[] bytes = new byte[20];

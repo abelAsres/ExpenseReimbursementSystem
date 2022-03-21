@@ -12,6 +12,7 @@ public class UserDTO {
     private byte[] salt;
 
 
+    public UserDTO(){}
 
     public UserDTO(String userName, String password, String firstName, String lastName, String email, int roleId) {
         this.userName = userName;
