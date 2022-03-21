@@ -24,7 +24,7 @@ public class UserService {
         this.userDao = mockDao;
     }
 
-    public List<User> getallUsers() throws SQLException {
+    public List<User> getAllUsers() throws SQLException {
         return userDao.getAllUsers();
     }
 
@@ -45,12 +45,29 @@ public class UserService {
         return user;
     }*/
 
+    public User getUserById(String id) throws SQLException {
+        try{
+            int userId = Integer.parseInt(id);
+            return userDao.getUserById(userId);
+        }catch (NumberFormatException e){
+            throw new IllegalArgumentException("You did not provide a valid ID.  Try again!!!");
+        }
+    }
     public User addUser (UserDTO userDTO) throws SQLException, NoSuchAlgorithmException {
         validateUserDTO(userDTO);
         //hash and salt password
         String hashSaltPassword = hashUtility.generateHashSaltPassword("SHA-512",userDTO.getPassword(),userDTO.getSalt());
         userDTO.setPassword(hashSaltPassword);
         return userDao.addUser(userDTO);
+    }
+
+    public boolean removeUser(String id) throws SQLException{
+        try{
+            int userId = Integer.parseInt(id);
+            return userDao.removeUser(userId);
+        }catch(NumberFormatException e){
+            throw new IllegalArgumentException("You did not provide a valid ID.  Try again!!!");
+        }
     }
 
     public void validateUserDTO (UserDTO userDto){
@@ -75,7 +92,7 @@ public class UserService {
                throw new IllegalArgumentException("Last name must only have alphabetical characters. Last name input was " + userDto.getLastName());
            }
 
-           if(!userDto.getEmail().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")){
+           if(!userDto.getEmail().matches("^[A-Za-z0-9+_.-]+@[A-Za-z-]+[.]+[a-z]{2,3}$")){
                throw new IllegalArgumentException("Please ensure that your email is correct,Internationalized domain names are not allowed.");
            }
 

@@ -39,6 +39,24 @@ public class UserDAO {
         }
     }
 
+    public User getUserById(int id) throws SQLException {
+        try(Connection connection = ConnectionUtility.getConnection()){
+            String query = "SELECT * FROM ers_users WHERE id = ?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setInt(1,id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+
+            return new User(resultSet.getInt("id"),resultSet.getString("user_name"),resultSet.getString("ers_password"),
+                    resultSet.getString("user_first_name"), resultSet.getString("user_last_name"),resultSet.getString("user_email"),
+                    resultSet.getInt("user_role_id"),resultSet.getBytes("salt"));
+        }
+    }
+
     public User addUser(UserDTO userDTO) throws SQLException {
         try(Connection connection = ConnectionUtility.getConnection()){
             String query = "INSERT INTO users (user_name,ers_password,user_first_name,user_last_name,user_email,user_role_id,salt) " +
@@ -68,4 +86,29 @@ public class UserDAO {
         }
     }
 
+    public boolean removeUser(int id) throws SQLException {
+        try(Connection connection = ConnectionUtility.getConnection()){
+            String query = "DELETE FROM ers_users WHERE id = ?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setInt(1,id);
+
+            int numOfRemovedUsers = preparedStatement.executeUpdate();
+
+            if (numOfRemovedUsers == 1){
+                return true;
+            }
+        }
+        return false;
+    }
+/*
+    public User updateUser(User user) throws SQLException {
+        try(Connection connection = ConnectionUtility.getConnection()){
+            String query = "UPDATE ers_users " +
+                    "SET user_name = ? " +
+                    ""
+        }
+    }
+*/
 }
