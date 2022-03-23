@@ -349,3 +349,165 @@ java.lang.NullPointerException: Parameter specified as non-null is null: method 
 21 03 2022 - 18:12:57.129 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/users
 21 03 2022 - 18:14:37.774 [JettyServerThreadPool-19] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ERROR: column "ers_password" of relation "users" does not exist
   Position: 30
+21 03 2022 - 20:55:57.068 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 20:55:57.100 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @674ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 20:55:57.102 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 20:55:57.134 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 20:55:57.134 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 20:55:57.724 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 20:55:57.724 [main] INFO  io.javalin.Javalin - Javalin started in 623ms \o/
+21 03 2022 - 20:56:38.597 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 20:56:38.637 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @799ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 20:56:38.639 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 20:56:38.677 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 20:56:38.677 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 20:56:39.297 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 20:56:39.297 [main] INFO  io.javalin.Javalin - Javalin started in 659ms \o/
+21 03 2022 - 20:56:43.214 [JettyServerThreadPool-29] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:00:07.798 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 21:00:07.825 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @599ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 21:00:07.826 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 21:00:07.852 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 21:00:07.853 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 21:00:08.360 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 21:00:08.360 [main] INFO  io.javalin.Javalin - Javalin started in 534ms \o/
+21 03 2022 - 21:00:12.530 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:00:13.057 [JettyServerThreadPool-26] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ResultSet not positioned properly, perhaps you need to call next.
+21 03 2022 - 21:04:36.507 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:04:36.561 [JettyServerThreadPool-14] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ERROR: duplicate key value violates unique constraint "ers_users_user_name_key"
+  Detail: Key (user_name)=(lilWiggy) already exists.
+21 03 2022 - 21:09:39.839 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/19
+21 03 2022 - 21:09:55.658 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:09:55.709 [JettyServerThreadPool-17] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ResultSet not positioned properly, perhaps you need to call next.
+21 03 2022 - 21:10:18.611 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/19
+21 03 2022 - 21:10:29.907 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/20
+21 03 2022 - 21:10:38.648 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/21
+21 03 2022 - 21:13:32.807 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 21:13:32.847 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @708ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 21:13:32.849 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 21:13:32.887 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 21:13:32.888 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 21:13:33.449 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 21:13:33.449 [main] INFO  io.javalin.Javalin - Javalin started in 601ms \o/
+21 03 2022 - 21:16:30.008 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:17:04.854 [JettyServerThreadPool-23] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ResultSet not positioned properly, perhaps you need to call next.
+21 03 2022 - 21:17:32.367 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/21
+21 03 2022 - 21:17:46.212 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/22
+21 03 2022 - 21:22:46.436 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 21:22:46.473 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @709ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 21:22:46.475 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 21:22:46.509 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 21:22:46.509 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 21:22:47.064 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 21:22:47.065 [main] INFO  io.javalin.Javalin - Javalin started in 591ms \o/
+21 03 2022 - 21:25:20.737 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 21:25:20.770 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @710ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 21:25:20.772 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 21:25:20.805 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 21:25:20.805 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 21:25:21.369 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 21:25:21.369 [main] INFO  io.javalin.Javalin - Javalin started in 598ms \o/
+21 03 2022 - 21:25:25.274 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:26:00.589 [JettyServerThreadPool-21] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ResultSet not positioned properly, perhaps you need to call next.
+21 03 2022 - 21:26:21.474 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 21:26:21.503 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @619ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 21:26:21.504 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 21:26:21.530 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 21:26:21.530 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 21:26:22.043 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 21:26:22.043 [main] INFO  io.javalin.Javalin - Javalin started in 539ms \o/
+21 03 2022 - 21:26:33.594 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/23
+21 03 2022 - 21:26:37.967 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:26:38.096 [JettyServerThreadPool-20] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ResultSet not positioned properly, perhaps you need to call next.
+21 03 2022 - 21:27:59.978 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 21:28:00.007 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @594ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 21:28:00.009 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 21:28:00.038 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 21:28:00.038 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 21:28:00.646 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 21:28:00.646 [main] INFO  io.javalin.Javalin - Javalin started in 638ms \o/
+21 03 2022 - 21:28:09.594 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/24
+21 03 2022 - 21:28:14.690 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:28:14.820 [JettyServerThreadPool-20] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ResultSet not positioned properly, perhaps you need to call next.
+21 03 2022 - 21:44:39.468 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+21 03 2022 - 21:44:39.495 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @626ms to org.eclipse.jetty.util.log.Slf4jLog
+21 03 2022 - 21:44:39.496 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+21 03 2022 - 21:44:39.524 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+21 03 2022 - 21:44:39.524 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+21 03 2022 - 21:44:40.054 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+21 03 2022 - 21:44:40.054 [main] INFO  io.javalin.Javalin - Javalin started in 559ms \o/
+21 03 2022 - 21:44:56.889 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/25
+21 03 2022 - 21:45:06.132 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/users
+21 03 2022 - 21:45:06.263 [JettyServerThreadPool-19] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ResultSet not positioned properly, perhaps you need to call next.

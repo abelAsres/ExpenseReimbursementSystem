@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReimbursementDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">project_1</a> &gt; <a href="index.source.html" class="el_package">com.revature.dao</a> &gt; <span class="el_source">ReimbursementDAO.java</span></div><h1>ReimbursementDAO.java</h1><pre class="source lang-java linenums">package com.revature.dao;
+
+import com.revature.model.Reimbursement;
+import com.revature.utility.ConnectionUtility;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="nc" id="L13">public class ReimbursementDAO {</span>
+    public List&lt;Reimbursement&gt; getAllReimbursement() throws SQLException {
+<span class="nc" id="L15">        List&lt;Reimbursement&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L16">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L17">            String query = &quot;SELECT * FROM ers_reimbursement&quot;;</span>
+
+<span class="nc" id="L19">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+
+<span class="nc" id="L21">            ResultSet resultSet = preparedStatement.executeQuery();</span>
+
+<span class="nc bnc" id="L23" title="All 2 branches missed.">            while(resultSet.next()){</span>
+<span class="nc" id="L24">                reimbursements.add(new Reimbursement(resultSet.getInt(&quot;id&quot;),</span>
+<span class="nc" id="L25">                        resultSet.getDouble(&quot;reimb_amount&quot;),</span>
+<span class="nc" id="L26">                        resultSet.getString(&quot;reimb_submitted&quot;),</span>
+<span class="nc" id="L27">                        resultSet.getString(&quot;reimb_approved&quot;),</span>
+<span class="nc" id="L28">                        resultSet.getString(&quot;reimb_description&quot;),</span>
+<span class="nc" id="L29">                        resultSet.getString(&quot;reimb_receipt&quot;),</span>
+<span class="nc" id="L30">                        resultSet.getString(&quot;reimb_author&quot;),</span>
+<span class="nc" id="L31">                        resultSet.getString(&quot;reimb_resolver&quot;),</span>
+<span class="nc" id="L32">                        resultSet.getInt(&quot;reimb_status_id&quot;),</span>
+<span class="nc" id="L33">                        resultSet.getInt(&quot;reimb_type_id&quot;)));</span>
+            }
+        }
+<span class="nc" id="L36">        return reimbursements;</span>
+    }
+
+    public Reimbursement getReimbursementById(int id) throws SQLException {
+<span class="nc" id="L40">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L41">            String query = &quot;SELECT * FROM ers_reimbursement WHERE id = ?&quot;;</span>
+
+<span class="nc" id="L43">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+
+<span class="nc" id="L45">            preparedStatement.setInt(1,id);</span>
+
+<span class="nc" id="L47">            ResultSet resultSet = preparedStatement.executeQuery();</span>
+
+<span class="nc" id="L49">            resultSet.next();</span>
+
+<span class="nc" id="L51">            return new Reimbursement(resultSet.getInt(&quot;id&quot;),</span>
+<span class="nc" id="L52">                    resultSet.getDouble(&quot;reimb_amount&quot;),</span>
+<span class="nc" id="L53">                    resultSet.getString(&quot;reimb_submitted&quot;),</span>
+<span class="nc" id="L54">                    resultSet.getString(&quot;reimb_approved&quot;),</span>
+<span class="nc" id="L55">                    resultSet.getString(&quot;reimb_description&quot;),</span>
+<span class="nc" id="L56">                    resultSet.getString(&quot;reimb_receipt&quot;),</span>
+<span class="nc" id="L57">                    resultSet.getString(&quot;reimb_author&quot;),</span>
+<span class="nc" id="L58">                    resultSet.getString(&quot;reimb_resolver&quot;),</span>
+<span class="nc" id="L59">                    resultSet.getInt(&quot;reimb_status_id&quot;),</span>
+<span class="nc" id="L60">                    resultSet.getInt(&quot;reimb_type_id&quot;));</span>
+
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

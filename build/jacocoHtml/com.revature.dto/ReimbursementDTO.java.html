@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReimbursementDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">project_1</a> &gt; <a href="index.source.html" class="el_package">com.revature.dto</a> &gt; <span class="el_source">ReimbursementDTO.java</span></div><h1>ReimbursementDTO.java</h1><pre class="source lang-java linenums">package com.revature.dto;
+
+public class ReimbursementDTO {
+    private double amount;
+    private String submittedTime;
+    private String resolvedTime;
+    private String description;
+    private String imageLink;
+    private String author;
+    private int statusId;
+    private int type_id;
+
+<span class="nc" id="L13">    public ReimbursementDTO(){}</span>
+
+    public ReimbursementDTO(double amount, String submittedTime, String resolvedTime, String description, String imageLink,
+<span class="nc" id="L16">                            String author, int type_id) {</span>
+<span class="nc" id="L17">        this.amount = amount;</span>
+<span class="nc" id="L18">        this.submittedTime = submittedTime;</span>
+<span class="nc" id="L19">        this.resolvedTime = resolvedTime;</span>
+<span class="nc" id="L20">        this.description = description;</span>
+<span class="nc" id="L21">        this.imageLink = imageLink;</span>
+<span class="nc" id="L22">        this.author = author;</span>
+<span class="nc" id="L23">        this.statusId = 1;</span>
+<span class="nc" id="L24">        this.type_id = type_id;</span>
+<span class="nc" id="L25">    }</span>
+
+    public double getAmount() {
+<span class="nc" id="L28">        return amount;</span>
+    }
+
+    public void setAmount(double amount) {
+<span class="nc" id="L32">        this.amount = amount;</span>
+<span class="nc" id="L33">    }</span>
+
+    public String getSubmittedTime() {
+<span class="nc" id="L36">        return submittedTime;</span>
+    }
+
+    public void setSubmittedTime(String submittedTime) {
+<span class="nc" id="L40">        this.submittedTime = submittedTime;</span>
+<span class="nc" id="L41">    }</span>
+
+    public String getResolvedTime() {
+<span class="nc" id="L44">        return resolvedTime;</span>
+    }
+
+    public void setResolvedTime(String resolvedTime) {
+<span class="nc" id="L48">        this.resolvedTime = resolvedTime;</span>
+<span class="nc" id="L49">    }</span>
+
+    public String getDescription() {
+<span class="nc" id="L52">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="nc" id="L56">        this.description = description;</span>
+<span class="nc" id="L57">    }</span>
+
+    public String getImageLink() {
+<span class="nc" id="L60">        return imageLink;</span>
+    }
+
+    public void setImageLink(String imageLink) {
+<span class="nc" id="L64">        this.imageLink = imageLink;</span>
+<span class="nc" id="L65">    }</span>
+
+    public String getAuthor() {
+<span class="nc" id="L68">        return author;</span>
+    }
+
+    public void setAuthor(String author) {
+<span class="nc" id="L72">        this.author = author;</span>
+<span class="nc" id="L73">    }</span>
+
+    public int getStatusId() {
+<span class="nc" id="L76">        return statusId;</span>
+    }
+
+    public void setStatusId(int statusId) {
+<span class="nc" id="L80">        this.statusId = statusId;</span>
+<span class="nc" id="L81">    }</span>
+
+    public int getType_id() {
+<span class="nc" id="L84">        return type_id;</span>
+    }
+
+    public void setType_id(int type_id) {
+<span class="nc" id="L88">        this.type_id = type_id;</span>
+<span class="nc" id="L89">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

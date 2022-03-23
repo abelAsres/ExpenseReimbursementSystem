@@ -6,7 +6,7 @@ import com.revature.service.UserService;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
 
-public class UserContoller implements Controller{
+public class UserController implements Controller{
 
     private UserService userService = new UserService();
 
@@ -24,7 +24,7 @@ public class UserContoller implements Controller{
         UserDTO userDTO = ctx.bodyAsClass(UserDTO.class);
         User user = userService.addUser(userDTO);
         ctx.status(201);
-        ctx.json("User "+user.getUserName()+" has been added");
+        ctx.json("User "+user.getUserName()+" has been registered");
     };
 
     private Handler removeUser = ctx -> {
@@ -32,7 +32,7 @@ public class UserContoller implements Controller{
         if(userService.removeUser(id)){
             ctx.json("User with ID "+id+" has been removed");
         }else{
-            ctx.json("User with ID "+id+" was not removed");
+            ctx.json("User with ID "+id+" does not exist");
         }
     };
     @Override

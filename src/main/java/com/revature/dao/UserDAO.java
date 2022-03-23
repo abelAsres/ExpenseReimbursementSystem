@@ -60,26 +60,23 @@ public class UserDAO {
 
     public User addUser(UserDTO userDTO) throws SQLException {
         try(Connection connection = ConnectionUtility.getConnection()){
-            String query = "INSERT INTO users (user_name,ers_password,user_first_name,user_last_name,user_email,user_role_id,salt) " +
+            String query = "INSERT INTO ers_users (user_name,ers_password,user_first_name,user_last_name,user_email,user_role_id,salt) " +
                     "VALUES (?,?,?,?,?,?,?)";
 
-            PreparedStatement pstmt = connection.prepareStatement(query);
+            PreparedStatement preparedStatment = connection.prepareStatement(query);
 
-            pstmt.setString(1,userDTO.getUserName());
-            pstmt.setString(2,userDTO.getPassword());
-            pstmt.setString(3,userDTO.getFirstName());
-            pstmt.setString(4,userDTO.getLastName());
-            pstmt.setString(5,userDTO.getEmail());
-            pstmt.setInt(6,userDTO.getRoleId());
-            pstmt.setBytes(7,userDTO.getSalt());
+            preparedStatment.setString(1,userDTO.getUserName());
+            preparedStatment.setString(2,userDTO.getPassword());
+            preparedStatment.setString(3,userDTO.getFirstName());
+            preparedStatment.setString(4,userDTO.getLastName());
+            preparedStatment.setString(5,userDTO.getEmail());
+            preparedStatment.setInt(6,userDTO.getRoleId());
+            preparedStatment.setBytes(7,userDTO.getSalt());
 
+            preparedStatment.executeUpdate();
 
-            pstmt.executeUpdate();
-
-            ResultSet results = pstmt.getGeneratedKeys();
-
+            ResultSet results = preparedStatment.getGeneratedKeys();
             results.next();
-
             int id = results.getInt(1);
 
             return new User(id,userDTO.getUserName(),userDTO.getPassword(),userDTO.getFirstName(),userDTO.getLastName(),

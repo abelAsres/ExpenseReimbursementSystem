@@ -49,58 +49,56 @@ public class UserDAO {
 
 <span class="nc" id="L50">            ResultSet resultSet = preparedStatement.executeQuery();</span>
 
-<span class="nc" id="L52">            resultSet.next();</span>
-
-<span class="nc" id="L54">            return new User(resultSet.getInt(&quot;id&quot;),resultSet.getString(&quot;user_name&quot;),resultSet.getString(&quot;ers_password&quot;),</span>
-<span class="nc" id="L55">                    resultSet.getString(&quot;user_first_name&quot;), resultSet.getString(&quot;user_last_name&quot;),resultSet.getString(&quot;user_email&quot;),</span>
-<span class="nc" id="L56">                    resultSet.getInt(&quot;user_role_id&quot;),resultSet.getBytes(&quot;salt&quot;));</span>
-        }
+<span class="nc bnc" id="L52" title="All 2 branches missed.">            if(resultSet.next()){</span>
+<span class="nc" id="L53">                return new User(resultSet.getInt(&quot;id&quot;),resultSet.getString(&quot;user_name&quot;),resultSet.getString(&quot;ers_password&quot;),</span>
+<span class="nc" id="L54">                        resultSet.getString(&quot;user_first_name&quot;), resultSet.getString(&quot;user_last_name&quot;),resultSet.getString(&quot;user_email&quot;),</span>
+<span class="nc" id="L55">                        resultSet.getInt(&quot;user_role_id&quot;),resultSet.getBytes(&quot;salt&quot;));</span>
+            }
+<span class="nc" id="L57">           return null;</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        }</span>
     }
 
     public User addUser(UserDTO userDTO) throws SQLException {
-<span class="nc" id="L61">        try(Connection connection = ConnectionUtility.getConnection()){</span>
-<span class="nc" id="L62">            String query = &quot;INSERT INTO users (user_name,ers_password,user_first_name,user_last_name,user_email,user_role_id,salt) &quot; +</span>
+<span class="nc" id="L62">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L63">            String query = &quot;INSERT INTO ers_users (user_name,ers_password,user_first_name,user_last_name,user_email,user_role_id,salt) &quot; +</span>
                     &quot;VALUES (?,?,?,?,?,?,?)&quot;;
 
-<span class="nc" id="L65">            PreparedStatement pstmt = connection.prepareStatement(query);</span>
+<span class="nc" id="L66">            PreparedStatement preparedStatment = connection.prepareStatement(query);</span>
 
-<span class="nc" id="L67">            pstmt.setString(1,userDTO.getUserName());</span>
-<span class="nc" id="L68">            pstmt.setString(2,userDTO.getPassword());</span>
-<span class="nc" id="L69">            pstmt.setString(3,userDTO.getFirstName());</span>
-<span class="nc" id="L70">            pstmt.setString(4,userDTO.getLastName());</span>
-<span class="nc" id="L71">            pstmt.setString(5,userDTO.getEmail());</span>
-<span class="nc" id="L72">            pstmt.setInt(6,userDTO.getRoleId());</span>
-<span class="nc" id="L73">            pstmt.setBytes(7,userDTO.getSalt());</span>
+<span class="nc" id="L68">            preparedStatment.setString(1,userDTO.getUserName());</span>
+<span class="nc" id="L69">            preparedStatment.setString(2,userDTO.getPassword());</span>
+<span class="nc" id="L70">            preparedStatment.setString(3,userDTO.getFirstName());</span>
+<span class="nc" id="L71">            preparedStatment.setString(4,userDTO.getLastName());</span>
+<span class="nc" id="L72">            preparedStatment.setString(5,userDTO.getEmail());</span>
+<span class="nc" id="L73">            preparedStatment.setInt(6,userDTO.getRoleId());</span>
+<span class="nc" id="L74">            preparedStatment.setBytes(7,userDTO.getSalt());</span>
 
+<span class="nc" id="L76">            preparedStatment.executeUpdate();</span>
 
-<span class="nc" id="L76">            pstmt.executeUpdate();</span>
+<span class="nc" id="L78">            ResultSet results = preparedStatment.getGeneratedKeys();</span>
+<span class="nc" id="L79">            results.next();</span>
+<span class="nc" id="L80">            int id = results.getInt(1);</span>
 
-<span class="nc" id="L78">            ResultSet results = pstmt.getGeneratedKeys();</span>
-
-<span class="nc" id="L80">            results.next();</span>
-
-<span class="nc" id="L82">            int id = results.getInt(1);</span>
-
-<span class="nc" id="L84">            return new User(id,userDTO.getUserName(),userDTO.getPassword(),userDTO.getFirstName(),userDTO.getLastName(),</span>
-<span class="nc" id="L85">                    userDTO.getEmail(), userDTO.getRoleId(), userDTO.getSalt());</span>
+<span class="nc" id="L82">            return new User(id,userDTO.getUserName(),userDTO.getPassword(),userDTO.getFirstName(),userDTO.getLastName(),</span>
+<span class="nc" id="L83">                    userDTO.getEmail(), userDTO.getRoleId(), userDTO.getSalt());</span>
         }
     }
 
     public boolean removeUser(int id) throws SQLException {
-<span class="nc" id="L90">        try(Connection connection = ConnectionUtility.getConnection()){</span>
-<span class="nc" id="L91">            String query = &quot;DELETE FROM ers_users WHERE id = ?&quot;;</span>
+<span class="nc" id="L88">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L89">            String query = &quot;DELETE FROM ers_users WHERE id = ?&quot;;</span>
 
-<span class="nc" id="L93">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+<span class="nc" id="L91">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
 
-<span class="nc" id="L95">            preparedStatement.setInt(1,id);</span>
+<span class="nc" id="L93">            preparedStatement.setInt(1,id);</span>
 
-<span class="nc" id="L97">            int numOfRemovedUsers = preparedStatement.executeUpdate();</span>
+<span class="nc" id="L95">            int numOfRemovedUsers = preparedStatement.executeUpdate();</span>
 
-<span class="nc bnc" id="L99" title="All 2 branches missed.">            if (numOfRemovedUsers == 1){</span>
-<span class="nc" id="L100">                return true;</span>
+<span class="nc bnc" id="L97" title="All 2 branches missed.">            if (numOfRemovedUsers == 1){</span>
+<span class="nc" id="L98">                return true;</span>
             }
-<span class="nc bnc" id="L102" title="All 2 branches missed.">        }</span>
-<span class="nc" id="L103">        return false;</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">        }</span>
+<span class="nc" id="L101">        return false;</span>
     }
 /*
     public User updateUser(User user) throws SQLException {

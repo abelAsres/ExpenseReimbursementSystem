@@ -32,7 +32,7 @@ import io.javalin.http.Handler;
 <span class="nc bnc" id="L32" title="All 2 branches missed.">        if(userService.removeUser(id)){</span>
 <span class="nc" id="L33">            ctx.json(&quot;User with ID &quot;+id+&quot; has been removed&quot;);</span>
         }else{
-<span class="nc" id="L35">            ctx.json(&quot;User with ID &quot;+id+&quot; was not removed&quot;);</span>
+<span class="nc" id="L35">            ctx.json(&quot;User with ID &quot;+id+&quot; does not exist&quot;);</span>
         }
 <span class="nc" id="L37">    };</span>
     @Override

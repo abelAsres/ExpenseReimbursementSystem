@@ -2,7 +2,7 @@ package com.revature.main;
 
 import com.revature.controller.Controller;
 import com.revature.controller.ExceptionController;
-import com.revature.controller.UserContoller;
+import com.revature.controller.UserController;
 import io.javalin.Javalin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ public class Driver {
             logger.info(ctx.method() + " request received for " + ctx.path());
         });
 
-        mapControllers(app,new UserContoller(),new ExceptionController());
+        mapControllers(app,new UserController(),new ExceptionController());
 
         app.start();
     }

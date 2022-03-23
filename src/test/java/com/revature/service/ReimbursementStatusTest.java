@@ -35,7 +35,7 @@ public class ReimbursementStatusTest {
     }
 
     @Test
-    public void test_getAllReimbursementStatusById() throws SQLException {
+    public void test_getReimbursementStatusById() throws SQLException {
         ReimbursementStatusDAO mockReimbursementStatusDAO = mock(ReimbursementStatusDAO.class);
         ReimbursementStatus mockReimbursementStatus = new ReimbursementStatus(1,"Lodging");
 
