@@ -58,6 +58,24 @@ public class UserDAO {
         }
     }
 
+    public User getUserByUserName(String userName) throws SQLException {
+        try(Connection connection = ConnectionUtility.getConnection()){
+            String query = "SELECT * FROM ers_users WHERE user_name = ?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setString(1,userName);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()){
+                return new User(resultSet.getInt("id"),resultSet.getString("user_name"),resultSet.getString("ers_password"),
+                        resultSet.getString("user_first_name"), resultSet.getString("user_last_name"),resultSet.getString("user_email"),
+                        resultSet.getInt("user_role_id"),resultSet.getBytes("salt"));
+            }
+            return null;
+        }
+    }
     public User addUser(UserDTO userDTO) throws SQLException {
         try(Connection connection = ConnectionUtility.getConnection()){
             String query = "INSERT INTO ers_users (user_name,ers_password,user_first_name,user_last_name,user_email,user_role_id,salt) " +

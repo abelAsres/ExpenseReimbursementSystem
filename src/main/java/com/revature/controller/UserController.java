@@ -1,5 +1,6 @@
 package com.revature.controller;
 
+import com.revature.dto.LoginDTO;
 import com.revature.dto.UserDTO;
 import com.revature.model.User;
 import com.revature.service.UserService;
@@ -35,6 +36,7 @@ public class UserController implements Controller{
             ctx.json("User with ID "+id+" does not exist");
         }
     };
+
     @Override
     public void mapEndPoints(Javalin app) {
         app.get("/project-1/users",getAllUsers);

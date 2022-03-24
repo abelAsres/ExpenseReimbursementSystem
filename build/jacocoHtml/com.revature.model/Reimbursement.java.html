@@ -16,18 +16,18 @@ public class Reimbursement {
 
     public Reimbursement(int id, double amount, String submittedTime, String resolvedTime,
                          String description, String imageLink, String author, String resolver,
-<span class="fc" id="L19">                         int statusId, int type_id) {</span>
-<span class="fc" id="L20">        this.id = id;</span>
-<span class="fc" id="L21">        this.amount = amount;</span>
-<span class="fc" id="L22">        this.submittedTime = submittedTime;</span>
-<span class="fc" id="L23">        this.resolvedTime = resolvedTime;</span>
-<span class="fc" id="L24">        this.description = description;</span>
-<span class="fc" id="L25">        this.imageLink = imageLink;</span>
-<span class="fc" id="L26">        this.author = author;</span>
-<span class="fc" id="L27">        this.resolver = resolver;</span>
-<span class="fc" id="L28">        this.statusId = statusId;</span>
-<span class="fc" id="L29">        this.type_id = type_id;</span>
-<span class="fc" id="L30">    }</span>
+<span class="nc" id="L19">                         int statusId, int type_id) {</span>
+<span class="nc" id="L20">        this.id = id;</span>
+<span class="nc" id="L21">        this.amount = amount;</span>
+<span class="nc" id="L22">        this.submittedTime = submittedTime;</span>
+<span class="nc" id="L23">        this.resolvedTime = resolvedTime;</span>
+<span class="nc" id="L24">        this.description = description;</span>
+<span class="nc" id="L25">        this.imageLink = imageLink;</span>
+<span class="nc" id="L26">        this.author = author;</span>
+<span class="nc" id="L27">        this.resolver = resolver;</span>
+<span class="nc" id="L28">        this.statusId = statusId;</span>
+<span class="nc" id="L29">        this.type_id = type_id;</span>
+<span class="nc" id="L30">    }</span>
 
     public int getId() {
 <span class="nc" id="L33">        return id;</span>
@@ -111,7 +111,7 @@ public class Reimbursement {
 
     @Override
     public boolean equals(Object o) {
-<span class="pc bpc" id="L114" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">        if (this == o) return true;</span>
 <span class="nc bnc" id="L115" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
 <span class="nc" id="L116">        Reimbursement that = (Reimbursement) o;</span>
 <span class="nc bnc" id="L117" title="All 20 branches missed.">        return id == that.id &amp;&amp; Double.compare(that.amount, amount) == 0 &amp;&amp; statusId == that.statusId &amp;&amp; type_id == that.type_id &amp;&amp; Objects.equals(submittedTime, that.submittedTime) &amp;&amp; Objects.equals(resolvedTime, that.resolvedTime) &amp;&amp; Objects.equals(description, that.description) &amp;&amp; Objects.equals(imageLink, that.imageLink) &amp;&amp; Objects.equals(author, that.author) &amp;&amp; Objects.equals(resolver, that.resolver);</span>

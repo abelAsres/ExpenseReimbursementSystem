@@ -16,16 +16,16 @@ public class User {
 
 <span class="nc" id="L17">    public User(){}</span>
 
-<span class="fc" id="L19">    public User(int id, String userName, String password, String firstName, String lastName, String email, int roleId, byte[] salt) {</span>
-<span class="fc" id="L20">        this.id = id;</span>
-<span class="fc" id="L21">        this.userName = userName;</span>
-<span class="fc" id="L22">        this.password = password;</span>
-<span class="fc" id="L23">        this.firstName = firstName;</span>
-<span class="fc" id="L24">        this.lastName = lastName;</span>
-<span class="fc" id="L25">        this.email = email;</span>
-<span class="fc" id="L26">        this.roleId = roleId;</span>
-<span class="fc" id="L27">        this.salt = salt;</span>
-<span class="fc" id="L28">    }</span>
+<span class="nc" id="L19">    public User(int id, String userName, String password, String firstName, String lastName, String email, int roleId, byte[] salt) {</span>
+<span class="nc" id="L20">        this.id = id;</span>
+<span class="nc" id="L21">        this.userName = userName;</span>
+<span class="nc" id="L22">        this.password = password;</span>
+<span class="nc" id="L23">        this.firstName = firstName;</span>
+<span class="nc" id="L24">        this.lastName = lastName;</span>
+<span class="nc" id="L25">        this.email = email;</span>
+<span class="nc" id="L26">        this.roleId = roleId;</span>
+<span class="nc" id="L27">        this.salt = salt;</span>
+<span class="nc" id="L28">    }</span>
 
     public int getId() {
 <span class="nc" id="L31">        return id;</span>
@@ -93,7 +93,7 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-<span class="pc bpc" id="L96" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">        if (this == o) return true;</span>
 <span class="nc bnc" id="L97" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
 <span class="nc" id="L98">        User user = (User) o;</span>
 <span class="nc bnc" id="L99" title="All 16 branches missed.">        return id == user.id &amp;&amp; roleId == user.roleId &amp;&amp; Objects.equals(userName, user.userName) &amp;&amp; Objects.equals(password, user.password) &amp;&amp; Objects.equals(firstName, user.firstName) &amp;&amp; Objects.equals(lastName, user.lastName) &amp;&amp; Objects.equals(email, user.email) &amp;&amp; Arrays.equals(salt, user.salt);</span>

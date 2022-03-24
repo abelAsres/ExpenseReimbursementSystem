@@ -7,6 +7,7 @@ import com.revature.exception.UserNotFoundException;
 import com.revature.model.User;
 import com.revature.utility.HashUtility;
 
+import javax.security.auth.login.FailedLoginException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
@@ -27,22 +28,14 @@ public class UserService {
         return userDao.getAllUsers();
     }
 
-    /*
-    public User login(String username, String password) throws SQLException, FailedLoginException, NoSuchAlgorithmException, InvalidKeyException {
-        User user = this.userDao.getUserByUsernameAndPassword(username, password);
 
-        if (user == null) {
+    public User login(String username, String password) throws SQLException, FailedLoginException, NoSuchAlgorithmException {
+        User user = userDao.getUserByUserName(username);
+        if (user == null || !HashUtility.generateHashSaltPassword("SHA-512",password,user.getSalt()).equals(user.getPassword())) {
             throw new FailedLoginException("Invalid username and/or password was provided");
         }
-
-        if(hashUtility.generateHashSaltPassword("SHA-512",password,user.getSalt()).equals(user.getPassword())){
-            System.out.println("hash checks out");
-        }else{
-            throw new InvalidKeyException("Try again!!!");
-        }
-
         return user;
-    }*/
+    }
 
     public User getUserById(String id) throws SQLException,UserNotFoundException{
         try{

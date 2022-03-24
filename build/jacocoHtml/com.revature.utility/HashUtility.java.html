@@ -7,18 +7,18 @@ import java.security.SecureRandom;
 
 <span class="nc" id="L8">public class HashUtility {</span>
     public static byte[] createSalt(){
-<span class="fc" id="L10">        byte[] bytes = new byte[20];</span>
-<span class="fc" id="L11">        SecureRandom secureRandom = new SecureRandom();</span>
-<span class="fc" id="L12">        secureRandom.nextBytes(bytes);</span>
-<span class="fc" id="L13">        return bytes;</span>
+<span class="nc" id="L10">        byte[] bytes = new byte[20];</span>
+<span class="nc" id="L11">        SecureRandom secureRandom = new SecureRandom();</span>
+<span class="nc" id="L12">        secureRandom.nextBytes(bytes);</span>
+<span class="nc" id="L13">        return bytes;</span>
     }
 
     public static String generateHashSaltPassword(String algorithm, String password, byte[] salt) throws NoSuchAlgorithmException {
-<span class="fc" id="L17">        MessageDigest digest = MessageDigest.getInstance(algorithm);</span>
-<span class="fc" id="L18">        digest.reset();</span>
-<span class="fc" id="L19">        digest.update(salt);</span>
-<span class="fc" id="L20">        byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));</span>
-<span class="fc" id="L21">        return new String(hash);</span>
+<span class="nc" id="L17">        MessageDigest digest = MessageDigest.getInstance(algorithm);</span>
+<span class="nc" id="L18">        digest.reset();</span>
+<span class="nc" id="L19">        digest.update(salt);</span>
+<span class="nc" id="L20">        byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));</span>
+<span class="nc" id="L21">        return new String(hash);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

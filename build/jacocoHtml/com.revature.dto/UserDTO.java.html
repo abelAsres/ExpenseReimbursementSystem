@@ -14,50 +14,50 @@ public class UserDTO {
 
 <span class="nc" id="L15">    public UserDTO(){}</span>
 
-<span class="fc" id="L17">    public UserDTO(String userName, String password, String firstName, String lastName, String email, int roleId) {</span>
-<span class="fc" id="L18">        this.userName = userName;</span>
-<span class="fc" id="L19">        this.password = password;</span>
-<span class="fc" id="L20">        this.firstName = firstName;</span>
-<span class="fc" id="L21">        this.lastName = lastName;</span>
-<span class="fc" id="L22">        this.email = email;</span>
-<span class="fc" id="L23">        this.roleId = roleId;</span>
-<span class="fc" id="L24">        this.salt = HashUtility.createSalt();</span>
-<span class="fc" id="L25">    }</span>
+<span class="nc" id="L17">    public UserDTO(String userName, String password, String firstName, String lastName, String email, int roleId) {</span>
+<span class="nc" id="L18">        this.userName = userName;</span>
+<span class="nc" id="L19">        this.password = password;</span>
+<span class="nc" id="L20">        this.firstName = firstName;</span>
+<span class="nc" id="L21">        this.lastName = lastName;</span>
+<span class="nc" id="L22">        this.email = email;</span>
+<span class="nc" id="L23">        this.roleId = roleId;</span>
+<span class="nc" id="L24">        this.salt = HashUtility.createSalt();</span>
+<span class="nc" id="L25">    }</span>
 
     public String getUserName() {
-<span class="fc" id="L28">        return userName;</span>
+<span class="nc" id="L28">        return userName;</span>
     }
 
     public void setUserName(String userName) {
-<span class="fc" id="L32">        this.userName = userName;</span>
-<span class="fc" id="L33">    }</span>
+<span class="nc" id="L32">        this.userName = userName;</span>
+<span class="nc" id="L33">    }</span>
 
     public String getPassword() {
-<span class="fc" id="L36">        return password;</span>
+<span class="nc" id="L36">        return password;</span>
     }
 
     public void setPassword(String password) {
-<span class="fc" id="L40">        this.password = password;</span>
-<span class="fc" id="L41">    }</span>
+<span class="nc" id="L40">        this.password = password;</span>
+<span class="nc" id="L41">    }</span>
 
     public String getFirstName() {
-<span class="fc" id="L44">        return firstName;</span>
+<span class="nc" id="L44">        return firstName;</span>
     }
 
     public void setFirstName(String firstName) {
-<span class="fc" id="L48">        this.firstName = firstName;</span>
-<span class="fc" id="L49">    }</span>
+<span class="nc" id="L48">        this.firstName = firstName;</span>
+<span class="nc" id="L49">    }</span>
 
     public String getLastName() {
-<span class="fc" id="L52">        return lastName;</span>
+<span class="nc" id="L52">        return lastName;</span>
     }
 
     public void setLastName(String lastName) {
-<span class="fc" id="L56">        this.lastName = lastName;</span>
-<span class="fc" id="L57">    }</span>
+<span class="nc" id="L56">        this.lastName = lastName;</span>
+<span class="nc" id="L57">    }</span>
 
     public String getEmail() {
-<span class="fc" id="L60">        return email;</span>
+<span class="nc" id="L60">        return email;</span>
     }
 
     public void setEmail(String email) {
@@ -73,11 +73,11 @@ public class UserDTO {
 <span class="nc" id="L73">    }</span>
 
     public byte[] getSalt() {
-<span class="fc" id="L76">        return salt;</span>
+<span class="nc" id="L76">        return salt;</span>
     }
 
     public void setSalt(byte[] salt) {
-<span class="fc" id="L80">        this.salt = salt;</span>
-<span class="fc" id="L81">    }</span>
+<span class="nc" id="L80">        this.salt = salt;</span>
+<span class="nc" id="L81">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -4,9 +4,11 @@ import com.revature.dao.UserDAO;
 import com.revature.dto.UserDTO;
 import com.revature.exception.UserNotFoundException;
 import com.revature.model.User;
+import com.revature.utility.HashUtility;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import javax.security.auth.login.FailedLoginException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.sql.SQLException;
@@ -101,6 +103,38 @@ public class UserServiceTest {
         Boolean userRemoved = userService.removeUser("1");
 
         Assertions.assertEquals(expectedResult,userRemoved);
+    }
+
+    @Test
+    public void test_loginUser() throws SQLException, FailedLoginException, NoSuchAlgorithmException {
+        UserDAO mockUserDAO = mock(UserDAO.class);
+
+        UserService userService = new UserService(mockUserDAO);
+
+        byte[] bytes= HashUtility.createSalt();
+
+        User expectedUser = new User(1,"testUser","password","test","user","testuser@gmail.com",5,bytes);
+
+        expectedUser.setPassword(HashUtility.generateHashSaltPassword("SHA-512","password",bytes));
+
+        when(mockUserDAO.getUserByUserName(expectedUser.getUserName())).thenReturn(expectedUser);
+
+        User actualUser = userService.login("testUser","password");
+
+        Assertions.assertEquals(expectedUser,actualUser);
+    }
+
+    @Test
+    public void test_loginUser_FailLoginException() throws NoSuchAlgorithmException, SQLException, FailedLoginException {
+        UserDAO mockUserDAO = mock(UserDAO.class);
+
+        UserService userService = new UserService(mockUserDAO);
+
+        // Act + Assert
+        //password has not been hashed and salted
+        Assertions.assertThrows(FailedLoginException.class, () -> {
+           userService.login("testUser","password");
+        });
     }
 
     /*

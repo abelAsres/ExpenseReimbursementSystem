@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.revature.service.ReimbursementServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-22T20:52:04" hostname="LAPTOP-HO6FK4NQ" time="0.048">
-  <properties/>
-  <testcase name="test_getReimbursementById()" classname="com.revature.service.ReimbursementServiceTest" time="0.045"/>
-  <testcase name="test_getAllReimbursements()" classname="com.revature.service.ReimbursementServiceTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

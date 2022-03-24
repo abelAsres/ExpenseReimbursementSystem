@@ -2,7 +2,7 @@
 
 import com.revature.controller.Controller;
 import com.revature.controller.ExceptionController;
-import com.revature.controller.UserContoller;
+import com.revature.controller.UserController;
 import io.javalin.Javalin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 <span class="nc" id="L18">            logger.info(ctx.method() + &quot; request received for &quot; + ctx.path());</span>
 <span class="nc" id="L19">        });</span>
 
-<span class="nc" id="L21">        mapControllers(app,new UserContoller(),new ExceptionController());</span>
+<span class="nc" id="L21">        mapControllers(app,new UserController(),new ExceptionController());</span>
 
 <span class="nc" id="L23">        app.start();</span>
 <span class="nc" id="L24">    }</span>

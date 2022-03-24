@@ -1,5 +1,6 @@
 package com.revature.main;
 
+import com.revature.controller.AuthenticationContoller;
 import com.revature.controller.Controller;
 import com.revature.controller.ExceptionController;
 import com.revature.controller.UserController;
@@ -18,7 +19,7 @@ public class Driver {
             logger.info(ctx.method() + " request received for " + ctx.path());
         });
 
-        mapControllers(app,new UserController(),new ExceptionController());
+        mapControllers(app,new UserController(),new AuthenticationContoller(),new ExceptionController());
 
         app.start();
     }
