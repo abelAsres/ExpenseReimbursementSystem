@@ -543,3 +543,543 @@ java.lang.NullPointerException: Parameter specified as non-null is null: method 
 23 03 2022 - 12:49:29.853 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 23 03 2022 - 12:49:29.853 [main] INFO  io.javalin.Javalin - Javalin started in 655ms \o/
 23 03 2022 - 12:49:34.538 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 11:40:00.982 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 11:40:01.015 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @739ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 11:40:01.016 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 11:40:01.049 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 11:40:01.050 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 11:40:01.705 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 11:40:01.706 [main] INFO  io.javalin.Javalin - Javalin started in 690ms \o/
+24 03 2022 - 12:40:08.247 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 12:47:37.633 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 12:48:11.943 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 12:56:45.743 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:35:12.055 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:35:12.082 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @686ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:35:12.084 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:35:12.110 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:35:12.111 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:35:12.647 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:35:12.647 [main] INFO  io.javalin.Javalin - Javalin started in 564ms \o/
+24 03 2022 - 13:35:32.943 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 13:36:24.316 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:37:52.178 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:39:07.554 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:39:14.851 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:39:14.877 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @736ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:39:14.879 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:39:14.905 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:39:14.906 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:39:15.553 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:39:15.553 [main] INFO  io.javalin.Javalin - Javalin started in 675ms \o/
+24 03 2022 - 13:39:17.567 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:45:20.276 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:47:08.402 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:47:08.427 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @619ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:47:08.428 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:47:08.456 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:47:08.457 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:47:09.021 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:47:09.021 [main] INFO  io.javalin.Javalin - Javalin started in 593ms \o/
+24 03 2022 - 13:47:24.952 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:47:41.176 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:47:41.200 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @640ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:47:41.201 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:47:41.229 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:47:41.230 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:47:41.764 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:47:41.764 [main] INFO  io.javalin.Javalin - Javalin started in 564ms \o/
+24 03 2022 - 13:47:48.793 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:50:02.289 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:50:02.314 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @602ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:50:02.315 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:50:02.343 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:50:02.343 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:50:02.889 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:50:02.890 [main] INFO  io.javalin.Javalin - Javalin started in 576ms \o/
+24 03 2022 - 13:50:06.328 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:50:27.009 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:51:15.697 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:51:15.723 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @604ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:51:15.725 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:51:15.753 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:51:15.753 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:51:16.289 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:51:16.289 [main] INFO  io.javalin.Javalin - Javalin started in 565ms \o/
+24 03 2022 - 13:51:20.438 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:51:49.768 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:51:49.795 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @621ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:51:49.797 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:51:49.823 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:51:49.823 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:51:50.368 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:51:50.368 [main] INFO  io.javalin.Javalin - Javalin started in 572ms \o/
+24 03 2022 - 13:51:55.966 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:52:38.050 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:53:10.149 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:53:10.176 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @659ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:53:10.177 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:53:10.203 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:53:10.203 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:53:10.762 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:53:10.762 [main] INFO  io.javalin.Javalin - Javalin started in 586ms \o/
+24 03 2022 - 13:53:40.996 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:53:54.081 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:53:54.107 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @592ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:53:54.108 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:53:54.133 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:53:54.134 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:53:54.628 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:53:54.628 [main] INFO  io.javalin.Javalin - Javalin started in 520ms \o/
+24 03 2022 - 13:53:57.886 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:54:57.562 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:54:57.586 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @634ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:54:57.587 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:54:57.612 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:54:57.612 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:54:58.110 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:54:58.110 [main] INFO  io.javalin.Javalin - Javalin started in 524ms \o/
+24 03 2022 - 13:55:06.205 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:55:37.694 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:55:37.722 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @638ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:55:37.724 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:55:37.751 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:55:37.751 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:55:38.290 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:55:38.290 [main] INFO  io.javalin.Javalin - Javalin started in 567ms \o/
+24 03 2022 - 13:56:06.870 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 13:56:56.702 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 13:56:56.732 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @624ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 13:56:56.733 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 13:56:56.762 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 13:56:56.762 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 13:56:57.309 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 13:56:57.310 [main] INFO  io.javalin.Javalin - Javalin started in 578ms \o/
+24 03 2022 - 13:57:01.607 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 14:14:01.277 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 14:14:01.307 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @723ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 14:14:01.307 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 14:14:01.337 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 14:14:01.338 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 14:14:01.960 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 14:14:01.961 [main] INFO  io.javalin.Javalin - Javalin started in 653ms \o/
+24 03 2022 - 14:14:18.955 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 14:15:46.508 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 14:15:46.534 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @680ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 14:15:46.535 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 14:15:46.562 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 14:15:46.563 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 14:15:47.107 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 14:15:47.107 [main] INFO  io.javalin.Javalin - Javalin started in 572ms \o/
+24 03 2022 - 14:15:51.723 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 14:21:14.320 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 14:21:14.350 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @645ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 14:21:14.351 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 14:21:14.382 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 14:21:14.382 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 14:21:14.967 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 14:21:14.968 [main] INFO  io.javalin.Javalin - Javalin started in 617ms \o/
+24 03 2022 - 14:21:21.367 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 14:26:44.638 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 14:26:44.686 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @703ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 14:26:44.687 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 14:26:44.720 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 14:26:44.720 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 14:26:45.356 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 14:26:45.357 [main] INFO  io.javalin.Javalin - Javalin started in 670ms \o/
+24 03 2022 - 14:27:13.569 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 15:20:01.241 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 15:20:01.269 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @692ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 15:20:01.272 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 15:20:01.302 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 15:20:01.303 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 15:20:01.892 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 15:20:01.892 [main] INFO  io.javalin.Javalin - Javalin started in 621ms \o/
+24 03 2022 - 15:33:18.238 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:34:16.805 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:37:17.931 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:40:52.234 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:51:33.219 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:55:17.307 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:56:10.154 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:56:19.592 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:57:03.313 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 15:59:04.273 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:00:08.365 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 16:00:08.390 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @603ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 16:00:08.392 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 16:00:08.416 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 16:00:08.417 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 16:00:08.947 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 16:00:08.948 [main] INFO  io.javalin.Javalin - Javalin started in 557ms \o/
+24 03 2022 - 16:00:33.339 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:01:01.553 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:02:59.588 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 16:02:59.618 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @669ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 16:02:59.620 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 16:02:59.651 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 16:02:59.652 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 16:03:00.317 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 16:03:00.317 [main] INFO  io.javalin.Javalin - Javalin started in 698ms \o/
+24 03 2022 - 16:03:09.771 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:04:11.090 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:05:16.074 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:05:16.079 [JettyServerThreadPool-16] WARN  io.javalin.Javalin - Uncaught exception
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `com.revature.dto.LoginDTO` from Array value (token `JsonToken.START_ARRAY`)
+ at [Source: (String)"[object Object]"; line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1462)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeFromArray(BeanDeserializer.java:638)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:210)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:186)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at io.javalin.plugin.json.JavalinJackson.fromJsonString(JavalinJackson.kt:37)
+	at io.javalin.http.Context.bodyAsClass(Context.kt:114)
+	at com.revature.controller.AuthenticationContoller.lambda$new$0(AuthenticationContoller.java:15)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:137)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+24 03 2022 - 16:06:11.774 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 16:06:11.804 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @680ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 16:06:11.805 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 16:06:11.831 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 16:06:11.832 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 16:06:12.392 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 16:06:12.392 [main] INFO  io.javalin.Javalin - Javalin started in 588ms \o/
+24 03 2022 - 16:06:19.788 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:09:52.499 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 16:09:52.525 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @581ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 16:09:52.526 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 16:09:52.553 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 16:09:52.553 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 16:09:53.093 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 16:09:53.093 [main] INFO  io.javalin.Javalin - Javalin started in 568ms \o/
+24 03 2022 - 16:10:08.445 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:10:43.507 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:12:24.000 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:16:34.224 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:23:19.696 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:28:53.845 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:41:32.908 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 16:41:32.933 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @667ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 16:41:32.935 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 16:41:32.963 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 16:41:32.963 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 16:41:33.523 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 16:41:33.524 [main] INFO  io.javalin.Javalin - Javalin started in 590ms \o/
+24 03 2022 - 16:44:17.103 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 16:44:17.132 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @688ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 16:44:17.133 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 16:44:17.158 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 16:44:17.158 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 16:44:17.742 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 16:44:17.743 [main] INFO  io.javalin.Javalin - Javalin started in 610ms \o/
+24 03 2022 - 16:44:32.822 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 16:45:32.042 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 16:45:32.071 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @704ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 16:45:32.072 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 16:45:32.101 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 16:45:32.101 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 16:45:32.660 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 16:45:32.660 [main] INFO  io.javalin.Javalin - Javalin started in 588ms \o/
+24 03 2022 - 16:45:36.661 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:09:51.875 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:10:03.881 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 17:10:03.907 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @826ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 17:10:03.908 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 17:10:03.939 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 17:10:03.939 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 17:10:04.530 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 17:10:04.531 [main] INFO  io.javalin.Javalin - Javalin started in 623ms \o/
+24 03 2022 - 17:10:07.476 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:12:14.213 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 17:12:14.240 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @803ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 17:12:14.242 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 17:12:14.275 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 17:12:14.275 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 17:12:14.881 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 17:12:14.882 [main] INFO  io.javalin.Javalin - Javalin started in 641ms \o/
+24 03 2022 - 17:12:45.171 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:12:57.009 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:13:18.257 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:15:32.325 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 17:15:32.328 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:15:35.440 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:16:27.948 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 17:16:27.952 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 17:24:39.523 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 17:24:39.527 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - POST request received for /project-1/login
+24 03 2022 - 20:55:12.560 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+24 03 2022 - 20:55:12.589 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @601ms to org.eclipse.jetty.util.log.Slf4jLog
+24 03 2022 - 20:55:12.590 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+24 03 2022 - 20:55:12.616 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+24 03 2022 - 20:55:12.617 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+24 03 2022 - 20:55:13.123 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+24 03 2022 - 20:55:13.124 [main] INFO  io.javalin.Javalin - Javalin started in 534ms \o/
+24 03 2022 - 20:55:27.365 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/login
+24 03 2022 - 20:55:27.377 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - POST request received for /project-1/login
