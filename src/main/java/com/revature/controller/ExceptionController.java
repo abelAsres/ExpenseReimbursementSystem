@@ -6,9 +6,11 @@ package com.revature.controller;
 import com.revature.exception.UserNotFoundException;
 import io.javalin.Javalin;
 import io.javalin.http.ExceptionHandler;
+import io.javalin.http.UnauthorizedResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.security.auth.login.FailedLoginException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
@@ -68,6 +70,18 @@ public class ExceptionController implements Controller{
         ctx.json(e.getMessage());
     };
 
+    private ExceptionHandler failedLogin = (e,ctx) ->{
+        logger.warn("Failed to login. "+e.getMessage());
+        ctx.status(401);
+        ctx.json(e.getMessage());
+    };
+
+    private ExceptionHandler jwtInvalid = (e,ctx)->{
+        logger.warn("Invalid JWT. "+ e.getMessage());
+        ctx.status(401);
+        ctx.json(e.getMessage());
+    };
+
     @Override
     public void mapEndPoints(Javalin app) {
        // app.exception(ClientNotFoundException.class,clientNotFound);
@@ -76,6 +90,8 @@ public class ExceptionController implements Controller{
         app.exception(NullPointerException.class,nullPointerException);
         app.exception(NoSuchAlgorithmException.class,noSuchAlgorithmException);
         app.exception(UserNotFoundException.class,userNotfound);
+        app.exception(FailedLoginException.class,failedLogin);
+        app.exception(UnauthorizedResponse.class,jwtInvalid);
 
         //app.exception(ClientAlreadyExistsException.class,clientAlreadyExists);
         //app.exception(AccountDoesNotBelongToClient.class,accountDoesNotBelongToClient);

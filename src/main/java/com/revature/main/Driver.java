@@ -1,6 +1,6 @@
 package com.revature.main;
 
-import com.revature.controller.AuthenticationContoller;
+import com.revature.controller.AuthenticationController;
 import com.revature.controller.Controller;
 import com.revature.controller.ExceptionController;
 import com.revature.controller.UserController;
@@ -24,7 +24,7 @@ public class Driver {
 
         });
 
-        mapControllers(app,new UserController(),new AuthenticationContoller(),new ExceptionController());
+        mapControllers(app,new UserController(),new AuthenticationController(),new ExceptionController());
 
         app.start();
     }

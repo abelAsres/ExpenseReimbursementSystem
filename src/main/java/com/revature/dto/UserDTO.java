@@ -23,6 +23,13 @@ public class UserDTO {
         this.roleId = roleId;
         this.salt = HashUtility.createSalt();
     }
+    public UserDTO(String userName, String firstName, String lastName, String email, int roleId) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.roleId = roleId;
+    }
 
     public String getUserName() {
         return userName;
