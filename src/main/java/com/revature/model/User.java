@@ -12,11 +12,13 @@ public class User {
     private String email;
     private int roleId;
     private byte[] salt;
+    private String profilePic;
 
 
     public User(){}
 
-    public User(int id, String userName, String password, String firstName, String lastName, String email, int roleId, byte[] salt) {
+    public User(int id, String userName, String password, String firstName, String lastName, String email,
+                int roleId, byte[] salt, String profilePic) {
         this.id = id;
         this.userName = userName;
         this.password = password;
@@ -25,6 +27,7 @@ public class User {
         this.email = email;
         this.roleId = roleId;
         this.salt = salt;
+        this.profilePic=profilePic;
     }
 
     public int getId() {
@@ -89,6 +92,14 @@ public class User {
 
     public void setSalt(byte[] salt) {
         this.salt = salt;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 
     @Override

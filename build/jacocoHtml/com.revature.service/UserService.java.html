@@ -20,9 +20,9 @@ public class UserService {
 <span class="nc" id="L20">        this.userDao = new UserDAO();</span>
 <span class="nc" id="L21">    }</span>
 
-<span class="fc" id="L23">    public UserService(UserDAO mockDao) {</span>
-<span class="fc" id="L24">        this.userDao = mockDao;</span>
-<span class="fc" id="L25">    }</span>
+<span class="nc" id="L23">    public UserService(UserDAO mockDao) {</span>
+<span class="nc" id="L24">        this.userDao = mockDao;</span>
+<span class="nc" id="L25">    }</span>
 
     public List&lt;User&gt; getAllUsers() throws SQLException {
 <span class="nc" id="L28">        return userDao.getAllUsers();</span>
@@ -30,9 +30,9 @@ public class UserService {
 
 
     public User login(String username, String password) throws SQLException, FailedLoginException, NoSuchAlgorithmException {
-<span class="fc" id="L33">        User user = userDao.getUserByUserName(username);</span>
-<span class="pc bpc" id="L34" title="3 of 4 branches missed.">        if (user == null || !HashUtility.generateHashSaltPassword(&quot;SHA-512&quot;,password,user.getSalt()).equals(user.getPassword())) {</span>
-<span class="fc" id="L35">            throw new FailedLoginException(&quot;Invalid username and/or password was provided&quot;);</span>
+<span class="nc" id="L33">        User user = userDao.getUserByUserName(username);</span>
+<span class="nc bnc" id="L34" title="All 4 branches missed.">        if (user == null || !HashUtility.generateHashSaltPassword(&quot;SHA-512&quot;,password,user.getSalt()).equals(user.getPassword())) {</span>
+<span class="nc" id="L35">            throw new FailedLoginException(&quot;Invalid username and/or password was provided&quot;);</span>
         }
 <span class="nc" id="L37">        return user;</span>
     }

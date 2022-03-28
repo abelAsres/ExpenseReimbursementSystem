@@ -9,7 +9,7 @@ public class ConnectionUtility {
 
     public static Connection getConnection() throws SQLException {
 
-        String url = System.getenv("postgres_url");
+        String url = System.getenv("gcp_url");
         String username = System.getenv("postgres_username");
         String password = System.getenv("postgresPS");
 

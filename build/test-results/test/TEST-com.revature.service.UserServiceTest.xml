@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.revature.service.UserServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-23T16:48:44" hostname="LAPTOP-HO6FK4NQ" time="1.282">
+<testsuite name="com.revature.service.UserServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-28T05:42:36" hostname="LAPTOP-HO6FK4NQ" time="0.988">
   <properties/>
-  <testcase name="test_loginUser_FailLoginException()" classname="com.revature.service.UserServiceTest" time="1.282"/>
+  <testcase name="test_getReimbursementsByUserId()" classname="com.revature.service.UserServiceTest" time="0.988"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

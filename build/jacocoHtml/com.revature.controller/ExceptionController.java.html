@@ -6,9 +6,11 @@
 import com.revature.exception.UserNotFoundException;
 import io.javalin.Javalin;
 import io.javalin.http.ExceptionHandler;
+import io.javalin.http.UnauthorizedResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.security.auth.login.FailedLoginException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
@@ -16,69 +18,83 @@ import java.sql.SQLException;
 // using Javalin's exception mapping functionality
 // This ExceptionController provides us with the ability to &quot;map&quot; exceptions in one central location
 // that get thrown from the endpoint handlers themselves
-<span class="nc" id="L19">public class ExceptionController implements Controller{</span>
+<span class="nc" id="L21">public class ExceptionController implements Controller{</span>
 
-<span class="nc" id="L21">    private Logger logger = LoggerFactory.getLogger(ExceptionController.class);</span>
+<span class="nc" id="L23">    private Logger logger = LoggerFactory.getLogger(ExceptionController.class);</span>
 
-<span class="nc" id="L23">    private ExceptionHandler clientNotFound = (e, ctx) -&gt; {</span>
-<span class="nc" id="L24">        logger.warn(&quot;User attempted to retrieve a client that was not found. Exception message is &quot; + e.getMessage());</span>
-<span class="nc" id="L25">        ctx.status(404);</span>
-<span class="nc" id="L26">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L27">    };</span>
+<span class="nc" id="L25">    private ExceptionHandler clientNotFound = (e, ctx) -&gt; {</span>
+<span class="nc" id="L26">        logger.warn(&quot;User attempted to retrieve a client that was not found. Exception message is &quot; + e.getMessage());</span>
+<span class="nc" id="L27">        ctx.status(404);</span>
+<span class="nc" id="L28">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L29">    };</span>
 
-<span class="nc" id="L29">    private ExceptionHandler badArgument = (e, ctx) -&gt; {</span>
-<span class="nc" id="L30">        logger.warn(&quot;User input a bad argument. Exception message is &quot; + e.getMessage());</span>
-<span class="nc" id="L31">        ctx.status(400);</span>
-<span class="nc" id="L32">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L33">    };</span>
+<span class="nc" id="L31">    private ExceptionHandler badArgument = (e, ctx) -&gt; {</span>
+<span class="nc" id="L32">        logger.warn(&quot;User input a bad argument. Exception message is &quot; + e.getMessage());</span>
+<span class="nc" id="L33">        ctx.status(400);</span>
+<span class="nc" id="L34">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L35">    };</span>
 
-<span class="nc" id="L35">    private ExceptionHandler sqlException = (e, ctx) -&gt; {</span>
-<span class="nc" id="L36">        logger.warn(&quot;SQL error. Exception message is &quot;+e.getMessage());</span>
-<span class="nc" id="L37">        ctx.status(400);</span>
-<span class="nc" id="L38">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L39">    };</span>
+<span class="nc" id="L37">    private ExceptionHandler sqlException = (e, ctx) -&gt; {</span>
+<span class="nc" id="L38">        logger.warn(&quot;SQL error. Exception message is &quot;+e.getMessage());</span>
+<span class="nc" id="L39">        ctx.status(400);</span>
+<span class="nc" id="L40">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L41">    };</span>
 
-<span class="nc" id="L41">    private ExceptionHandler nullPointerException = (e, ctx) -&gt; {</span>
-<span class="nc" id="L42">        logger.warn(&quot;Parameter specified as non-null is null. &quot;+e.getMessage());</span>
-<span class="nc" id="L43">        ctx.status(400);</span>
-<span class="nc" id="L44">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L45">    };</span>
+<span class="nc" id="L43">    private ExceptionHandler nullPointerException = (e, ctx) -&gt; {</span>
+<span class="nc" id="L44">        logger.warn(&quot;Parameter specified as non-null is null. &quot;+e.getMessage());</span>
+<span class="nc" id="L45">        ctx.status(400);</span>
+<span class="nc" id="L46">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L47">    };</span>
 
-<span class="nc" id="L47">    private ExceptionHandler clientAlreadyExists = (e, ctx) -&gt;{</span>
-<span class="nc" id="L48">        logger.warn(&quot;Client is already in the database: &quot;+e.getMessage());</span>
-<span class="nc" id="L49">        ctx.status(400);</span>
-<span class="nc" id="L50">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L51">    };</span>
+<span class="nc" id="L49">    private ExceptionHandler clientAlreadyExists = (e, ctx) -&gt;{</span>
+<span class="nc" id="L50">        logger.warn(&quot;Client is already in the database: &quot;+e.getMessage());</span>
+<span class="nc" id="L51">        ctx.status(400);</span>
+<span class="nc" id="L52">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L53">    };</span>
 
-<span class="nc" id="L53">    private ExceptionHandler accountDoesNotBelongToClient = (e,ctx)-&gt;{</span>
-<span class="nc" id="L54">        logger.warn(&quot;Client is not authorized for this account &quot;+e.getMessage());</span>
-<span class="nc" id="L55">        ctx.status(400);</span>
-<span class="nc" id="L56">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L57">    };</span>
+<span class="nc" id="L55">    private ExceptionHandler accountDoesNotBelongToClient = (e,ctx)-&gt;{</span>
+<span class="nc" id="L56">        logger.warn(&quot;Client is not authorized for this account &quot;+e.getMessage());</span>
+<span class="nc" id="L57">        ctx.status(400);</span>
+<span class="nc" id="L58">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L59">    };</span>
 
-<span class="nc" id="L59">    private ExceptionHandler noSuchAlgorithmException = (e,ctx) -&gt;{</span>
-<span class="nc" id="L60">        logger.warn(&quot;Hashing the password did not work. &quot;+ e.getMessage());</span>
-<span class="nc" id="L61">        ctx.status(400);</span>
-<span class="nc" id="L62">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L63">    };</span>
+<span class="nc" id="L61">    private ExceptionHandler noSuchAlgorithmException = (e,ctx) -&gt;{</span>
+<span class="nc" id="L62">        logger.warn(&quot;Hashing the password did not work. &quot;+ e.getMessage());</span>
+<span class="nc" id="L63">        ctx.status(400);</span>
+<span class="nc" id="L64">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L65">    };</span>
 
-<span class="nc" id="L65">    private ExceptionHandler userNotfound = (e,ctx) -&gt; {</span>
-<span class="nc" id="L66">        logger.warn(&quot;User was not found. &quot;+e.getMessage());</span>
-<span class="nc" id="L67">        ctx.status(404);</span>
-<span class="nc" id="L68">        ctx.json(e.getMessage());</span>
-<span class="nc" id="L69">    };</span>
+<span class="nc" id="L67">    private ExceptionHandler userNotfound = (e,ctx) -&gt; {</span>
+<span class="nc" id="L68">        logger.warn(&quot;User was not found. &quot;+e.getMessage());</span>
+<span class="nc" id="L69">        ctx.status(404);</span>
+<span class="nc" id="L70">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L71">    };</span>
+
+<span class="nc" id="L73">    private ExceptionHandler failedLogin = (e,ctx) -&gt;{</span>
+<span class="nc" id="L74">        logger.warn(&quot;Failed to login. &quot;+e.getMessage());</span>
+<span class="nc" id="L75">        ctx.status(401);</span>
+<span class="nc" id="L76">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L77">    };</span>
+
+<span class="nc" id="L79">    private ExceptionHandler jwtInvalid = (e,ctx)-&gt;{</span>
+<span class="nc" id="L80">        logger.warn(&quot;Invalid JWT. &quot;+ e.getMessage());</span>
+<span class="nc" id="L81">        ctx.status(401);</span>
+<span class="nc" id="L82">        ctx.json(e.getMessage());</span>
+<span class="nc" id="L83">    };</span>
 
     @Override
     public void mapEndPoints(Javalin app) {
        // app.exception(ClientNotFoundException.class,clientNotFound);
-<span class="nc" id="L74">        app.exception(IllegalArgumentException.class,badArgument);</span>
-<span class="nc" id="L75">        app.exception(SQLException.class,sqlException);</span>
-<span class="nc" id="L76">        app.exception(NullPointerException.class,nullPointerException);</span>
-<span class="nc" id="L77">        app.exception(NoSuchAlgorithmException.class,noSuchAlgorithmException);</span>
-<span class="nc" id="L78">        app.exception(UserNotFoundException.class,userNotfound);</span>
+<span class="nc" id="L88">        app.exception(IllegalArgumentException.class,badArgument);</span>
+<span class="nc" id="L89">        app.exception(SQLException.class,sqlException);</span>
+<span class="nc" id="L90">        app.exception(NullPointerException.class,nullPointerException);</span>
+<span class="nc" id="L91">        app.exception(NoSuchAlgorithmException.class,noSuchAlgorithmException);</span>
+<span class="nc" id="L92">        app.exception(UserNotFoundException.class,userNotfound);</span>
+<span class="nc" id="L93">        app.exception(FailedLoginException.class,failedLogin);</span>
+<span class="nc" id="L94">        app.exception(UnauthorizedResponse.class,jwtInvalid);</span>
 
         //app.exception(ClientAlreadyExistsException.class,clientAlreadyExists);
         //app.exception(AccountDoesNotBelongToClient.class,accountDoesNotBelongToClient);
-<span class="nc" id="L82">    }</span>
+<span class="nc" id="L98">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,9 +1,6 @@
 package com.revature.main;
 
-import com.revature.controller.AuthenticationController;
-import com.revature.controller.Controller;
-import com.revature.controller.ExceptionController;
-import com.revature.controller.UserController;
+import com.revature.controller.*;
 import io.javalin.Javalin;
 import io.javalin.core.util.Header;
 import org.slf4j.Logger;
@@ -24,7 +21,7 @@ public class Driver {
 
         });
 
-        mapControllers(app,new UserController(),new AuthenticationController(),new ExceptionController());
+        mapControllers(app,new UserController(),new AuthenticationController(),new ExceptionController(), new ReimbursementController());
 
         app.start();
     }

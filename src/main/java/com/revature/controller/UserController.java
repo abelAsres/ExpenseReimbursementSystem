@@ -1,16 +1,26 @@
 package com.revature.controller;
 
 import com.revature.dto.LoginDTO;
+import com.revature.dto.ResponseReimbursementDTO;
 import com.revature.dto.UserDTO;
 import com.revature.model.User;
+import com.revature.service.ReimbursementService;
 import com.revature.service.UserService;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserController implements Controller{
 
-    private UserService userService = new UserService();
+    private UserService userService;
+    private ReimbursementService reimbursementService;
 
+    public UserController(){
+        this.userService = new UserService();
+        this.reimbursementService = new ReimbursementService();
+    }
     private Handler getAllUsers = ctx -> {
         ctx.json(userService.getAllUsers());
     };
@@ -37,11 +47,20 @@ public class UserController implements Controller{
         }
     };
 
+    private Handler getReimbursementsByUserId = ctx -> {
+        String id = ctx.pathParam("user_id");
+        List<ResponseReimbursementDTO> reimbursements = new ArrayList<>();
+
+        reimbursements = reimbursementService.getReimbursementsByUserId(id);
+        ctx.json(reimbursements);
+    };
+
     @Override
     public void mapEndPoints(Javalin app) {
         app.get("/project-1/users",getAllUsers);
         app.get("/project-1/users/{user_id}",getUserById);
         app.post("/project-1/users",addUser);
         app.delete("/project-1/users/{user_id}",removeUser);
+        app.get("/project-1/users/{user_id}/reimbursements",getReimbursementsByUserId);
     }
 }

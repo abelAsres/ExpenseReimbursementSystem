@@ -33,7 +33,8 @@ public class UserDAO {
                         resultSet.getString("user_last_name"),
                         resultSet.getString("user_email"),
                         resultSet.getInt("user_role_id"),
-                        resultSet.getBytes("salt")));
+                        resultSet.getBytes("salt"),
+                        resultSet.getString("profile_pic")));
             }
             return allUsers;
         }
@@ -52,7 +53,7 @@ public class UserDAO {
             if(resultSet.next()){
                 return new User(resultSet.getInt("id"),resultSet.getString("user_name"),resultSet.getString("ers_password"),
                         resultSet.getString("user_first_name"), resultSet.getString("user_last_name"),resultSet.getString("user_email"),
-                        resultSet.getInt("user_role_id"),resultSet.getBytes("salt"));
+                        resultSet.getInt("user_role_id"),resultSet.getBytes("salt"),resultSet.getString("profile_pic"));
             }
            return null;
         }
@@ -71,7 +72,7 @@ public class UserDAO {
             if(resultSet.next()){
                 return new User(resultSet.getInt("id"),resultSet.getString("user_name"),resultSet.getString("ers_password"),
                         resultSet.getString("user_first_name"), resultSet.getString("user_last_name"),resultSet.getString("user_email"),
-                        resultSet.getInt("user_role_id"),resultSet.getBytes("salt"));
+                        resultSet.getInt("user_role_id"),resultSet.getBytes("salt"),resultSet.getString("profile_pic"));
             }
             return null;
         }
@@ -98,7 +99,7 @@ public class UserDAO {
             int id = results.getInt(1);
 
             return new User(id,userDTO.getUserName(),userDTO.getPassword(),userDTO.getFirstName(),userDTO.getLastName(),
-                    userDTO.getEmail(), userDTO.getRoleId(), userDTO.getSalt());
+                    userDTO.getEmail(), userDTO.getRoleId(), userDTO.getSalt(),userDTO.getProfilePic());
         }
     }
 

@@ -1,6 +1,8 @@
 package com.revature.service;
 
+import com.revature.dao.ReimbursementDAO;
 import com.revature.dao.UserDAO;
+import com.revature.dto.ResponseReimbursementDTO;
 import com.revature.dto.UserDTO;
 import com.revature.exception.UserNotFoundException;
 import com.revature.model.User;
@@ -29,10 +31,10 @@ public class UserServiceTest {
         SecureRandom secureRandom = new SecureRandom();
         secureRandom.nextBytes(bytes);
 
-        mockUserList.add(new User(1, "testUser","password","test","user","testuser@umail.com",1,bytes));
-        mockUserList.add(new User(2, "testUser","password","test","user","testuser@umail.com",2,bytes));
-        mockUserList.add(new User(3, "testUser","password","test","user","testuser@umail.com",3,bytes));
-        mockUserList.add(new User(4, "testUser","password","test","user","testuser@umail.com",4,bytes));
+        mockUserList.add(new User(1, "testUser","password","test","user","testuser@umail.com",1,bytes,null));
+        mockUserList.add(new User(2, "testUser","password","test","user","testuser@umail.com",2,bytes,null));
+        mockUserList.add(new User(3, "testUser","password","test","user","testuser@umail.com",3,bytes,null));
+        mockUserList.add(new User(4, "testUser","password","test","user","testuser@umail.com",4,bytes,null));
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -57,7 +59,7 @@ public class UserServiceTest {
         secureRandom.nextBytes(bytes);
 
 
-        User expectedUser = new User(1,"testUser","password","test","user","testuser@gmail.com",5,bytes);
+        User expectedUser = new User(1,"testUser","password","test","user","testuser@gmail.com",5,bytes,null);
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -70,6 +72,33 @@ public class UserServiceTest {
     }
 
     @Test
+    public void test_getReimbursementsByUserId() throws SQLException {
+        ReimbursementDAO mockReimbursementDAO = mock(ReimbursementDAO.class);
+
+        List<ResponseReimbursementDTO> reimbursements = new ArrayList<>();
+
+        reimbursements.add(new ResponseReimbursementDTO(1,100,"2022-03-28 00:27:05.760",
+                "","description","link","testUser","","Pending","Travel"));
+        reimbursements.add(new ResponseReimbursementDTO(2,100,"2022-03-28 00:27:05.760",
+                "","description","link","testUser","","Pending","Travel"));
+        reimbursements.add(new ResponseReimbursementDTO(3,100,"2022-03-28 00:27:05.760",
+                "","description","link","testUser","","Pending","Travel"));
+        reimbursements.add(new ResponseReimbursementDTO(4,100,"2022-03-28 00:27:05.760",
+                "","description","link","testUser","","Pending","Travel"));
+        reimbursements.add(new ResponseReimbursementDTO(5,100,"2022-03-28 00:27:05.760",
+                "","description","link","testUser","","Pending","Travel"));
+
+        ReimbursementService reimbursementService = new ReimbursementService(mockReimbursementDAO);
+
+        when(mockReimbursementDAO.getReimbursementsByUserId(1)).thenReturn(reimbursements);
+
+        List<ResponseReimbursementDTO> actualReimbursements = reimbursementService.getReimbursementsByUserId("1");
+
+        Assertions.assertEquals(reimbursements,actualReimbursements);
+
+    }
+
+    @Test
     public void test_addUser() throws SQLException, NoSuchAlgorithmException {
         UserDAO mockUserDAO = mock(UserDAO.class);
 
@@ -77,8 +106,8 @@ public class UserServiceTest {
         SecureRandom secureRandom = new SecureRandom();
         secureRandom.nextBytes(bytes);
 
-        UserDTO mockUserDTO = new UserDTO("testUser","password","test","user","testuser@gmail.com",5);
-        User expectedUser = new User(1,"testUser","password","test","user","testuser@gmail.com",5,bytes);
+        UserDTO mockUserDTO = new UserDTO("testUser","password","test","user","testuser@gmail.com",5,null);
+        User expectedUser = new User(1,"testUser","password","test","user","testuser@gmail.com",5,bytes,null);
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -113,7 +142,7 @@ public class UserServiceTest {
 
         byte[] bytes= HashUtility.createSalt();
 
-        User expectedUser = new User(1,"testUser","password","test","user","testuser@gmail.com",5,bytes);
+        User expectedUser = new User(1,"testUser","password","test","user","testuser@gmail.com",5,bytes,null);
 
         expectedUser.setPassword(HashUtility.generateHashSaltPassword("SHA-512","password",bytes));
 
@@ -159,7 +188,7 @@ public class UserServiceTest {
     public void test_validateUserDTOProperties(){
         UserDAO mockUserDAO = mock(UserDAO.class);
 
-        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh","Jazz","hjazz@revature.com",1);
+        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh","Jazz","hjazz@revature.com",1,null);
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -172,7 +201,7 @@ public class UserServiceTest {
 
         UserDAO mockUserDAO = mock(UserDAO.class);
 
-        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh123","Jazz","hjazz@revature.com",1);
+        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh123","Jazz","hjazz@revature.com",1,null);
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -186,7 +215,7 @@ public class UserServiceTest {
     public void test_validateUserLasttName_IllegalArgumentException(){
         UserDAO mockUserDAO = mock(UserDAO.class);
 
-        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh","Jazz123","hjazz@revature.com",1);
+        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh","Jazz123","hjazz@revature.com",1,null);
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -204,7 +233,7 @@ public class UserServiceTest {
         UserDTO mockUserDTO = new UserDTO("testUser",
                 "PasswordPasswordPasswordPasswordPasswordPasswordPassword" +
                         "PasswordPasswordPasswordPasswordPasswordPasswordPassword" +
-                        "PasswordPassword","Hugh","Jazz","hjazz@revature.com",1);
+                        "PasswordPassword","Hugh","Jazz","hjazz@revature.com",1,null);
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -218,7 +247,7 @@ public class UserServiceTest {
     public void test_validateUserEmail_IllegalArgumentException(){
         UserDAO mockUserDAO = mock(UserDAO.class);
 
-        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh","Jazz","hjazz@revature.m",1);
+        UserDTO mockUserDTO = new UserDTO("testUser","password","Hugh","Jazz","hjazz@revature.m",1,null);
 
         UserService userService = new UserService(mockUserDAO);
 
@@ -233,7 +262,7 @@ public class UserServiceTest {
     public void test_validateUserUserName_IllegalArgumentException(){
         UserDAO mockUserDAO = mock(UserDAO.class);
 
-        UserDTO mockUserDTO = new UserDTO("testUser@@","password","Hugh","Jazz","hjazz@revature.com",1);
+        UserDTO mockUserDTO = new UserDTO("testUser@@","password","Hugh","Jazz","hjazz@revature.com",1,null);
 
         UserService userService = new UserService(mockUserDAO);
 

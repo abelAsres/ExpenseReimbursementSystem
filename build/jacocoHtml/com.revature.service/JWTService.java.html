@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JWTService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">project_1</a> &gt; <a href="index.source.html" class="el_package">com.revature.service</a> &gt; <span class="el_source">JWTService.java</span></div><h1>JWTService.java</h1><pre class="source lang-java linenums">package com.revature.service;
+
+import com.revature.model.User;
+import io.javalin.http.UnauthorizedResponse;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
+
+public class JWTService {
+    //This will be a singleton to ensure that the server will have the same key
+    //for all instances of the service across the application
+
+    private static JWTService instance;
+
+    private Key key;
+
+
+<span class="nc" id="L23">    private JWTService(){</span>
+<span class="nc" id="L24">        byte[] sercret = &quot;ThisIsARandomlyTypedStringButItReallyIsn'tIfYouThinkAboutIt&quot;.getBytes();</span>
+<span class="nc" id="L25">        key = Keys.hmacShaKeyFor(sercret);</span>
+<span class="nc" id="L26">    }</span>
+
+    public static JWTService getInstance(){
+<span class="nc bnc" id="L29" title="All 2 branches missed.">        if(instance == null){</span>
+<span class="nc" id="L30">            instance = new JWTService();</span>
+        }
+
+<span class="nc" id="L33">        return instance;</span>
+    }
+
+    //Signing a JWT with the key
+    public String createJWT(User user){
+<span class="nc" id="L38">        return Jwts.builder()</span>
+<span class="nc" id="L39">                .setSubject(user.getUserName())</span>
+<span class="nc" id="L40">                .claim(&quot;user_id&quot;,user.getId())</span>
+<span class="nc" id="L41">                .claim(&quot;user_role&quot;,user.getRoleId())</span>
+<span class="nc" id="L42">                .signWith(key)</span>
+<span class="nc" id="L43">                .compact();</span>
+    }
+
+    //Validating a JWT with the key
+    public Jws&lt;Claims&gt; parseJWT(String jwt){
+        try{
+<span class="nc" id="L49">            Jws&lt;Claims&gt; token = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt);</span>
+<span class="nc" id="L50">            return token;</span>
+<span class="nc" id="L51">        }catch(JwtException e) {</span>
+<span class="nc" id="L52">            throw new UnauthorizedResponse(&quot;This JWT is invalid&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
