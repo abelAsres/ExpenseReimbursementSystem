@@ -6,14 +6,14 @@ public class ReimbursementDTO {
     private String resolvedTime;
     private String description;
     private String imageLink;
-    private String author;
+    private int author;
     private int statusId;
     private int type_id;
 
     public ReimbursementDTO(){}
 
     public ReimbursementDTO(double amount, String submittedTime, String resolvedTime, String description, String imageLink,
-                            String author, int type_id) {
+                            int author, int type_id) {
         this.amount = amount;
         this.submittedTime = submittedTime;
         this.resolvedTime = resolvedTime;
@@ -64,11 +64,11 @@ public class ReimbursementDTO {
         this.imageLink = imageLink;
     }
 
-    public String getAuthor() {
+    public int getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(int author) {
         this.author = author;
     }
 

@@ -28,7 +28,7 @@ public class AuthenticationController implements Controller{
 
         ctx.header("Access-Control-Expose-Headers", "*");
 
-        UserDTO loggedInUser = new UserDTO(user.getUserName(),user.getFirstName(),
+        UserDTO loggedInUser = new UserDTO(user.getId(),user.getUserName(),user.getFirstName(),
                 user.getLastName(),user.getEmail(),user.getRoleId(),user.getProfilePic());
 
         // Send the JSON web token after logging in back to the client (frontend / postman)

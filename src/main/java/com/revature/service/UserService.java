@@ -25,7 +25,13 @@ public class UserService {
     }
 
     public List<User> getAllUsers() throws SQLException {
-        return userDao.getAllUsers();
+        List<User> users = userDao.getAllUsers();
+        ReimbursementService reimbursementService = new ReimbursementService();
+        for (User user : users){
+            String userId = ""+user.getId();
+            user.setUserReimbursements(reimbursementService.getReimbursementsByUserId(userId));
+        }
+        return users;
     }
 
 

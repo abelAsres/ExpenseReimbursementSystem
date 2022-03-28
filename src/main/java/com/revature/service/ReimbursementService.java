@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import com.revature.dao.ReimbursementDAO;
+import com.revature.dto.ReimbursementDTO;
 import com.revature.dto.ResponseReimbursementDTO;
 import com.revature.model.Reimbursement;
 
@@ -39,5 +40,18 @@ public class ReimbursementService {
         }catch(NumberFormatException e){
             throw new IllegalArgumentException("You did not provide a valid id. "+e.getMessage());
         }
+    }
+
+    public boolean removeReimbursement(String id) throws SQLException {
+        int reimbursementId = Integer.parseInt(id);
+        try{
+            return reimbursementDAO.removeReimbursement(reimbursementId);
+        }catch(NumberFormatException e){
+            throw new IllegalArgumentException("You did not provide a valid id. "+e.getMessage());
+        }
+    }
+
+    public ResponseReimbursementDTO addReimbursementForUser(ReimbursementDTO reimbursementDTO) throws SQLException {
+        return reimbursementDAO.addReimbursementForUser(reimbursementDTO);
     }
 }

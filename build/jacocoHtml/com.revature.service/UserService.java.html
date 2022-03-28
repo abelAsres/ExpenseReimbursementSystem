@@ -20,49 +20,49 @@ public class UserService {
 <span class="nc" id="L20">        this.userDao = new UserDAO();</span>
 <span class="nc" id="L21">    }</span>
 
-<span class="nc" id="L23">    public UserService(UserDAO mockDao) {</span>
-<span class="nc" id="L24">        this.userDao = mockDao;</span>
-<span class="nc" id="L25">    }</span>
+<span class="fc" id="L23">    public UserService(UserDAO mockDao) {</span>
+<span class="fc" id="L24">        this.userDao = mockDao;</span>
+<span class="fc" id="L25">    }</span>
 
     public List&lt;User&gt; getAllUsers() throws SQLException {
-<span class="nc" id="L28">        return userDao.getAllUsers();</span>
+<span class="fc" id="L28">        return userDao.getAllUsers();</span>
     }
 
 
     public User login(String username, String password) throws SQLException, FailedLoginException, NoSuchAlgorithmException {
-<span class="nc" id="L33">        User user = userDao.getUserByUserName(username);</span>
-<span class="nc bnc" id="L34" title="All 4 branches missed.">        if (user == null || !HashUtility.generateHashSaltPassword(&quot;SHA-512&quot;,password,user.getSalt()).equals(user.getPassword())) {</span>
-<span class="nc" id="L35">            throw new FailedLoginException(&quot;Invalid username and/or password was provided&quot;);</span>
+<span class="fc" id="L33">        User user = userDao.getUserByUserName(username);</span>
+<span class="pc bpc" id="L34" title="1 of 4 branches missed.">        if (user == null || !HashUtility.generateHashSaltPassword(&quot;SHA-512&quot;,password,user.getSalt()).equals(user.getPassword())) {</span>
+<span class="fc" id="L35">            throw new FailedLoginException(&quot;Invalid username and/or password was provided&quot;);</span>
         }
-<span class="nc" id="L37">        return user;</span>
+<span class="fc" id="L37">        return user;</span>
     }
 
     public User getUserById(String id) throws SQLException,UserNotFoundException{
         try{
-<span class="nc" id="L42">            int userId = Integer.parseInt(id);</span>
-<span class="nc" id="L43">            User user = userDao.getUserById(userId);</span>
+<span class="fc" id="L42">            int userId = Integer.parseInt(id);</span>
+<span class="fc" id="L43">            User user = userDao.getUserById(userId);</span>
 
-<span class="nc bnc" id="L45" title="All 2 branches missed.">            if (user == null){</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">            if (user == null){</span>
 <span class="nc" id="L46">                throw new UserNotFoundException(&quot;User with id &quot;+ id + &quot; does not exist&quot;);</span>
             }
-<span class="nc" id="L48">            return user ;</span>
+<span class="fc" id="L48">            return user ;</span>
 <span class="nc" id="L49">        }catch (NumberFormatException e){</span>
 <span class="nc" id="L50">            throw new IllegalArgumentException(&quot;You did not provide a valid ID.  Try again!!!&quot;);</span>
         }
     }
     public User addUser (UserDTO userDTO) throws SQLException, NoSuchAlgorithmException {
-<span class="nc" id="L54">        validateUserDTO(userDTO);</span>
-<span class="nc" id="L55">        userDTO.setSalt(HashUtility.createSalt());</span>
+<span class="fc" id="L54">        validateUserDTO(userDTO);</span>
+<span class="fc" id="L55">        userDTO.setSalt(HashUtility.createSalt());</span>
         //hash and salt password
-<span class="nc" id="L57">        String hashSaltPassword = HashUtility.generateHashSaltPassword(&quot;SHA-512&quot;,userDTO.getPassword(),userDTO.getSalt());</span>
-<span class="nc" id="L58">        userDTO.setPassword(hashSaltPassword);</span>
-<span class="nc" id="L59">        return userDao.addUser(userDTO);</span>
+<span class="fc" id="L57">        String hashSaltPassword = HashUtility.generateHashSaltPassword(&quot;SHA-512&quot;,userDTO.getPassword(),userDTO.getSalt());</span>
+<span class="fc" id="L58">        userDTO.setPassword(hashSaltPassword);</span>
+<span class="fc" id="L59">        return userDao.addUser(userDTO);</span>
     }
 
     public boolean removeUser(String id) throws SQLException{
         try{
-<span class="nc" id="L64">            int userId = Integer.parseInt(id);</span>
-<span class="nc" id="L65">            return userDao.removeUser(userId);</span>
+<span class="fc" id="L64">            int userId = Integer.parseInt(id);</span>
+<span class="fc" id="L65">            return userDao.removeUser(userId);</span>
 <span class="nc" id="L66">        }catch(NumberFormatException e){</span>
 <span class="nc" id="L67">            throw new IllegalArgumentException(&quot;You did not provide a valid ID.  Try again!!!&quot;);</span>
         }
@@ -70,33 +70,33 @@ public class UserService {
 
     public void validateUserDTO (UserDTO userDto){
        try{
-<span class="nc" id="L73">           userDto.setUserName(userDto.getUserName().trim());</span>
-<span class="nc" id="L74">           userDto.setFirstName(userDto.getFirstName().trim());</span>
-<span class="nc" id="L75">           userDto.setLastName(userDto.getLastName().trim());</span>
+<span class="fc" id="L73">           userDto.setUserName(userDto.getUserName().trim());</span>
+<span class="fc" id="L74">           userDto.setFirstName(userDto.getFirstName().trim());</span>
+<span class="fc" id="L75">           userDto.setLastName(userDto.getLastName().trim());</span>
 
-<span class="nc bnc" id="L77" title="All 2 branches missed.">           if (userDto.getPassword().length() &gt; 50){</span>
-<span class="nc" id="L78">               throw new IllegalArgumentException(&quot;Your password is too long. Please make it shorter&quot;);</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">           if (userDto.getPassword().length() &gt; 50){</span>
+<span class="fc" id="L78">               throw new IllegalArgumentException(&quot;Your password is too long. Please make it shorter&quot;);</span>
            }
 
-<span class="nc bnc" id="L81" title="All 2 branches missed.">           if (!userDto.getUserName().matches(&quot;[a-zA-Z?['!_-]]+&quot;)) {</span>
-<span class="nc" id="L82">               throw new IllegalArgumentException(&quot;Username must only have alphabetical characters and/or '!_-. Username input was &quot; + userDto.getUserName());</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">           if (!userDto.getUserName().matches(&quot;[a-zA-Z?['!_-]]+&quot;)) {</span>
+<span class="fc" id="L82">               throw new IllegalArgumentException(&quot;Username must only have alphabetical characters and/or '!_-. Username input was &quot; + userDto.getUserName());</span>
            }
 
-<span class="nc bnc" id="L85" title="All 2 branches missed.">           if (!userDto.getFirstName().matches(&quot;[a-zA-Z?']+&quot;)) {</span>
-<span class="nc" id="L86">               throw new IllegalArgumentException(&quot;First name must only have alphabetical characters. First name input was &quot; + userDto.getFirstName());</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">           if (!userDto.getFirstName().matches(&quot;[a-zA-Z?']+&quot;)) {</span>
+<span class="fc" id="L86">               throw new IllegalArgumentException(&quot;First name must only have alphabetical characters. First name input was &quot; + userDto.getFirstName());</span>
            }
 
-<span class="nc bnc" id="L89" title="All 2 branches missed.">           if (!userDto.getLastName().matches(&quot;[a-zA-Z?']+&quot;)) {</span>
-<span class="nc" id="L90">               throw new IllegalArgumentException(&quot;Last name must only have alphabetical characters. Last name input was &quot; + userDto.getLastName());</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">           if (!userDto.getLastName().matches(&quot;[a-zA-Z?']+&quot;)) {</span>
+<span class="fc" id="L90">               throw new IllegalArgumentException(&quot;Last name must only have alphabetical characters. Last name input was &quot; + userDto.getLastName());</span>
            }
 
-<span class="nc bnc" id="L93" title="All 2 branches missed.">           if(!userDto.getEmail().matches(&quot;^[A-Za-z0-9+_.-]+@[A-Za-z-]+[.]+[a-z]{2,3}$&quot;)){</span>
-<span class="nc" id="L94">               throw new IllegalArgumentException(&quot;Please ensure that your email is correct,Internationalized domain names are not allowed.&quot;);</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">           if(!userDto.getEmail().matches(&quot;^[A-Za-z0-9+_.-]+@[A-Za-z-]+[.]+[a-z]{2,3}$&quot;)){</span>
+<span class="fc" id="L94">               throw new IllegalArgumentException(&quot;Please ensure that your email is correct,Internationalized domain names are not allowed.&quot;);</span>
            }
 
 <span class="nc" id="L97">       }catch(NullPointerException e){</span>
 <span class="nc" id="L98">           new NullPointerException(&quot;Parameter specified as non-null is null&quot;);</span>
-<span class="nc" id="L99">       }</span>
-<span class="nc" id="L100">    }</span>
+<span class="fc" id="L99">       }</span>
+<span class="fc" id="L100">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

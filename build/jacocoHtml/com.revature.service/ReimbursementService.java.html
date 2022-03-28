@@ -20,13 +20,13 @@ public class ReimbursementService {
 <span class="fc" id="L20">    }</span>
 
     public List&lt;Reimbursement&gt; getAllReimbursement() throws SQLException {
-<span class="nc" id="L23">        return reimbursementDAO.getAllReimbursement();</span>
+<span class="fc" id="L23">        return reimbursementDAO.getAllReimbursement();</span>
     }
 
     public Reimbursement getReimbursementById(String reimbursementId) throws SQLException {
-<span class="nc" id="L27">        int id = Integer.parseInt(reimbursementId);</span>
+<span class="fc" id="L27">        int id = Integer.parseInt(reimbursementId);</span>
         try{
-<span class="nc" id="L29">            return reimbursementDAO.getReimbursementById(id);</span>
+<span class="fc" id="L29">            return reimbursementDAO.getReimbursementById(id);</span>
 <span class="nc" id="L30">        }catch(NumberFormatException e){</span>
 <span class="nc" id="L31">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
         }

@@ -3,6 +3,7 @@ package com.revature.dto;
 import com.revature.utility.HashUtility;
 
 public class UserDTO {
+    private int id;
     private String userName;
     private String password;
     private String firstName;
@@ -26,13 +27,22 @@ public class UserDTO {
         this.profilePic = profilePic;
     }
 
-    public UserDTO(String userName, String firstName, String lastName, String email, int roleId, String profilePic) {
+    public UserDTO(int id,String userName, String firstName, String lastName, String email, int roleId, String profilePic) {
+        this.id = id;
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.roleId = roleId;
         this.profilePic=profilePic;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUserName() {

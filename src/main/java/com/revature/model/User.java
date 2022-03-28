@@ -1,6 +1,9 @@
 package com.revature.model;
 
+import com.revature.dto.ResponseReimbursementDTO;
+
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -13,7 +16,7 @@ public class User {
     private int roleId;
     private byte[] salt;
     private String profilePic;
-
+    private List<ResponseReimbursementDTO> userReimbursements;
 
     public User(){}
 
@@ -28,6 +31,7 @@ public class User {
         this.roleId = roleId;
         this.salt = salt;
         this.profilePic=profilePic;
+        userReimbursements= null;
     }
 
     public int getId() {
@@ -100,6 +104,14 @@ public class User {
 
     public void setProfilePic(String profilePic) {
         this.profilePic = profilePic;
+    }
+
+    public List<ResponseReimbursementDTO> getUserReimbursements() {
+        return userReimbursements;
+    }
+
+    public void setUserReimbursements(List<ResponseReimbursementDTO> userReimbursements) {
+        this.userReimbursements = userReimbursements;
     }
 
     @Override

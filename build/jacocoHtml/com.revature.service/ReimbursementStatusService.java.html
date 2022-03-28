@@ -15,18 +15,18 @@ public class ReimbursementStatusService {
 <span class="nc" id="L15">        this.reimbursementStatusDAO=new ReimbursementStatusDAO();</span>
 <span class="nc" id="L16">    }</span>
 
-<span class="nc" id="L18">    public ReimbursementStatusService(ReimbursementStatusDAO mockReimbursementStatusDAO) {</span>
-<span class="nc" id="L19">        this.reimbursementStatusDAO = mockReimbursementStatusDAO;</span>
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L18">    public ReimbursementStatusService(ReimbursementStatusDAO mockReimbursementStatusDAO) {</span>
+<span class="fc" id="L19">        this.reimbursementStatusDAO = mockReimbursementStatusDAO;</span>
+<span class="fc" id="L20">    }</span>
 
     public List&lt;ReimbursementStatus&gt; getAllReimbursementStatus() throws SQLException {
-<span class="nc" id="L23">        return reimbursementStatusDAO.getAllReimbursementStatus();</span>
+<span class="fc" id="L23">        return reimbursementStatusDAO.getAllReimbursementStatus();</span>
     }
 
     public ReimbursementStatus getReimbursementStatusById(String id) throws SQLException{
-<span class="nc" id="L27">        int statusId = Integer.parseInt(id);</span>
+<span class="fc" id="L27">        int statusId = Integer.parseInt(id);</span>
         try{
-<span class="nc" id="L29">            return reimbursementStatusDAO.getReimbursementStatusById(statusId);</span>
+<span class="fc" id="L29">            return reimbursementStatusDAO.getReimbursementStatusById(statusId);</span>
 <span class="nc" id="L30">        }catch(NumberFormatException e){</span>
 <span class="nc" id="L31">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
         }

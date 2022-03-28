@@ -1832,3 +1832,216 @@ Caused by: java.lang.NullPointerException: Required parameter project must be sp
 28 03 2022 - 01:27:29.975 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 28 03 2022 - 01:27:29.975 [main] INFO  io.javalin.Javalin - Javalin started in 592ms \o/
 28 03 2022 - 01:27:33.978 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/18/reimbursements
+28 03 2022 - 09:10:29.314 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+28 03 2022 - 09:10:29.346 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @732ms to org.eclipse.jetty.util.log.Slf4jLog
+28 03 2022 - 09:10:29.347 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+28 03 2022 - 09:10:29.385 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+28 03 2022 - 09:10:29.386 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+28 03 2022 - 09:10:29.939 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+28 03 2022 - 09:10:29.939 [main] INFO  io.javalin.Javalin - Javalin started in 592ms \o/
+28 03 2022 - 09:11:17.344 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:11:18.664 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/undefined/reimbursements
+28 03 2022 - 09:11:18.667 [JettyServerThreadPool-20] WARN  c.r.controller.ExceptionController - User input a bad argument. Exception message is For input string: "undefined"
+28 03 2022 - 09:11:57.621 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/users/undefined/reimbursements
+28 03 2022 - 09:11:57.622 [JettyServerThreadPool-17] WARN  c.r.controller.ExceptionController - User input a bad argument. Exception message is For input string: "undefined"
+28 03 2022 - 09:11:57.774 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /favicon.ico
+28 03 2022 - 09:14:05.150 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/users/undefined/reimbursements
+28 03 2022 - 09:14:05.151 [JettyServerThreadPool-16] WARN  c.r.controller.ExceptionController - User input a bad argument. Exception message is For input string: "undefined"
+28 03 2022 - 09:14:27.064 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:14:27.697 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/undefined/reimbursements
+28 03 2022 - 09:14:27.697 [JettyServerThreadPool-21] WARN  c.r.controller.ExceptionController - User input a bad argument. Exception message is For input string: "undefined"
+28 03 2022 - 09:15:32.164 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:15:32.822 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/undefined/reimbursements
+28 03 2022 - 09:15:32.823 [JettyServerThreadPool-20] WARN  c.r.controller.ExceptionController - User input a bad argument. Exception message is For input string: "undefined"
+28 03 2022 - 09:19:42.458 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+28 03 2022 - 09:19:42.486 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @646ms to org.eclipse.jetty.util.log.Slf4jLog
+28 03 2022 - 09:19:42.487 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+28 03 2022 - 09:19:42.514 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+28 03 2022 - 09:19:42.514 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+28 03 2022 - 09:19:43.009 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+28 03 2022 - 09:19:43.009 [main] INFO  io.javalin.Javalin - Javalin started in 522ms \o/
+28 03 2022 - 09:19:55.839 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:19:56.985 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 09:20:35.465 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:20:36.189 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 09:24:24.141 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:24:24.791 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 09:26:13.828 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:26:14.510 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 09:39:31.298 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:39:31.978 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 09:43:28.357 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 09:45:02.313 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 09:45:02.992 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users
+28 03 2022 - 09:45:06.424 [JettyServerThreadPool-30] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 09:51:56.152 [JettyServerThreadPool-32] INFO  com.revature.main.Driver - GET request received for /project-1/users/18/reimbursements
+28 03 2022 - 09:52:02.807 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/users/16/reimbursements
+28 03 2022 - 11:03:19.449 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+28 03 2022 - 11:03:19.487 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @811ms to org.eclipse.jetty.util.log.Slf4jLog
+28 03 2022 - 11:03:19.488 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+28 03 2022 - 11:03:19.516 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+28 03 2022 - 11:03:19.517 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+28 03 2022 - 11:03:20.125 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+28 03 2022 - 11:03:20.126 [main] INFO  io.javalin.Javalin - Javalin started in 639ms \o/
+28 03 2022 - 11:04:17.293 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 11:04:18.444 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 11:15:28.489 [JettyServerThreadPool-28] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 11:15:29.190 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users
+28 03 2022 - 11:16:55.283 [JettyServerThreadPool-28] INFO  com.revature.main.Driver - GET request received for /project-1/users/17/reimbursements
+28 03 2022 - 11:16:56.141 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /favicon.ico
+28 03 2022 - 12:38:30.623 [JettyServerThreadPool-28] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 12:38:31.299 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 12:39:55.251 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 12:43:28.125 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 12:43:57.001 [JettyServerThreadPool-28] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 12:43:57.747 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 12:46:02.458 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 12:46:03.015 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 12:46:31.079 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:00:28.985 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:01:52.290 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:47:17.218 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:47:34.335 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+28 03 2022 - 13:47:34.370 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @707ms to org.eclipse.jetty.util.log.Slf4jLog
+28 03 2022 - 13:47:34.372 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+28 03 2022 - 13:47:34.410 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+28 03 2022 - 13:47:34.410 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+28 03 2022 - 13:47:34.988 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+28 03 2022 - 13:47:34.988 [main] INFO  io.javalin.Javalin - Javalin started in 617ms \o/
+28 03 2022 - 13:47:46.132 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 13:47:47.303 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:49:47.161 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:54:59.998 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:55:29.858 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:56:11.589 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:56:23.700 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 13:56:24.416 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 13:57:24.502 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:16:03.389 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:35:27.306 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:36:34.572 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - POST request received for /project-1/login
+28 03 2022 - 14:36:35.186 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:38:05.936 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:39:49.927 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:41:04.885 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:51:03.115 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:51:06.112 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:51:06.114 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:51:53.447 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:52:12.336 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:52:12.339 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:53:45.466 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+28 03 2022 - 14:53:45.505 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @777ms to org.eclipse.jetty.util.log.Slf4jLog
+28 03 2022 - 14:53:45.508 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+28 03 2022 - 14:53:45.537 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+28 03 2022 - 14:53:45.537 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+28 03 2022 - 14:53:46.119 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+28 03 2022 - 14:53:46.120 [main] INFO  io.javalin.Javalin - Javalin started in 614ms \o/
+28 03 2022 - 14:53:54.614 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:53:54.625 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:54:02.138 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:54:37.195 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:54:37.198 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:54:39.598 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:54:39.601 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:57:38.905 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 14:57:42.800 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:57:42.803 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:59:44.594 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+28 03 2022 - 14:59:44.633 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @731ms to org.eclipse.jetty.util.log.Slf4jLog
+28 03 2022 - 14:59:44.635 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+28 03 2022 - 14:59:44.670 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+28 03 2022 - 14:59:44.671 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+28 03 2022 - 14:59:45.219 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+28 03 2022 - 14:59:45.220 [main] INFO  io.javalin.Javalin - Javalin started in 586ms \o/
+28 03 2022 - 14:59:53.712 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:59:53.727 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/4
+28 03 2022 - 14:59:54.710 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:01:14.320 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:01:17.137 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/3
+28 03 2022 - 15:01:17.139 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/3
+28 03 2022 - 15:01:17.756 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:01:21.126 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/users/1/reimbursements/2
+28 03 2022 - 15:01:21.129 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - DELETE request received for /project-1/users/1/reimbursements/2
+28 03 2022 - 15:01:21.738 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:06:00.195 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:09:38.842 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:10:19.977 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:13:03.859 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:21:19.624 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:22:15.360 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:22:57.871 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:24:06.248 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:25:18.494 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:26:10.369 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:27:21.600 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:27:53.591 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:29:22.332 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:30:56.229 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:31:23.734 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:36:41.128 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:37:46.535 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:39:58.199 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:40:24.716 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:42:27.302 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:45:08.015 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:45:51.078 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:50:25.374 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:51:24.554 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 15:55:05.287 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:11:16.723 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:19:52.701 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:20:32.273 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:28:00.155 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:30:09.282 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:40:25.261 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:42:16.445 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+28 03 2022 - 16:43:26.961 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements

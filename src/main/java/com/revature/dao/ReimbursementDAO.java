@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import com.revature.dto.ReimbursementDTO;
 import com.revature.dto.ResponseReimbursementDTO;
 import com.revature.model.Reimbursement;
 import com.revature.utility.ConnectionUtility;
@@ -88,6 +89,73 @@ public class ReimbursementDAO {
                         resultSet.getString("reimb_type")));
             }
             return reimbursements;
+        }
+    }
+
+    public boolean removeReimbursement(int id) throws SQLException {
+        try(Connection connection = ConnectionUtility.getConnection()){
+            String query = "DELETE FROM ers_reimbursement WHERE id = ?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setInt(1,id);
+
+            int deleteRows = preparedStatement.executeUpdate();
+
+            if(deleteRows == 1){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public ResponseReimbursementDTO addReimbursementForUser(ReimbursementDTO reimbursementDTO) throws SQLException {
+        try(Connection connection = ConnectionUtility.getConnection()){
+            String query = "INSERT INTO ers_reimbursement(reimb_amount,reimb_description,reimb_receipt,reimb_author,reimb_type_id) " +
+                    "VALUES" +
+                    "(?,?,?,?,?)";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setDouble(1,reimbursementDTO.getAmount());
+            preparedStatement.setString(2,reimbursementDTO.getDescription());
+            preparedStatement.setString(3,reimbursementDTO.getImageLink());
+            preparedStatement.setInt(4,reimbursementDTO.getAuthor());
+            preparedStatement.setInt(5,reimbursementDTO.getType_id());
+
+            preparedStatement.executeUpdate();
+
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+
+            resultSet.next();
+
+            int id = resultSet.getInt(1);
+
+            String query1 =  "SELECT * FROM ers_reimbursement_type WHERE id = ?";
+            PreparedStatement preparedStatement1 = connection.prepareStatement(query1);
+            preparedStatement1.setString(1,resultSet.getString("reimb_type_id"));
+            ResultSet resultSet1= preparedStatement1.executeQuery();
+            resultSet1.next();
+
+
+            String query2 =  "SELECT * FROM ers_reimbursement_status WHERE id = ?";
+            PreparedStatement preparedStatement2 = connection.prepareStatement(query2);
+            preparedStatement2.setString(1,resultSet.getString("reimb_type_id"));
+            ResultSet resultSet2= preparedStatement2.executeQuery();
+            resultSet2.next();
+
+            String query3 =  "SELECT * FROM ers_users WHERE id = ?";
+            PreparedStatement preparedStatement3 = connection.prepareStatement(query3);
+            preparedStatement2.setString(1,resultSet.getString("reimb_author"));
+            ResultSet resultSet3= preparedStatement2.executeQuery();
+            resultSet3.next();
+
+
+            return new ResponseReimbursementDTO(id,resultSet.getDouble("reimb_amount"),resultSet.getString("reimb_submitted"),
+                    resultSet.getString("reimb_resolved"),resultSet.getString("reimb_description"),
+                    resultSet.getString("reimb_receipt"), resultSet3.getString("user_name"),
+                    resultSet.getString("reimb_resolver"),resultSet2.getString("reimb_status_id"),
+                    resultSet1.getString("reimb_type_id"));
         }
     }
 
