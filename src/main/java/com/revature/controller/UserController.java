@@ -1,15 +1,19 @@
 package com.revature.controller;
 
-import com.revature.dto.LoginDTO;
-import com.revature.dto.ReimbursementDTO;
-import com.revature.dto.ResponseReimbursementDTO;
-import com.revature.dto.UserDTO;
+import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.BucketInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
+import com.revature.dto.*;
 import com.revature.model.User;
 import com.revature.service.ReimbursementService;
 import com.revature.service.UserService;
+import com.revature.utility.FileUploadUtility;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
+import io.javalin.http.UploadedFile;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,11 +67,27 @@ public class UserController implements Controller{
 
     private Handler addReimbursementForUser = ctx -> {
         String userId = ctx.pathParam("user_id");
-        ReimbursementDTO reimbursementDTO = ctx.bodyAsClass(ReimbursementDTO.class);
-        User user = userService.getUserById(userId);
-        reimbursementDTO.setAuthor(user.getId());
-        reimbursementService.addReimbursementForUser(reimbursementDTO);
+        //AddReimbursementDTO reimbursementDTO = ctx.bodyAsClass(AddReimbursementDTO.class);
 
+        String description = ctx.formParam("description");
+        String amount = ctx.formParam("amount");
+        String author = ctx.formParam("author");
+        String type = ctx.formParam("type");
+        UploadedFile imageFile = ctx.uploadedFile("image");
+        InputStream imageIs = imageFile.getContent();
+
+        String imageLink = FileUploadUtility.uploadImage(imageFile.getFilename(),imageIs,imageFile.getContentType());
+
+        ResponseReimbursementDTO reimbursementDTO= reimbursementService.addReimbursementForUser(amount,author,description,imageLink,type);
+
+
+        ctx.json(reimbursementDTO);
+
+
+        //User user = userService.getUserById(userId);
+        //reimbursementDTO.setAuthor(user.getId());
+        //reimbursementService.addReimbursementForUser(reimbursementDTO);
+        //reimbursementDTO.toString();
     };
 
     @Override

@@ -51,7 +51,10 @@ public class ReimbursementService {
         }
     }
 
-    public ResponseReimbursementDTO addReimbursementForUser(ReimbursementDTO reimbursementDTO) throws SQLException {
-        return reimbursementDAO.addReimbursementForUser(reimbursementDTO);
+    public ResponseReimbursementDTO addReimbursementForUser(String amountReimb, String authorIdReimb,String description, String imageLink, String typeIdReimb) throws SQLException {
+        double amount = Double.parseDouble(amountReimb);
+        int authorId = Integer.parseInt(authorIdReimb);
+        int typeId = Integer.parseInt(typeIdReimb);
+        return reimbursementDAO.addReimbursementForUser(amount,authorId,description,imageLink,typeId);
     }
 }

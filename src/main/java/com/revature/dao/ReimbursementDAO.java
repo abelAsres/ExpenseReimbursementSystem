@@ -109,7 +109,7 @@ public class ReimbursementDAO {
         return false;
     }
 
-    public ResponseReimbursementDTO addReimbursementForUser(ReimbursementDTO reimbursementDTO) throws SQLException {
+    public ResponseReimbursementDTO addReimbursementForUser(double amount, int authorId, String description, String imageLink, int typeId) throws SQLException {
         try(Connection connection = ConnectionUtility.getConnection()){
             String query = "INSERT INTO ers_reimbursement(reimb_amount,reimb_description,reimb_receipt,reimb_author,reimb_type_id) " +
                     "VALUES" +
@@ -117,11 +117,11 @@ public class ReimbursementDAO {
 
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
-            preparedStatement.setDouble(1,reimbursementDTO.getAmount());
-            preparedStatement.setString(2,reimbursementDTO.getDescription());
-            preparedStatement.setString(3,reimbursementDTO.getImageLink());
-            preparedStatement.setInt(4,reimbursementDTO.getAuthor());
-            preparedStatement.setInt(5,reimbursementDTO.getType_id());
+            preparedStatement.setDouble(1,amount);
+            preparedStatement.setString(2,description);
+            preparedStatement.setString(3,imageLink);
+            preparedStatement.setInt(4,authorId);
+            preparedStatement.setInt(5,typeId);
 
             preparedStatement.executeUpdate();
 
@@ -146,7 +146,7 @@ public class ReimbursementDAO {
 
             String query3 =  "SELECT * FROM ers_users WHERE id = ?";
             PreparedStatement preparedStatement3 = connection.prepareStatement(query3);
-            preparedStatement2.setString(1,resultSet.getString("reimb_author"));
+            preparedStatement3.setString(1,resultSet.getString("reimb_author"));
             ResultSet resultSet3= preparedStatement2.executeQuery();
             resultSet3.next();
 
