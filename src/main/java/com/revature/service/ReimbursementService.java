@@ -20,7 +20,7 @@ public class ReimbursementService {
         this.reimbursementDAO= mockReimbursementDAO;
     }
 
-    public List<Reimbursement> getAllReimbursement() throws SQLException {
+    public List<ResponseReimbursementDTO> getAllReimbursement() throws SQLException {
         return reimbursementDAO.getAllReimbursement();
     }
 

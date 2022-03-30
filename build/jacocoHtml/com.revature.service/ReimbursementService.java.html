@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReimbursementService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">project_1</a> &gt; <a href="index.source.html" class="el_package">com.revature.service</a> &gt; <span class="el_source">ReimbursementService.java</span></div><h1>ReimbursementService.java</h1><pre class="source lang-java linenums">package com.revature.service;
 
 import com.revature.dao.ReimbursementDAO;
+import com.revature.dto.ReimbursementDTO;
 import com.revature.dto.ResponseReimbursementDTO;
 import com.revature.model.Reimbursement;
 
@@ -11,34 +12,50 @@ public class ReimbursementService {
     private ReimbursementDAO reimbursementDAO;
 
 
-<span class="nc" id="L14">    public ReimbursementService () {</span>
-<span class="nc" id="L15">        this.reimbursementDAO= new ReimbursementDAO();</span>
-<span class="nc" id="L16">    }</span>
+<span class="nc" id="L15">    public ReimbursementService () {</span>
+<span class="nc" id="L16">        this.reimbursementDAO= new ReimbursementDAO();</span>
+<span class="nc" id="L17">    }</span>
 
-<span class="fc" id="L18">    public ReimbursementService(ReimbursementDAO mockReimbursementDAO) {</span>
-<span class="fc" id="L19">        this.reimbursementDAO= mockReimbursementDAO;</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L19">    public ReimbursementService(ReimbursementDAO mockReimbursementDAO) {</span>
+<span class="fc" id="L20">        this.reimbursementDAO= mockReimbursementDAO;</span>
+<span class="fc" id="L21">    }</span>
 
-    public List&lt;Reimbursement&gt; getAllReimbursement() throws SQLException {
-<span class="fc" id="L23">        return reimbursementDAO.getAllReimbursement();</span>
+    public List&lt;ResponseReimbursementDTO&gt; getAllReimbursement() throws SQLException {
+<span class="fc" id="L24">        return reimbursementDAO.getAllReimbursement();</span>
     }
 
     public Reimbursement getReimbursementById(String reimbursementId) throws SQLException {
-<span class="fc" id="L27">        int id = Integer.parseInt(reimbursementId);</span>
+<span class="nc" id="L28">        int id = Integer.parseInt(reimbursementId);</span>
         try{
-<span class="fc" id="L29">            return reimbursementDAO.getReimbursementById(id);</span>
-<span class="nc" id="L30">        }catch(NumberFormatException e){</span>
-<span class="nc" id="L31">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
+<span class="nc" id="L30">            return reimbursementDAO.getReimbursementById(id);</span>
+<span class="nc" id="L31">        }catch(NumberFormatException e){</span>
+<span class="nc" id="L32">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
         }
     }
 
     public List&lt;ResponseReimbursementDTO&gt; getReimbursementsByUserId(String userId) throws SQLException {
-<span class="fc" id="L36">        int id = Integer.parseInt(userId);</span>
+<span class="nc" id="L37">        int id = Integer.parseInt(userId);</span>
         try{
-<span class="fc" id="L38">            return reimbursementDAO.getReimbursementsByUserId(id);</span>
-<span class="nc" id="L39">        }catch(NumberFormatException e){</span>
-<span class="nc" id="L40">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
+<span class="nc" id="L39">            return reimbursementDAO.getReimbursementsByUserId(id);</span>
+<span class="nc" id="L40">        }catch(NumberFormatException e){</span>
+<span class="nc" id="L41">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
         }
+    }
+
+    public boolean removeReimbursement(String id) throws SQLException {
+<span class="nc" id="L46">        int reimbursementId = Integer.parseInt(id);</span>
+        try{
+<span class="nc" id="L48">            return reimbursementDAO.removeReimbursement(reimbursementId);</span>
+<span class="nc" id="L49">        }catch(NumberFormatException e){</span>
+<span class="nc" id="L50">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
+        }
+    }
+
+    public ResponseReimbursementDTO addReimbursementForUser(String amountReimb, String authorIdReimb,String description, String imageLink, String typeIdReimb) throws SQLException {
+<span class="nc" id="L55">        double amount = Double.parseDouble(amountReimb);</span>
+<span class="nc" id="L56">        int authorId = Integer.parseInt(authorIdReimb);</span>
+<span class="nc" id="L57">        int typeId = Integer.parseInt(typeIdReimb);</span>
+<span class="nc" id="L58">        return reimbursementDAO.addReimbursementForUser(amount,authorId,description,imageLink,typeId);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

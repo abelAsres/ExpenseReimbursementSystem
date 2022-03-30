@@ -2,6 +2,7 @@ package com.revature.service;
 
 import com.revature.dao.ReimbursementDAO;
 import com.revature.dao.ReimbursementRoleDAO;
+import com.revature.dto.ResponseReimbursementDTO;
 import com.revature.model.Reimbursement;
 import com.revature.model.ReimbursementRole;
 import org.junit.jupiter.api.Assertions;
@@ -19,26 +20,29 @@ public class ReimbursementServiceTest {
     public void test_getAllReimbursements() throws SQLException {
 
         ReimbursementDAO mockReimbursementDAO = mock(ReimbursementDAO.class);
-        List<Reimbursement> mockReimbursementList = new ArrayList<>();
+        List<ResponseReimbursementDTO> mockReimbursementList = new ArrayList<>();
 
         ReimbursementService reimbursementService = new ReimbursementService(mockReimbursementDAO);
 
-        mockReimbursementList.add(new Reimbursement(1,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
-                "testDesc","testLink","testAuthor","testResolver",1,1));
-        mockReimbursementList.add(new Reimbursement(2,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
-                "testDesc","testLink","testAuthor","testResolver",1,1));
-        mockReimbursementList.add(new Reimbursement(3,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
-                "testDesc","testLink","testAuthor","testResolver",1,1));
-        mockReimbursementList.add(new Reimbursement(4,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
-                "testDesc","testLink","testAuthor","testResolver",1,1));
-        mockReimbursementList.add(new Reimbursement(5,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
-                "testDesc","testLink","testAuthor","testResolver",1,1));
-        mockReimbursementList.add(new Reimbursement(6,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
-                "testDesc","testLink","testAuthor","testResolver",1,1));
+        mockReimbursementList.add(new ResponseReimbursementDTO(1,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
+                "testDesc","testLink","testAuthor","testResolver","1","1"));
+        mockReimbursementList.add(new ResponseReimbursementDTO(2,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
+                "testDesc","testLink","testAuthor","testResolver","1","1"));
+        mockReimbursementList.add(new ResponseReimbursementDTO(3,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
+                "testDesc","testLink","testAuthor","testResolver","1","1"));
+        mockReimbursementList.add(new ResponseReimbursementDTO(4,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
+                "testDesc","testLink","testAuthor","testResolver","1","1"));
+        mockReimbursementList.add(new ResponseReimbursementDTO(5,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
+                "testDesc","testLink","testAuthor","testResolver","1","1"));
+        mockReimbursementList.add(new ResponseReimbursementDTO(6,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
+                "testDesc","testLink","testAuthor","testResolver","1","1"));
+        mockReimbursementList.add(new ResponseReimbursementDTO(7,100.00,"22-03-2022 16:10:10","22-03-2022 16:10:10",
+                "testDesc","testLink","testAuthor","testResolver","1","1"));
+
 
         when(mockReimbursementDAO.getAllReimbursement()).thenReturn(mockReimbursementList);
 
-        List<Reimbursement> reimbursements = reimbursementService.getAllReimbursement();
+        List<ResponseReimbursementDTO> reimbursements = reimbursementService.getAllReimbursement();
 
         Assertions.assertEquals(mockReimbursementList,reimbursements);
     }

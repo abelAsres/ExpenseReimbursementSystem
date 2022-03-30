@@ -4,26 +4,39 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import com.revature.service.ReimbursementService;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
 
-<span class="nc" id="L10">public class ReimbursementController implements Controller {</span>
+public class ReimbursementController implements Controller {
+
+    ReimbursementService reimbursementService;
+
+<span class="nc" id="L15">    public ReimbursementController(){</span>
+<span class="nc" id="L16">        reimbursementService = new ReimbursementService();</span>
+<span class="nc" id="L17">    }</span>
+
+<span class="nc" id="L19">    private Handler getBucket = ctx -&gt; {</span>
+<span class="nc" id="L20">        Storage storage = (Storage) StorageOptions.getDefaultInstance().getService();</span>
+
+<span class="nc" id="L22">        String bucketName = &quot;project-1-images&quot;;</span>
+<span class="nc" id="L23">        Bucket bucket = storage.create(BucketInfo.of(bucketName));</span>
+
+<span class="nc" id="L25">        ctx.json(bucket.getName());</span>
+<span class="nc" id="L26">    };</span>
+
+<span class="nc" id="L28">    private Handler getAllReimbursements = ctx -&gt; {</span>
+<span class="nc" id="L29">        ctx.json(reimbursementService.getAllReimbursement());</span>
+<span class="nc" id="L30">    };</span>
+<span class="nc" id="L31">    private Handler editReimbursement = ctx -&gt; {</span>
+<span class="nc" id="L32">        String id = ctx.formParam(&quot;id&quot;);</span>
 
 
-<span class="nc" id="L13">    private Handler getBucket = ctx -&gt; {</span>
-<span class="nc" id="L14">        Storage storage = (Storage) StorageOptions.getDefaultInstance().getService();</span>
-
-<span class="nc" id="L16">        String bucketName = &quot;project-1-images&quot;;</span>
-<span class="nc" id="L17">        Bucket bucket = storage.create(BucketInfo.of(bucketName));</span>
-
-<span class="nc" id="L19">        ctx.json(bucket.getName());</span>
-<span class="nc" id="L20">    };</span>
-
-
+<span class="nc" id="L35">    };</span>
 
     @Override
     public void mapEndPoints(Javalin app) {
-<span class="nc" id="L26">        app.get(&quot;/project-1/bucket&quot;, getBucket);</span>
-<span class="nc" id="L27">    }</span>
+<span class="nc" id="L39">        app.get(&quot;/project-1/bucket&quot;, getBucket);</span>
+<span class="nc" id="L40">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

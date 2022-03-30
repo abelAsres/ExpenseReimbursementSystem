@@ -1,14 +1,10 @@
 package com.revature.controller;
 
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.BucketInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 import com.revature.dto.*;
 import com.revature.model.User;
 import com.revature.service.ReimbursementService;
 import com.revature.service.UserService;
-import com.revature.utility.FileUploadUtility;
+import com.revature.utility.GoogleStorageUtility;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
 import io.javalin.http.UploadedFile;
@@ -76,11 +72,12 @@ public class UserController implements Controller{
         UploadedFile imageFile = ctx.uploadedFile("image");
         InputStream imageIs = imageFile.getContent();
 
-        String imageLink = FileUploadUtility.uploadImage(imageFile.getFilename(),imageIs,imageFile.getContentType());
+        String imageLink = GoogleStorageUtility.uploadImage(imageFile.getFilename(),imageIs,imageFile.getContentType());
 
         ResponseReimbursementDTO reimbursementDTO= reimbursementService.addReimbursementForUser(amount,author,description,imageLink,type);
 
 
+        ctx.status(201);
         ctx.json(reimbursementDTO);
 
 

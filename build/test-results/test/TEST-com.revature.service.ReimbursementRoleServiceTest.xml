@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.revature.service.ReimbursementRoleServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-28T15:03:11" hostname="LAPTOP-HO6FK4NQ" time="1.284">
-  <properties/>
-  <testcase name="test_getAllReimbursementRoles()" classname="com.revature.service.ReimbursementRoleServiceTest" time="1.278"/>
-  <testcase name="test_getReimbursementRoleById()" classname="com.revature.service.ReimbursementRoleServiceTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
