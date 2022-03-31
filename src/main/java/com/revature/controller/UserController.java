@@ -2,12 +2,16 @@ package com.revature.controller;
 
 import com.revature.dto.*;
 import com.revature.model.User;
+import com.revature.service.JWTService;
 import com.revature.service.ReimbursementService;
 import com.revature.service.UserService;
 import com.revature.utility.GoogleStorageUtility;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
+import io.javalin.http.UnauthorizedResponse;
 import io.javalin.http.UploadedFile;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -17,22 +21,42 @@ public class UserController implements Controller{
 
     private UserService userService;
     private ReimbursementService reimbursementService;
+    private JWTService jwtService;
 
     public UserController(){
         this.userService = new UserService();
         this.reimbursementService = new ReimbursementService();
+        this.jwtService=JWTService.getInstance();
     }
     private Handler getAllUsers = ctx -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = jwtService.parseJWT(jwt);
+
+        if(!token.getBody().get("user_role").equals("Manager")){
+            throw new UnauthorizedResponse("You must be logged in as a manager");
+        }
         ctx.json(userService.getAllUsers());
     };
 
     private Handler getUserById = ctx -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = jwtService.parseJWT(jwt);
+
+        if(token == null){
+            throw new UnauthorizedResponse("You must be logged in");
+        }
         String id = ctx.pathParam("user_id");
         User user = userService.getUserById(id);
         ctx.json(user);
     };
 
     private Handler addUser = ctx -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = jwtService.parseJWT(jwt);
+
+        if(!token.getBody().get("user_role").equals("Manager")){
+            throw new UnauthorizedResponse("You must be logged in as a manager");
+        }
         UserDTO userDTO = ctx.bodyAsClass(UserDTO.class);
         User user = userService.addUser(userDTO);
         ctx.status(201);
@@ -40,6 +64,12 @@ public class UserController implements Controller{
     };
 
     private Handler removeUser = ctx -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = jwtService.parseJWT(jwt);
+
+        if(!token.getBody().get("user_role").equals("Manager")){
+            throw new UnauthorizedResponse("You must be logged in as a manager");
+        }
         String id = ctx.pathParam("user_id");
         if(userService.removeUser(id)){
             ctx.json("User with ID "+id+" has been removed");
@@ -49,6 +79,12 @@ public class UserController implements Controller{
     };
 
     private Handler getReimbursementsByUserId = ctx -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = jwtService.parseJWT(jwt);
+
+        if(!token.getBody().get("user_role").equals("Associate")){
+            throw new UnauthorizedResponse("You must be logged in as a associate");
+        }
         String id = ctx.pathParam("user_id");
         List<ResponseReimbursementDTO> reimbursements = new ArrayList<>();
 
@@ -57,11 +93,23 @@ public class UserController implements Controller{
     };
 
     private Handler removeUserReimbursement = ctx ->{
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = jwtService.parseJWT(jwt);
+
+        if(!token.getBody().get("user_role").equals("Associate")){
+            throw new UnauthorizedResponse("You must be logged in as a associate");
+        }
         String id = ctx.pathParam("reimbursement_id");
         ctx.json(reimbursementService.removeReimbursement(id));
     };
 
     private Handler addReimbursementForUser = ctx -> {
+        String jwt = ctx.header("Authorization").split(" ")[1];
+        Jws<Claims> token = jwtService.parseJWT(jwt);
+
+        if(!token.getBody().get("user_role").equals("Associate")){
+            throw new UnauthorizedResponse("You must be logged in as a associate");
+        }
         String userId = ctx.pathParam("user_id");
         //AddReimbursementDTO reimbursementDTO = ctx.bodyAsClass(AddReimbursementDTO.class);
 

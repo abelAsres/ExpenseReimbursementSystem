@@ -167,4 +167,44 @@ public class ReimbursementDAO {
         }
     }
 
+    public List<ResponseReimbursementDTO> updateReimbursementById(int id, int status, int resolverId) throws SQLException {
+        List<ResponseReimbursementDTO> responseReimbursementDTOS = new ArrayList<>();
+        try(Connection connection = ConnectionUtility.getConnection()){
+            String query = "UPDATE ers_reimbursement SET " +
+                    " reimb_resolved = current_timestamp, reimb_resolver = ?, reimb_status_id =? " +
+                    "WHERE id = ?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setInt(1,resolverId);
+            preparedStatement.setInt(2,status);
+            preparedStatement.setInt(3,id);
+
+            preparedStatement.executeUpdate();
+
+            String query2 = "SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description," +
+                    "reimb_receipt,eu.user_name,(SELECT user_name FROM ers_users eu2 WHERE id= er.reimb_resolver) AS resolver," +
+                    "ers.reimb_status,ert.reimb_type " +
+                    "FROM ers_reimbursement er JOIN ers_users eu ON eu.id = er.reimb_author " +
+                    "JOIN ers_reimbursement_status ers ON ers.id = er.reimb_status_id " +
+                    "JOIN ers_reimbursement_type ert ON ert.id = er.reimb_type_id ";
+
+            PreparedStatement preparedStatement2 = connection.prepareStatement(query2);
+
+
+            ResultSet resultSet = preparedStatement2.executeQuery();
+
+            while(resultSet.next()){
+                responseReimbursementDTOS.add(new ResponseReimbursementDTO(id,resultSet.getDouble("reimb_amount"),resultSet.getString("reimb_submitted"),
+                        resultSet.getString("reimb_resolved"),resultSet.getString("reimb_description"),
+                        resultSet.getString("reimb_receipt"), resultSet.getString("user_name"),
+                        resultSet.getString("resolver"),resultSet.getString("reimb_status"),
+                        resultSet.getString("reimb_type")));
+            }
+
+            return responseReimbursementDTOS;
+        }
+
+    }
+
 }

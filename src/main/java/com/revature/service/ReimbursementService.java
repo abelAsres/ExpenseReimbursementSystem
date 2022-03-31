@@ -51,6 +51,19 @@ public class ReimbursementService {
         }
     }
 
+    public List<ResponseReimbursementDTO> updateReimbursementById(String id, String status,String userId) throws SQLException {
+
+        int reimId = Integer.parseInt(id);
+        int statusId = status.equals("Accept") ? 2 : 3;
+        int resolverId = Integer.parseInt(userId);
+        try{
+            return reimbursementDAO.updateReimbursementById(reimId, statusId,resolverId);
+        }catch(NumberFormatException e){
+            throw new IllegalArgumentException("You did not provide a valid id. "+e.getMessage());
+        }
+
+    }
+
     public ResponseReimbursementDTO addReimbursementForUser(String amountReimb, String authorIdReimb,String description, String imageLink, String typeIdReimb) throws SQLException {
         double amount = Double.parseDouble(amountReimb);
         int authorId = Integer.parseInt(authorIdReimb);

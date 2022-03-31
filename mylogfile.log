@@ -5475,3 +5475,370 @@ java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 30 03 2022 - 18:02:38.154 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
 30 03 2022 - 18:06:12.524 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
 30 03 2022 - 18:06:59.390 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 20:38:07.716 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 20:38:07.746 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @797ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 20:38:07.748 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 20:38:07.776 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 20:38:07.776 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 20:38:08.294 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 20:38:08.294 [main] INFO  io.javalin.Javalin - Javalin started in 547ms \o/
+30 03 2022 - 20:38:33.788 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - POST request received for /project-1/login
+30 03 2022 - 20:38:37.403 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 20:42:23.410 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 20:42:59.789 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 20:56:49.705 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:04:23.777 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:05:30.388 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:42:41.349 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:43:00.676 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:43:25.406 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:43:49.062 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:44:34.694 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:46:00.112 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:46:15.337 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:46:59.970 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:50:57.342 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:54:10.558 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:54:23.893 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:55:19.075 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:55:43.152 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:56:01.623 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:56:21.662 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:58:33.670 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 21:58:53.726 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:25:58.458 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 22:25:58.504 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @918ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 22:25:58.507 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 22:25:58.544 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 22:25:58.544 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 22:25:59.098 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 22:25:59.099 [main] INFO  io.javalin.Javalin - Javalin started in 594ms \o/
+30 03 2022 - 22:25:59.203 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:26:02.206 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:27:16.277 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:27:20.606 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 22:27:20.609 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 22:28:28.282 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 22:28:28.318 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @814ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 22:28:28.319 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 22:28:28.347 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 22:28:28.348 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 22:28:28.907 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 22:28:28.907 [main] INFO  io.javalin.Javalin - Javalin started in 589ms \o/
+30 03 2022 - 22:28:32.935 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:28:36.303 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 22:28:36.306 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 22:28:36.308 [JettyServerThreadPool-24] WARN  c.r.controller.ExceptionController - User input a bad argument. Exception message is 'id' is not a valid path-param for '/project-1/reimbursements/{reimbursement_id}'.
+30 03 2022 - 22:29:18.326 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 22:29:18.360 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @793ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 22:29:18.361 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 22:29:18.390 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 22:29:18.390 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 22:29:18.928 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 22:29:18.928 [main] INFO  io.javalin.Javalin - Javalin started in 568ms \o/
+30 03 2022 - 22:29:25.161 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:29:28.152 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 22:29:28.155 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 22:32:03.628 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 22:32:03.665 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @780ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 22:32:03.666 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 22:32:03.699 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 22:32:03.699 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 22:32:04.246 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 22:32:04.246 [main] INFO  io.javalin.Javalin - Javalin started in 581ms \o/
+30 03 2022 - 22:32:07.225 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:32:09.895 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 22:32:09.900 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 22:38:34.254 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 22:38:34.291 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @784ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 22:38:34.293 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 22:38:34.322 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 22:38:34.323 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 22:38:34.842 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 22:38:34.842 [main] INFO  io.javalin.Javalin - Javalin started in 550ms \o/
+30 03 2022 - 22:38:45.272 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 22:38:48.351 [JettyServerThreadPool-22] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 22:38:48.355 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 23:08:14.411 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:08:14.450 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @794ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:08:14.452 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:08:14.483 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:08:14.484 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:08:15.037 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:08:15.038 [main] INFO  io.javalin.Javalin - Javalin started in 587ms \o/
+30 03 2022 - 23:08:22.596 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:08:29.167 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 23:08:29.170 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 23:09:09.620 [JettyServerThreadPool-20] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ERROR: column "reimb_resolver" is of type integer but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 84
+30 03 2022 - 23:11:20.709 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:11:20.738 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @633ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:11:20.739 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:11:20.767 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:11:20.767 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:11:21.303 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:11:21.303 [main] INFO  io.javalin.Javalin - Javalin started in 565ms \o/
+30 03 2022 - 23:11:25.798 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:11:29.464 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 23:11:29.467 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 23:11:30.162 [JettyServerThreadPool-15] WARN  c.r.controller.ExceptionController - SQL error. Exception message is ERROR: column "reimb_resolver" is of type integer but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 84
+30 03 2022 - 23:14:06.992 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:14:07.022 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @708ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:14:07.023 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:14:07.048 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:14:07.048 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:14:07.585 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:14:07.585 [main] INFO  io.javalin.Javalin - Javalin started in 562ms \o/
+30 03 2022 - 23:14:14.130 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:14:17.616 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 23:14:17.619 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 23:14:18.199 [JettyServerThreadPool-15] WARN  c.r.controller.ExceptionController - SQL error. Exception message is The column index is out of range: 1, number of columns: 0.
+30 03 2022 - 23:14:51.157 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:14:51.187 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @686ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:14:51.188 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:14:51.225 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:14:51.225 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:14:51.742 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:14:51.742 [main] INFO  io.javalin.Javalin - Javalin started in 555ms \o/
+30 03 2022 - 23:14:55.815 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/42
+30 03 2022 - 23:14:55.826 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/42
+30 03 2022 - 23:14:56.735 [JettyServerThreadPool-16] WARN  c.r.controller.ExceptionController - SQL error. Exception message is The column name reimb_resolver was not found in this ResultSet.
+30 03 2022 - 23:18:05.512 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:18:05.542 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @709ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:18:05.544 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:18:05.577 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:18:05.577 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:18:06.090 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:18:06.091 [main] INFO  io.javalin.Javalin - Javalin started in 548ms \o/
+30 03 2022 - 23:18:12.100 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:19:41.665 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:21:07.703 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/37
+30 03 2022 - 23:21:07.708 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/37
+30 03 2022 - 23:21:08.353 [JettyServerThreadPool-15] WARN  c.r.controller.ExceptionController - SQL error. Exception message is The column name reimb_status_id was not found in this ResultSet.
+30 03 2022 - 23:22:14.267 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:22:14.296 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @672ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:22:14.298 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:22:14.324 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:22:14.325 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:22:14.818 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:22:14.818 [main] INFO  io.javalin.Javalin - Javalin started in 521ms \o/
+30 03 2022 - 23:22:20.531 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:22:39.712 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/41
+30 03 2022 - 23:22:39.715 [JettyServerThreadPool-21] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/41
+30 03 2022 - 23:23:35.482 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:23:49.254 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/40
+30 03 2022 - 23:23:49.256 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/40
+30 03 2022 - 23:24:05.958 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /project-1/reimbursements
+30 03 2022 - 23:25:20.936 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - OPTIONS request received for /project-1/reimbursements/39
+30 03 2022 - 23:25:20.941 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - PATCH request received for /project-1/reimbursements/39
+30 03 2022 - 23:45:19.727 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:45:19.757 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @709ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:45:19.758 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:45:19.783 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:45:19.783 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:45:20.319 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:45:20.320 [main] INFO  io.javalin.Javalin - Javalin started in 562ms \o/
+30 03 2022 - 23:45:51.771 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - POST request received for /project-1/login
+30 03 2022 - 23:46:03.661 [JettyServerThreadPool-20] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+30 03 2022 - 23:46:03.664 [JettyServerThreadPool-20] WARN  c.r.controller.ExceptionController - Parameter specified as non-null is null. null
+30 03 2022 - 23:46:03.668 [JettyServerThreadPool-20] ERROR io.javalin.Javalin - Exception occurred while servicing http-request
+java.lang.NullPointerException: Parameter specified as non-null is null: method io.javalin.http.Context.json, parameter obj
+	at io.javalin.http.Context.json(Context.kt)
+	at com.revature.controller.ExceptionController.lambda$new$3(ExceptionController.java:46)
+	at io.javalin.http.ExceptionMapper.handle$javalin(ExceptionMapper.kt:26)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:133)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:137)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+30 03 2022 - 23:48:29.315 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+30 03 2022 - 23:48:29.352 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @778ms to org.eclipse.jetty.util.log.Slf4jLog
+30 03 2022 - 23:48:29.354 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+30 03 2022 - 23:48:29.395 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+30 03 2022 - 23:48:29.396 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+30 03 2022 - 23:48:29.924 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+30 03 2022 - 23:48:29.924 [main] INFO  io.javalin.Javalin - Javalin started in 571ms \o/
+30 03 2022 - 23:48:36.884 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
+30 03 2022 - 23:48:36.892 [JettyServerThreadPool-19] WARN  c.r.controller.ExceptionController - Parameter specified as non-null is null. null
+30 03 2022 - 23:48:36.895 [JettyServerThreadPool-19] ERROR io.javalin.Javalin - Exception occurred while servicing http-request
+java.lang.NullPointerException: Parameter specified as non-null is null: method io.javalin.http.Context.json, parameter obj
+	at io.javalin.http.Context.json(Context.kt)
+	at com.revature.controller.ExceptionController.lambda$new$3(ExceptionController.java:46)
+	at io.javalin.http.ExceptionMapper.handle$javalin(ExceptionMapper.kt:26)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:133)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+30 03 2022 - 23:48:51.300 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - GET request received for /project-1/users/1/reimbursements
