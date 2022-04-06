@@ -12,6 +12,7 @@ import io.javalin.http.UnauthorizedResponse;
 import io.javalin.http.UploadedFile;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
+import org.apache.tika.Tika;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class UserController implements Controller{
         String jwt = ctx.header("Authorization").split(" ")[1];
         Jws<Claims> token = jwtService.parseJWT(jwt);
 
-        if(!token.getBody().get("user_role").equals("Manager")){
+        if(!token.getBody().get("user_role").equals(1)){
             throw new UnauthorizedResponse("You must be logged in as a manager");
         }
         ctx.json(userService.getAllUsers());
@@ -51,12 +52,6 @@ public class UserController implements Controller{
     };
 
     private Handler addUser = ctx -> {
-        String jwt = ctx.header("Authorization").split(" ")[1];
-        Jws<Claims> token = jwtService.parseJWT(jwt);
-
-        if(!token.getBody().get("user_role").equals("Manager")){
-            throw new UnauthorizedResponse("You must be logged in as a manager");
-        }
         UserDTO userDTO = ctx.bodyAsClass(UserDTO.class);
         User user = userService.addUser(userDTO);
         ctx.status(201);
@@ -67,7 +62,7 @@ public class UserController implements Controller{
         String jwt = ctx.header("Authorization").split(" ")[1];
         Jws<Claims> token = jwtService.parseJWT(jwt);
 
-        if(!token.getBody().get("user_role").equals("Manager")){
+        if(!token.getBody().get("user_role").equals(1)){
             throw new UnauthorizedResponse("You must be logged in as a manager");
         }
         String id = ctx.pathParam("user_id");
@@ -82,7 +77,7 @@ public class UserController implements Controller{
         String jwt = ctx.header("Authorization").split(" ")[1];
         Jws<Claims> token = jwtService.parseJWT(jwt);
 
-        if(!token.getBody().get("user_role").equals("Associate")){
+        if(!token.getBody().get("user_role").equals(2)){
             throw new UnauthorizedResponse("You must be logged in as a associate");
         }
         String id = ctx.pathParam("user_id");
@@ -96,7 +91,7 @@ public class UserController implements Controller{
         String jwt = ctx.header("Authorization").split(" ")[1];
         Jws<Claims> token = jwtService.parseJWT(jwt);
 
-        if(!token.getBody().get("user_role").equals("Associate")){
+        if(!token.getBody().get("user_role").equals(2)){
             throw new UnauthorizedResponse("You must be logged in as a associate");
         }
         String id = ctx.pathParam("reimbursement_id");
@@ -107,11 +102,11 @@ public class UserController implements Controller{
         String jwt = ctx.header("Authorization").split(" ")[1];
         Jws<Claims> token = jwtService.parseJWT(jwt);
 
-        if(!token.getBody().get("user_role").equals("Associate")){
-            throw new UnauthorizedResponse("You must be logged in as a associate");
+        if(token == null){
+            throw new UnauthorizedResponse("You must be logged in");
         }
+
         String userId = ctx.pathParam("user_id");
-        //AddReimbursementDTO reimbursementDTO = ctx.bodyAsClass(AddReimbursementDTO.class);
 
         String description = ctx.formParam("description");
         String amount = ctx.formParam("amount");
@@ -120,19 +115,19 @@ public class UserController implements Controller{
         UploadedFile imageFile = ctx.uploadedFile("image");
         InputStream imageIs = imageFile.getContent();
 
-        String imageLink = GoogleStorageUtility.uploadImage(imageFile.getFilename(),imageIs,imageFile.getContentType());
+        Tika tika = new Tika();
+        String mimeType = tika.detect(imageIs);
+
+        if (!mimeType.equals("image/jpeg") && !mimeType.equals("image/png") && !mimeType.equals("image/gif")) {
+            throw new Exception("Image must be a JPEG, PNG, or GIF");
+        }
+
+        String imageLink = GoogleStorageUtility.uploadImage(imageFile);
 
         ResponseReimbursementDTO reimbursementDTO= reimbursementService.addReimbursementForUser(amount,author,description,imageLink,type);
 
-
         ctx.status(201);
         ctx.json(reimbursementDTO);
-
-
-        //User user = userService.getUserById(userId);
-        //reimbursementDTO.setAuthor(user.getId());
-        //reimbursementService.addReimbursementForUser(reimbursementDTO);
-        //reimbursementDTO.toString();
     };
 
     @Override

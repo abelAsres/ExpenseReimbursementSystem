@@ -12,9 +12,9 @@ public class ReimbursementService {
     private ReimbursementDAO reimbursementDAO;
 
 
-<span class="nc" id="L15">    public ReimbursementService () {</span>
-<span class="nc" id="L16">        this.reimbursementDAO= new ReimbursementDAO();</span>
-<span class="nc" id="L17">    }</span>
+<span class="fc" id="L15">    public ReimbursementService () {</span>
+<span class="fc" id="L16">        this.reimbursementDAO= new ReimbursementDAO();</span>
+<span class="fc" id="L17">    }</span>
 
 <span class="fc" id="L19">    public ReimbursementService(ReimbursementDAO mockReimbursementDAO) {</span>
 <span class="fc" id="L20">        this.reimbursementDAO= mockReimbursementDAO;</span>
@@ -25,18 +25,18 @@ public class ReimbursementService {
     }
 
     public Reimbursement getReimbursementById(String reimbursementId) throws SQLException {
-<span class="nc" id="L28">        int id = Integer.parseInt(reimbursementId);</span>
+<span class="fc" id="L28">        int id = Integer.parseInt(reimbursementId);</span>
         try{
-<span class="nc" id="L30">            return reimbursementDAO.getReimbursementById(id);</span>
+<span class="fc" id="L30">            return reimbursementDAO.getReimbursementById(id);</span>
 <span class="nc" id="L31">        }catch(NumberFormatException e){</span>
 <span class="nc" id="L32">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
         }
     }
 
     public List&lt;ResponseReimbursementDTO&gt; getReimbursementsByUserId(String userId) throws SQLException {
-<span class="nc" id="L37">        int id = Integer.parseInt(userId);</span>
+<span class="fc" id="L37">        int id = Integer.parseInt(userId);</span>
         try{
-<span class="nc" id="L39">            return reimbursementDAO.getReimbursementsByUserId(id);</span>
+<span class="fc" id="L39">            return reimbursementDAO.getReimbursementsByUserId(id);</span>
 <span class="nc" id="L40">        }catch(NumberFormatException e){</span>
 <span class="nc" id="L41">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
         }
@@ -51,11 +51,24 @@ public class ReimbursementService {
         }
     }
 
+    public List&lt;ResponseReimbursementDTO&gt; updateReimbursementById(String id, String status,String userId) throws SQLException {
+
+<span class="nc" id="L56">        int reimId = Integer.parseInt(id);</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        int statusId = status.equals(&quot;Accept&quot;) ? 2 : 3;</span>
+<span class="nc" id="L58">        int resolverId = Integer.parseInt(userId);</span>
+        try{
+<span class="nc" id="L60">            return reimbursementDAO.updateReimbursementById(reimId, statusId,resolverId);</span>
+<span class="nc" id="L61">        }catch(NumberFormatException e){</span>
+<span class="nc" id="L62">            throw new IllegalArgumentException(&quot;You did not provide a valid id. &quot;+e.getMessage());</span>
+        }
+
+    }
+
     public ResponseReimbursementDTO addReimbursementForUser(String amountReimb, String authorIdReimb,String description, String imageLink, String typeIdReimb) throws SQLException {
-<span class="nc" id="L55">        double amount = Double.parseDouble(amountReimb);</span>
-<span class="nc" id="L56">        int authorId = Integer.parseInt(authorIdReimb);</span>
-<span class="nc" id="L57">        int typeId = Integer.parseInt(typeIdReimb);</span>
-<span class="nc" id="L58">        return reimbursementDAO.addReimbursementForUser(amount,authorId,description,imageLink,typeId);</span>
+<span class="nc" id="L68">        double amount = Double.parseDouble(amountReimb);</span>
+<span class="nc" id="L69">        int authorId = Integer.parseInt(authorIdReimb);</span>
+<span class="nc" id="L70">        int typeId = Integer.parseInt(typeIdReimb);</span>
+<span class="nc" id="L71">        return reimbursementDAO.addReimbursementForUser(amount,authorId,description,imageLink,typeId);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

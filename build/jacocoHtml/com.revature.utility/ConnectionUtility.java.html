@@ -9,13 +9,13 @@ import java.sql.SQLException;
 
     public static Connection getConnection() throws SQLException {
 
-<span class="nc" id="L12">        String url = System.getenv(&quot;gcp_url&quot;);</span>
-<span class="nc" id="L13">        String username = System.getenv(&quot;postgres_username&quot;);</span>
-<span class="nc" id="L14">        String password = System.getenv(&quot;postgresPS&quot;);</span>
+<span class="fc" id="L12">        String url = System.getenv(&quot;gcp_url&quot;);</span>
+<span class="fc" id="L13">        String username = System.getenv(&quot;postgres_username&quot;);</span>
+<span class="fc" id="L14">        String password = System.getenv(&quot;postgresPS&quot;);</span>
 
-<span class="nc" id="L16">        DriverManager.registerDriver(new Driver());</span>
+<span class="fc" id="L16">        DriverManager.registerDriver(new Driver());</span>
 
-<span class="nc" id="L18">        return DriverManager.getConnection(url, username, password);</span>
+<span class="fc" id="L18">        return DriverManager.getConnection(url, username, password);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

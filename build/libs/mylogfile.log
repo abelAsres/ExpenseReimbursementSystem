@@ -1,0 +1,18 @@
+04 04 2022 - 22:35:40.859 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+04 04 2022 - 22:35:40.885 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @611ms to org.eclipse.jetty.util.log.Slf4jLog
+04 04 2022 - 22:35:40.886 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+04 04 2022 - 22:35:40.927 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+04 04 2022 - 22:35:40.933 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+04 04 2022 - 22:35:41.467 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+04 04 2022 - 22:35:41.467 [main] INFO  io.javalin.Javalin - Javalin started in 582ms \o/
+04 04 2022 - 22:36:50.420 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - POST request received for /project-1/login
+04 04 2022 - 22:36:51.903 [JettyServerThreadPool-14] WARN  c.r.controller.ExceptionController - Failed to login. Invalid username and/or password was provided
+04 04 2022 - 22:37:07.078 [JettyServerThreadPool-13] INFO  com.revature.main.Driver - POST request received for /project-1/login

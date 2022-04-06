@@ -6,69 +6,66 @@ import com.revature.model.Reimbursement;
 import com.revature.utility.ConnectionUtility;
 import com.revature.utility.GoogleStorageUtility;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-<span class="nc" id="L16">public class ReimbursementDAO {</span>
+<span class="fc" id="L13">public class ReimbursementDAO {</span>
     public List&lt;ResponseReimbursementDTO&gt; getAllReimbursement() throws SQLException {
-<span class="nc" id="L18">        List&lt;ResponseReimbursementDTO&gt; reimbursements = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L19">        try(Connection connection = ConnectionUtility.getConnection()){</span>
-<span class="nc" id="L20">            String query = &quot;SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description,&quot; +</span>
+<span class="nc" id="L15">        List&lt;ResponseReimbursementDTO&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L16">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L17">            String query = &quot;SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description,&quot; +</span>
                     &quot;reimb_receipt,eu.user_name,(SELECT user_name FROM ers_users eu2 WHERE id= er.reimb_resolver) AS resolver,&quot; +
                     &quot;ers.reimb_status,ert.reimb_type &quot; +
                     &quot;FROM ers_reimbursement er JOIN ers_users eu ON eu.id = er.reimb_author &quot; +
                     &quot;JOIN ers_reimbursement_status ers ON ers.id = er.reimb_status_id &quot; +
                     &quot;JOIN ers_reimbursement_type ert ON ert.id = er.reimb_type_id&quot;;
 
-<span class="nc" id="L27">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+<span class="nc" id="L24">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
 
-<span class="nc" id="L29">            ResultSet resultSet = preparedStatement.executeQuery();</span>
+<span class="nc" id="L26">            ResultSet resultSet = preparedStatement.executeQuery();</span>
 
-<span class="nc bnc" id="L31" title="All 2 branches missed.">            while(resultSet.next()){</span>
-<span class="nc" id="L32">                reimbursements.add(new ResponseReimbursementDTO(resultSet.getInt(&quot;id&quot;), resultSet.getDouble(&quot;reimb_amount&quot;),</span>
-<span class="nc" id="L33">                        resultSet.getString(&quot;reimb_submitted&quot;),resultSet.getString(&quot;reimb_resolved&quot;),</span>
-<span class="nc" id="L34">                        resultSet.getString(&quot;reimb_description&quot;), resultSet.getString(&quot;reimb_receipt&quot;),</span>
-<span class="nc" id="L35">                        resultSet.getString(&quot;user_name&quot;),resultSet.getString(&quot;resolver&quot;), resultSet.getString(&quot;reimb_status&quot;),</span>
-<span class="nc" id="L36">                        resultSet.getString(&quot;reimb_type&quot;)));</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">            while(resultSet.next()){</span>
+<span class="nc" id="L29">                reimbursements.add(new ResponseReimbursementDTO(resultSet.getInt(&quot;id&quot;), resultSet.getDouble(&quot;reimb_amount&quot;),</span>
+<span class="nc" id="L30">                        resultSet.getString(&quot;reimb_submitted&quot;),resultSet.getString(&quot;reimb_resolved&quot;),</span>
+<span class="nc" id="L31">                        resultSet.getString(&quot;reimb_description&quot;), resultSet.getString(&quot;reimb_receipt&quot;),</span>
+<span class="nc" id="L32">                        resultSet.getString(&quot;user_name&quot;),resultSet.getString(&quot;resolver&quot;), resultSet.getString(&quot;reimb_status&quot;),</span>
+<span class="nc" id="L33">                        resultSet.getString(&quot;reimb_type&quot;)));</span>
             }
         }
-<span class="nc" id="L39">        return reimbursements;</span>
+<span class="nc" id="L36">        return reimbursements;</span>
     }
 
     public Reimbursement getReimbursementById(int id) throws SQLException {
-<span class="nc" id="L43">        try(Connection connection = ConnectionUtility.getConnection()){</span>
-<span class="nc" id="L44">            String query = &quot;SELECT * FROM ers_reimbursement WHERE id = ?&quot;;</span>
+<span class="nc" id="L40">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L41">            String query = &quot;SELECT * FROM ers_reimbursement WHERE id = ?&quot;;</span>
 
-<span class="nc" id="L46">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+<span class="nc" id="L43">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
 
-<span class="nc" id="L48">            preparedStatement.setInt(1,id);</span>
+<span class="nc" id="L45">            preparedStatement.setInt(1,id);</span>
 
-<span class="nc" id="L50">            ResultSet resultSet = preparedStatement.executeQuery();</span>
+<span class="nc" id="L47">            ResultSet resultSet = preparedStatement.executeQuery();</span>
 
-<span class="nc" id="L52">            resultSet.next();</span>
+<span class="nc" id="L49">            resultSet.next();</span>
 
-<span class="nc" id="L54">            return new Reimbursement(resultSet.getInt(&quot;id&quot;),</span>
-<span class="nc" id="L55">                    resultSet.getDouble(&quot;reimb_amount&quot;),</span>
-<span class="nc" id="L56">                    resultSet.getString(&quot;reimb_submitted&quot;),</span>
-<span class="nc" id="L57">                    resultSet.getString(&quot;reimb_approved&quot;),</span>
-<span class="nc" id="L58">                    resultSet.getString(&quot;reimb_description&quot;),</span>
-<span class="nc" id="L59">                    resultSet.getString(&quot;reimb_receipt&quot;),</span>
-<span class="nc" id="L60">                    resultSet.getString(&quot;reimb_author&quot;),</span>
-<span class="nc" id="L61">                    resultSet.getString(&quot;reimb_resolver&quot;),</span>
-<span class="nc" id="L62">                    resultSet.getInt(&quot;reimb_status_id&quot;),</span>
-<span class="nc" id="L63">                    resultSet.getInt(&quot;reimb_type_id&quot;));</span>
+<span class="nc" id="L51">            return new Reimbursement(resultSet.getInt(&quot;id&quot;),</span>
+<span class="nc" id="L52">                    resultSet.getDouble(&quot;reimb_amount&quot;),</span>
+<span class="nc" id="L53">                    resultSet.getString(&quot;reimb_submitted&quot;),</span>
+<span class="nc" id="L54">                    resultSet.getString(&quot;reimb_approved&quot;),</span>
+<span class="nc" id="L55">                    resultSet.getString(&quot;reimb_description&quot;),</span>
+<span class="nc" id="L56">                    resultSet.getString(&quot;reimb_receipt&quot;),</span>
+<span class="nc" id="L57">                    resultSet.getString(&quot;reimb_author&quot;),</span>
+<span class="nc" id="L58">                    resultSet.getString(&quot;reimb_resolver&quot;),</span>
+<span class="nc" id="L59">                    resultSet.getInt(&quot;reimb_status_id&quot;),</span>
+<span class="nc" id="L60">                    resultSet.getInt(&quot;reimb_type_id&quot;));</span>
 
         }
     }
 
     public List&lt;ResponseReimbursementDTO&gt; getReimbursementsByUserId(int id) throws SQLException {
-<span class="nc" id="L69">        List&lt;ResponseReimbursementDTO&gt; reimbursements = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L70">        try(Connection connection = ConnectionUtility.getConnection()){</span>
-<span class="nc" id="L71">            String query = &quot;SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description,&quot; +</span>
+<span class="fc" id="L66">        List&lt;ResponseReimbursementDTO&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L67">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="fc" id="L68">            String query = &quot;SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description,&quot; +</span>
                     &quot;reimb_receipt,eu.user_name,(SELECT user_name FROM ers_users eu2 WHERE id= er.reimb_resolver) AS resolver,&quot; +
                     &quot;ers.reimb_status,ert.reimb_type &quot; +
                     &quot;FROM ers_reimbursement er JOIN ers_users eu ON eu.id = er.reimb_author &quot; +
@@ -76,95 +73,129 @@ import java.util.List;
                     &quot;JOIN ers_reimbursement_type ert ON ert.id = er.reimb_type_id &quot; +
                     &quot;WHERE er.reimb_author = ?&quot;;
 
-<span class="nc" id="L79">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+<span class="fc" id="L76">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
 
-<span class="nc" id="L81">            preparedStatement.setInt(1,id);</span>
+<span class="fc" id="L78">            preparedStatement.setInt(1,id);</span>
 
-<span class="nc" id="L83">            ResultSet resultSet = preparedStatement.executeQuery();</span>
+<span class="fc" id="L80">            ResultSet resultSet = preparedStatement.executeQuery();</span>
 
-<span class="nc bnc" id="L85" title="All 2 branches missed.">            while(resultSet.next()){</span>
-<span class="nc" id="L86">                reimbursements.add(new ResponseReimbursementDTO(resultSet.getInt(&quot;id&quot;), resultSet.getDouble(&quot;reimb_amount&quot;),</span>
-<span class="nc" id="L87">                        resultSet.getString(&quot;reimb_submitted&quot;),resultSet.getString(&quot;reimb_resolved&quot;),</span>
-<span class="nc" id="L88">                        resultSet.getString(&quot;reimb_description&quot;), resultSet.getString(&quot;reimb_receipt&quot;),</span>
-<span class="nc" id="L89">                        resultSet.getString(&quot;user_name&quot;),resultSet.getString(&quot;resolver&quot;), resultSet.getString(&quot;reimb_status&quot;),</span>
-<span class="nc" id="L90">                        resultSet.getString(&quot;reimb_type&quot;)));</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">            while(resultSet.next()){</span>
+<span class="fc" id="L83">                reimbursements.add(new ResponseReimbursementDTO(resultSet.getInt(&quot;id&quot;), resultSet.getDouble(&quot;reimb_amount&quot;),</span>
+<span class="fc" id="L84">                        resultSet.getString(&quot;reimb_submitted&quot;),resultSet.getString(&quot;reimb_resolved&quot;),</span>
+<span class="fc" id="L85">                        resultSet.getString(&quot;reimb_description&quot;), resultSet.getString(&quot;reimb_receipt&quot;),</span>
+<span class="fc" id="L86">                        resultSet.getString(&quot;user_name&quot;),resultSet.getString(&quot;resolver&quot;), resultSet.getString(&quot;reimb_status&quot;),</span>
+<span class="fc" id="L87">                        resultSet.getString(&quot;reimb_type&quot;)));</span>
             }
-<span class="nc" id="L92">            return reimbursements;</span>
+<span class="fc" id="L89">            return reimbursements;</span>
         }
     }
 
     public boolean removeReimbursement(int id) throws SQLException {
-<span class="nc" id="L97">        try(Connection connection = ConnectionUtility.getConnection()){</span>
-<span class="nc" id="L98">            String query1 = &quot;SELECT reimb_receipt FROM ers_reimbursement WHERE id =?&quot;;</span>
-<span class="nc" id="L99">            PreparedStatement preparedStatement1 = connection.prepareStatement(query1);</span>
-<span class="nc" id="L100">            preparedStatement1.setInt(1,id);</span>
+<span class="nc" id="L94">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L95">            String query1 = &quot;SELECT reimb_receipt FROM ers_reimbursement WHERE id =?&quot;;</span>
+<span class="nc" id="L96">            PreparedStatement preparedStatement1 = connection.prepareStatement(query1);</span>
+<span class="nc" id="L97">            preparedStatement1.setInt(1,id);</span>
 
-<span class="nc" id="L102">            ResultSet resultSet = preparedStatement1.executeQuery();</span>
+<span class="nc" id="L99">            ResultSet resultSet = preparedStatement1.executeQuery();</span>
 
-<span class="nc" id="L104">            resultSet.next();</span>
-<span class="nc" id="L105">            GoogleStorageUtility.deleteImage(resultSet.getString(&quot;reimb_receipt&quot;));</span>
+<span class="nc" id="L101">            resultSet.next();</span>
+<span class="nc" id="L102">            GoogleStorageUtility.deleteImage(resultSet.getString(&quot;reimb_receipt&quot;));</span>
 
-<span class="nc" id="L107">            String query2 = &quot;DELETE FROM ers_reimbursement WHERE id = ?&quot;;</span>
-<span class="nc" id="L108">            PreparedStatement preparedStatement2 = connection.prepareStatement(query2);</span>
-<span class="nc" id="L109">            preparedStatement2.setInt(1,id);</span>
+<span class="nc" id="L104">            String query2 = &quot;DELETE FROM ers_reimbursement WHERE id = ?&quot;;</span>
+<span class="nc" id="L105">            PreparedStatement preparedStatement2 = connection.prepareStatement(query2);</span>
+<span class="nc" id="L106">            preparedStatement2.setInt(1,id);</span>
 
-<span class="nc" id="L111">            int deleteRows = preparedStatement2.executeUpdate();</span>
+<span class="nc" id="L108">            int deleteRows = preparedStatement2.executeUpdate();</span>
 
-<span class="nc bnc" id="L113" title="All 2 branches missed.">            if(deleteRows == 1){</span>
-<span class="nc" id="L114">                return true;</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            if(deleteRows == 1){</span>
+<span class="nc" id="L111">                return true;</span>
             }
-<span class="nc bnc" id="L116" title="All 2 branches missed.">        }</span>
-<span class="nc" id="L117">        return false;</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">        }</span>
+<span class="nc" id="L114">        return false;</span>
     }
 
     public ResponseReimbursementDTO addReimbursementForUser(double amount, int authorId, String description, String imageLink, int typeId) throws SQLException {
-<span class="nc" id="L121">        try(Connection connection = ConnectionUtility.getConnection()){</span>
-<span class="nc" id="L122">            String query = &quot;INSERT INTO ers_reimbursement(reimb_amount,reimb_description,reimb_receipt,reimb_author,reimb_type_id) &quot; +</span>
+<span class="nc" id="L118">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L119">            String query = &quot;INSERT INTO ers_reimbursement(reimb_amount,reimb_description,reimb_receipt,reimb_author,reimb_type_id) &quot; +</span>
                     &quot;VALUES&quot; +
                     &quot;(?,?,?,?,?)&quot;;
 
-<span class="nc" id="L126">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+<span class="nc" id="L123">            PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);</span>
 
-<span class="nc" id="L128">            preparedStatement.setDouble(1,amount);</span>
-<span class="nc" id="L129">            preparedStatement.setString(2,description);</span>
-<span class="nc" id="L130">            preparedStatement.setString(3,imageLink);</span>
-<span class="nc" id="L131">            preparedStatement.setInt(4,authorId);</span>
-<span class="nc" id="L132">            preparedStatement.setInt(5,typeId);</span>
+<span class="nc" id="L125">            preparedStatement.setDouble(1,amount);</span>
+<span class="nc" id="L126">            preparedStatement.setString(2,description);</span>
+<span class="nc" id="L127">            preparedStatement.setString(3,imageLink);</span>
+<span class="nc" id="L128">            preparedStatement.setInt(4,authorId);</span>
+<span class="nc" id="L129">            preparedStatement.setInt(5,typeId);</span>
 
-<span class="nc" id="L134">            preparedStatement.executeUpdate();</span>
+<span class="nc" id="L131">            preparedStatement.executeUpdate();</span>
 
-<span class="nc" id="L136">            ResultSet resultSet = preparedStatement.getGeneratedKeys();</span>
+<span class="nc" id="L133">            ResultSet resultSet = preparedStatement.getGeneratedKeys();</span>
 
-<span class="nc" id="L138">            resultSet.next();</span>
+<span class="nc" id="L135">            resultSet.next();</span>
 
-<span class="nc" id="L140">            int id = resultSet.getInt(1);</span>
+<span class="nc" id="L137">            int id = resultSet.getInt(1);</span>
 
-<span class="nc" id="L142">            String query1 =  &quot;SELECT * FROM ers_reimbursement_type WHERE id = ?&quot;;</span>
-<span class="nc" id="L143">            PreparedStatement preparedStatement1 = connection.prepareStatement(query1);</span>
-<span class="nc" id="L144">            preparedStatement1.setString(1,resultSet.getString(&quot;reimb_type_id&quot;));</span>
-<span class="nc" id="L145">            ResultSet resultSet1= preparedStatement1.executeQuery();</span>
-<span class="nc" id="L146">            resultSet1.next();</span>
+<span class="nc" id="L139">            String query1 = &quot;SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description,&quot; +</span>
+                    &quot;reimb_receipt,eu.user_name,(SELECT user_name FROM ers_users eu2 WHERE id= er.reimb_resolver) AS resolver,&quot; +
+                    &quot;ers.reimb_status,ert.reimb_type &quot; +
+                    &quot;FROM ers_reimbursement er JOIN ers_users eu ON eu.id = er.reimb_author &quot; +
+                    &quot;JOIN ers_reimbursement_status ers ON ers.id = er.reimb_status_id &quot; +
+                    &quot;JOIN ers_reimbursement_type ert ON ert.id = er.reimb_type_id &quot; +
+                    &quot;WHERE er.id = ?&quot;;
 
-
-<span class="nc" id="L149">            String query2 =  &quot;SELECT * FROM ers_reimbursement_status WHERE id = ?&quot;;</span>
-<span class="nc" id="L150">            PreparedStatement preparedStatement2 = connection.prepareStatement(query2);</span>
-<span class="nc" id="L151">            preparedStatement2.setString(1,resultSet.getString(&quot;reimb_type_id&quot;));</span>
-<span class="nc" id="L152">            ResultSet resultSet2= preparedStatement2.executeQuery();</span>
-<span class="nc" id="L153">            resultSet2.next();</span>
-
-<span class="nc" id="L155">            String query3 =  &quot;SELECT * FROM ers_users WHERE id = ?&quot;;</span>
-<span class="nc" id="L156">            PreparedStatement preparedStatement3 = connection.prepareStatement(query3);</span>
-<span class="nc" id="L157">            preparedStatement3.setString(1,resultSet.getString(&quot;reimb_author&quot;));</span>
-<span class="nc" id="L158">            ResultSet resultSet3= preparedStatement2.executeQuery();</span>
-<span class="nc" id="L159">            resultSet3.next();</span>
+<span class="nc" id="L147">            PreparedStatement preparedStatement1 = connection.prepareStatement(query1);</span>
+<span class="nc" id="L148">            preparedStatement1.setInt(1,id);</span>
+<span class="nc" id="L149">            ResultSet resultSet1= preparedStatement1.executeQuery();</span>
+<span class="nc" id="L150">            resultSet1.next();</span>
 
 
-<span class="nc" id="L162">            return new ResponseReimbursementDTO(id,resultSet.getDouble(&quot;reimb_amount&quot;),resultSet.getString(&quot;reimb_submitted&quot;),</span>
-<span class="nc" id="L163">                    resultSet.getString(&quot;reimb_resolved&quot;),resultSet.getString(&quot;reimb_description&quot;),</span>
-<span class="nc" id="L164">                    resultSet.getString(&quot;reimb_receipt&quot;), resultSet3.getString(&quot;user_name&quot;),</span>
-<span class="nc" id="L165">                    resultSet.getString(&quot;reimb_resolver&quot;),resultSet2.getString(&quot;reimb_status_id&quot;),</span>
-<span class="nc" id="L166">                    resultSet1.getString(&quot;reimb_type_id&quot;));</span>
+<span class="nc" id="L153">            return new ResponseReimbursementDTO(id,resultSet1.getDouble(&quot;reimb_amount&quot;),resultSet1.getString(&quot;reimb_submitted&quot;),</span>
+<span class="nc" id="L154">                    resultSet1.getString(&quot;reimb_resolved&quot;),resultSet1.getString(&quot;reimb_description&quot;),</span>
+<span class="nc" id="L155">                    resultSet1.getString(&quot;reimb_receipt&quot;), resultSet1.getString(&quot;user_name&quot;),</span>
+<span class="nc" id="L156">                    resultSet1.getString(&quot;resolver&quot;),resultSet1.getString(&quot;reimb_status&quot;),</span>
+<span class="nc" id="L157">                    resultSet1.getString(&quot;reimb_type&quot;));</span>
         }
+    }
+
+    public List&lt;ResponseReimbursementDTO&gt; updateReimbursementById(int id, int status, int resolverId) throws SQLException {
+<span class="nc" id="L162">        List&lt;ResponseReimbursementDTO&gt; responseReimbursementDTOS = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L163">        try(Connection connection = ConnectionUtility.getConnection()){</span>
+<span class="nc" id="L164">            String query = &quot;UPDATE ers_reimbursement SET &quot; +</span>
+                    &quot; reimb_resolved = current_timestamp, reimb_resolver = ?, reimb_status_id =? &quot; +
+                    &quot;WHERE id = ?&quot;;
+
+<span class="nc" id="L168">            PreparedStatement preparedStatement = connection.prepareStatement(query);</span>
+
+<span class="nc" id="L170">            preparedStatement.setInt(1,resolverId);</span>
+<span class="nc" id="L171">            preparedStatement.setInt(2,status);</span>
+<span class="nc" id="L172">            preparedStatement.setInt(3,id);</span>
+
+<span class="nc" id="L174">            preparedStatement.executeUpdate();</span>
+
+<span class="nc" id="L176">            String query2 = &quot;SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description,&quot; +</span>
+                    &quot;reimb_receipt,eu.user_name,(SELECT user_name FROM ers_users eu2 WHERE id= er.reimb_resolver) AS resolver,&quot; +
+                    &quot;ers.reimb_status,ert.reimb_type &quot; +
+                    &quot;FROM ers_reimbursement er JOIN ers_users eu ON eu.id = er.reimb_author &quot; +
+                    &quot;JOIN ers_reimbursement_status ers ON ers.id = er.reimb_status_id &quot; +
+                    &quot;JOIN ers_reimbursement_type ert ON ert.id = er.reimb_type_id &quot;;
+
+<span class="nc" id="L183">            PreparedStatement preparedStatement2 = connection.prepareStatement(query2);</span>
+
+
+<span class="nc" id="L186">            ResultSet resultSet = preparedStatement2.executeQuery();</span>
+
+<span class="nc bnc" id="L188" title="All 2 branches missed.">            while(resultSet.next()){</span>
+<span class="nc" id="L189">                responseReimbursementDTOS.add(new ResponseReimbursementDTO(id,resultSet.getDouble(&quot;reimb_amount&quot;),resultSet.getString(&quot;reimb_submitted&quot;),</span>
+<span class="nc" id="L190">                        resultSet.getString(&quot;reimb_resolved&quot;),resultSet.getString(&quot;reimb_description&quot;),</span>
+<span class="nc" id="L191">                        resultSet.getString(&quot;reimb_receipt&quot;), resultSet.getString(&quot;user_name&quot;),</span>
+<span class="nc" id="L192">                        resultSet.getString(&quot;resolver&quot;),resultSet.getString(&quot;reimb_status&quot;),</span>
+<span class="nc" id="L193">                        resultSet.getString(&quot;reimb_type&quot;)));</span>
+            }
+
+<span class="nc" id="L196">            return responseReimbursementDTOS;</span>
+        }
+
     }
 
 }

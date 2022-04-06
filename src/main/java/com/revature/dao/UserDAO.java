@@ -4,10 +4,7 @@ import com.revature.dto.UserDTO;
 import com.revature.model.User;
 import com.revature.utility.ConnectionUtility;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,7 +79,7 @@ public class UserDAO {
             String query = "INSERT INTO ers_users (user_name,ers_password,user_first_name,user_last_name,user_email,user_role_id,salt) " +
                     "VALUES (?,?,?,?,?,?,?)";
 
-            PreparedStatement preparedStatment = connection.prepareStatement(query);
+            PreparedStatement preparedStatment = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
             preparedStatment.setString(1,userDTO.getUserName());
             preparedStatment.setString(2,userDTO.getPassword());

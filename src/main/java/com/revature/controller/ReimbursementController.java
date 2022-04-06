@@ -29,7 +29,7 @@ public class ReimbursementController implements Controller {
         String jwt = ctx.header("Authorization").split(" ")[1];
         Jws<Claims> token = jwtService.parseJWT(jwt);
 
-        if(!token.getBody().get("user_role").equals("Manager")){
+        if(!token.getBody().get("user_role").equals(1)){
             throw new UnauthorizedResponse("You must be logged in as a manager");
         }
         ctx.json(reimbursementService.getAllReimbursement());
@@ -40,7 +40,7 @@ public class ReimbursementController implements Controller {
         String jwt = ctx.header("Authorization").split(" ")[1];
         Jws<Claims> token = jwtService.parseJWT(jwt);
 
-        if(!token.getBody().get("user_role").equals("Manager")){
+        if(!token.getBody().get("user_role").equals(1)){
             throw new UnauthorizedResponse("You must be logged in as a manager");
         }
 

@@ -13,13 +13,13 @@ import java.io.InputStream;
 
 <span class="nc" id="L14">public class GoogleStorageUtility {</span>
 <span class="nc" id="L15">    public static Logger logger = LoggerFactory.getLogger(Driver.class);</span>
-    private static final String GOOGLE_STORAGE_URL = &quot;https://storage.googleapis.com/project-1-images&quot;;
+<span class="nc" id="L16">    private static final String GOOGLE_STORAGE_URL = System.getenv(&quot;gcp_bucket_project1&quot;);</span>
     public static String uploadImage(String fileName ,InputStream file,String fileType) throws IOException {
         // The ID of your GCP project
-<span class="nc" id="L19">        String projectId = &quot;project-1-345401&quot;;</span>
+<span class="nc" id="L19">        String projectId = System.getenv(&quot;gcp_project1_id&quot;);</span>
 
         // The ID of your GCS bucket
-<span class="nc" id="L22">        String bucketName = &quot;project-1-images&quot;;</span>
+<span class="nc" id="L22">        String bucketName = System.getenv(&quot;project1_bucket&quot;);</span>
 
 <span class="nc" id="L24">        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();</span>
 <span class="nc" id="L25">        BlobId blobId = BlobId.of(bucketName, fileName);</span>
@@ -28,29 +28,17 @@ import java.io.InputStream;
 <span class="nc" id="L28">        return GOOGLE_STORAGE_URL+&quot;/&quot;+fileName;</span>
     }
 
-    private static Bucket getBucket(String bucketName) throws IOException {
-<span class="nc" id="L32">        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(System.getenv(&quot;GOOGLE_APPLICATION_CREDENTIALS&quot;)))</span>
-<span class="nc" id="L33">                .createScoped(Lists.newArrayList(&quot;https://storage.googleapis.com/project-1-images&quot;));</span>
-<span class="nc" id="L34">        Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();</span>
-<span class="nc" id="L35">        Bucket bucket = storage.get(bucketName);</span>
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (bucket == null) {</span>
-<span class="nc" id="L37">            throw new IOException(&quot;Bucket not found:&quot;+bucketName);</span>
-        }
-<span class="nc" id="L39">        return bucket;</span>
-    }
-
     public static boolean deleteImage(String fileLocation){
         // The ID of your GCP project
-<span class="nc" id="L44">        String projectId = &quot;project-1-345401&quot;;</span>
+<span class="nc" id="L33">        String projectId = System.getenv(&quot;gcp_project1_id&quot;);</span>
 
         // The ID of your GCS bucket
-<span class="nc" id="L47">        String bucketName = &quot;project-1-images&quot;;</span>
+<span class="nc" id="L36">        String bucketName = System.getenv(&quot;project1_bucket&quot;);</span>
 
-<span class="nc" id="L49">        String file = fileLocation.replace(GOOGLE_STORAGE_URL+&quot;/&quot;,&quot;&quot;);</span>
-<span class="nc" id="L50">        String[] fileNameType = file.split(&quot;[/.]&quot;,2);</span>
+<span class="nc" id="L38">        String file = fileLocation.replace(GOOGLE_STORAGE_URL+&quot;/&quot;,&quot;&quot;);</span>
 
-<span class="nc" id="L52">        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();</span>
-<span class="nc" id="L53">        return storage.delete(bucketName,file);</span>
+<span class="nc" id="L40">        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();</span>
+<span class="nc" id="L41">        return storage.delete(bucketName,file);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

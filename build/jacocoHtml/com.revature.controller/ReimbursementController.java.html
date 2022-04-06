@@ -4,39 +4,62 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import com.revature.dto.ResponseReimbursementDTO;
+import com.revature.service.JWTService;
 import com.revature.service.ReimbursementService;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
+import io.javalin.http.UnauthorizedResponse;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+
+import java.util.List;
 
 public class ReimbursementController implements Controller {
 
     ReimbursementService reimbursementService;
+    JWTService jwtService;
 
-<span class="nc" id="L15">    public ReimbursementController(){</span>
-<span class="nc" id="L16">        reimbursementService = new ReimbursementService();</span>
-<span class="nc" id="L17">    }</span>
-
-<span class="nc" id="L19">    private Handler getBucket = ctx -&gt; {</span>
-<span class="nc" id="L20">        Storage storage = (Storage) StorageOptions.getDefaultInstance().getService();</span>
-
-<span class="nc" id="L22">        String bucketName = &quot;project-1-images&quot;;</span>
-<span class="nc" id="L23">        Bucket bucket = storage.create(BucketInfo.of(bucketName));</span>
-
-<span class="nc" id="L25">        ctx.json(bucket.getName());</span>
-<span class="nc" id="L26">    };</span>
+<span class="nc" id="L23">    public ReimbursementController(){</span>
+<span class="nc" id="L24">        reimbursementService = new ReimbursementService();</span>
+<span class="nc" id="L25">        jwtService=JWTService.getInstance();</span>
+<span class="nc" id="L26">    }</span>
 
 <span class="nc" id="L28">    private Handler getAllReimbursements = ctx -&gt; {</span>
-<span class="nc" id="L29">        ctx.json(reimbursementService.getAllReimbursement());</span>
-<span class="nc" id="L30">    };</span>
-<span class="nc" id="L31">    private Handler editReimbursement = ctx -&gt; {</span>
-<span class="nc" id="L32">        String id = ctx.formParam(&quot;id&quot;);</span>
+<span class="nc" id="L29">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L30">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(1)){</span>
+<span class="nc" id="L33">            throw new UnauthorizedResponse(&quot;You must be logged in as a manager&quot;);</span>
+        }
+<span class="nc" id="L35">        ctx.json(reimbursementService.getAllReimbursement());</span>
+<span class="nc" id="L36">    };</span>
 
 
-<span class="nc" id="L35">    };</span>
+<span class="nc" id="L39">    private Handler editReimbursement = ctx -&gt; {</span>
+<span class="nc" id="L40">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L41">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(1)){</span>
+<span class="nc" id="L44">            throw new UnauthorizedResponse(&quot;You must be logged in as a manager&quot;);</span>
+        }
+
+<span class="nc" id="L47">        String id = ctx.pathParam(&quot;reimbursement_id&quot;);</span>
+<span class="nc" id="L48">        String status = ctx.queryParam(&quot;status&quot;);</span>
+<span class="nc" id="L49">        String userId = ctx.queryParam(&quot;user_id&quot;);</span>
+
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        if(status == null){</span>
+<span class="nc" id="L52">            throw new IllegalArgumentException(&quot;You need to provide a status query parameter when attempting to edit a reimbursement&quot;);</span>
+        }
+
+<span class="nc" id="L55">        List&lt;ResponseReimbursementDTO&gt; responseReimbursementDTOS = reimbursementService.updateReimbursementById(id,status,userId);</span>
+<span class="nc" id="L56">        ctx.json(responseReimbursementDTOS);</span>
+<span class="nc" id="L57">    };</span>
 
     @Override
     public void mapEndPoints(Javalin app) {
-<span class="nc" id="L39">        app.get(&quot;/project-1/bucket&quot;, getBucket);</span>
-<span class="nc" id="L40">    }</span>
+<span class="nc" id="L61">        app.get(&quot;/project-1/reimbursements&quot;,getAllReimbursements);</span>
+<span class="nc" id="L62">        app.patch(&quot;/project-1/reimbursements/{reimbursement_id}&quot;,editReimbursement);</span>
+<span class="nc" id="L63">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

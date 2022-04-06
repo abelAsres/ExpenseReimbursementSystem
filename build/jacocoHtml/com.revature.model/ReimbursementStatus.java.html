@@ -6,10 +6,10 @@ public class ReimbursementStatus {
     private int id;
     private String status;
 
-<span class="nc" id="L9">    public ReimbursementStatus(int id, String status) {</span>
-<span class="nc" id="L10">        this.id = id;</span>
-<span class="nc" id="L11">        this.status = status;</span>
-<span class="nc" id="L12">    }</span>
+<span class="fc" id="L9">    public ReimbursementStatus(int id, String status) {</span>
+<span class="fc" id="L10">        this.id = id;</span>
+<span class="fc" id="L11">        this.status = status;</span>
+<span class="fc" id="L12">    }</span>
 
     public int getId() {
 <span class="nc" id="L15">        return id;</span>
@@ -29,7 +29,7 @@ public class ReimbursementStatus {
 
     @Override
     public boolean equals(Object o) {
-<span class="nc bnc" id="L32" title="All 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if (this == o) return true;</span>
 <span class="nc bnc" id="L33" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
 <span class="nc" id="L34">        ReimbursementStatus that = (ReimbursementStatus) o;</span>
 <span class="nc bnc" id="L35" title="All 4 branches missed.">        return id == that.id &amp;&amp; Objects.equals(status, that.status);</span>

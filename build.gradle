@@ -29,6 +29,21 @@ dependencies {
     implementation platform('com.google.cloud:libraries-bom:25.0.0')
 
     implementation 'com.google.cloud:google-cloud-storage'
+
+
+    implementation 'org.apache.tika:tika-core:2.3.0'
+}
+
+jar{
+    manifest{
+        attributes 'Main-Class': 'com.revature.main.Driver'
+    }
+    from{
+        (configurations.runtimeClasspath).collect{
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    duplicatesStrategy 'exclude'
 }
 
 test {
