@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associate Reimbursements</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/user-reimbursements.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+            <img src="https://storage.googleapis.com/project-1-images/newHomerLogo.PNG" >
+            </a>
+        
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="../index.html">
+                Home
+            </a>
+        
+            <a class="navbar-item" href="../html/dashboard.html">
+                Dashboard
+            </a>
+            </div>
+        
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                <a class="button is-light" href="#" id="logout-btn">
+                    Log out
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="buttons">
+        <button class="button is-info" onclick="isActiveModal()">Add Reimbursement</button>
+        <button class="button is-info" onclick="editReimbursement()" disabled>Edit Reimbursement</button>
+    </div>
+    <div class="buttons">
+        <button class="button is-info" onclick="sortByType()">Sort By Type</button>
+        <button class="button is-info" onclick="sortByAmount()">Sort By Amount</button>
+        <button class="button is-info" onclick="sortByStatus()">Sort By Status</button>
+        <button class="button is-info" onclick="sortBySubmitted()">Sort By Submitted</button>
+    </div>
+
+
+    <label for="type">Type:</label>
+    <select name="type" id="type" onchange="filterByType(this)">
+        <option value="">Select a Type</option>
+        <option value="Lodging">Lodging</option>
+        <option value="Travel">Travel</option>
+        <option value="Food">Food</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="status">Status:</label>
+    <select name="status" id="status" onchange="filterByStatus(this)">
+        <option value="">Select a Status</option>
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Denied">Denied</option>
+    </select>
+
+    <label for="associate">Associate:</label>
+    <select name="associate" id="associate" onchange="filterByAssociate(this)">
+        <option value="">Select a Associate</option>
+    </select>
+
+    <label for="manager">Manager:</label>
+    <select name="manager" id="manager" onchange="filterByManager(this)">
+        <option value="">Select a Manager</option>
+    </select>
+    <button class="button is-danger" onclick="clearFilters()">Clear Filters</button>
+    <table class="table">
+        <thead>
+            <tr>
+            <th><abbr title="Amount">Amt</th>
+            <th>Associate</th>
+            <th>Type</th>
+            <th>Submitted</th>
+            <th>Resolved</th>
+            <th>Description</th>
+            <th>Receipt</th>
+            <th>Status</th>
+            <th>Resolver</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th><abbr title="Amount">Amt</th>
+                <th>Associate</th>
+                <th>Type</th>
+                <th>Submitted</th>
+                <th>Resolved</th>
+                <th>Description</th>
+                <th>Receipt</th>
+                <th>Status</th>
+                <th>Resolver</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <div class="modal is-clipped">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <div class="field">
+                    <div class="control">
+                        Type: 
+                        <label class="radio">
+                            <input type="radio" name="type" class="reimb-type-radio">
+                                Lodging
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="type" class="reimb-type-radio">
+                                Travel
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="type" class="reimb-type-radio">
+                                Food
+                            </label>
+                        <label class="radio">
+                            <input type="radio" name="type" class="reimb-type-radio">
+                                Other
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Amount</label>
+                    <div class="control">
+                        <input type="number" min="1" step="0.01" class="input" placeholder="Enter Amount here" id="reimb-amount">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Descripton</label>
+                    <div class="control">
+                        <textarea class="textarea is-info is-medium" placeholder="Reimbursement Descripton" id="reimb-description"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="file" name="recepit" accept="image/png, image/jpeg, image/gif" id="reimb-image">
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-dark is-outlined" onclick="submitReimbursement()">
+                            Submit
+                        </button>
+                    </div> 
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close" onclick="isActiveModal()"></button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            <strong>The Reimbursements</strong> by <a href="https://github.com/abelAsres/ExpenseReimbursementSystem">Abel Asress</a>. 
+            </p>
+        </div>
+    </footer>
+    
+    <script src="../js/user-reimbursements.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
