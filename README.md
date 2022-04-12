@@ -8,6 +8,7 @@
 - PostgreSQL
 - Logback
 - Json Web Token
+- Firebase
 
 ## Decription
 

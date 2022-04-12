@@ -12,6 +12,7 @@ import io.javalin.http.UnauthorizedResponse;
 import io.javalin.http.UploadedFile;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
+import org.apache.tika.Tika;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -23,127 +24,121 @@ public class UserController implements Controller{
     private ReimbursementService reimbursementService;
     private JWTService jwtService;
 
-<span class="nc" id="L26">    public UserController(){</span>
-<span class="nc" id="L27">        this.userService = new UserService();</span>
-<span class="nc" id="L28">        this.reimbursementService = new ReimbursementService();</span>
-<span class="nc" id="L29">        this.jwtService=JWTService.getInstance();</span>
-<span class="nc" id="L30">    }</span>
-<span class="nc" id="L31">    private Handler getAllUsers = ctx -&gt; {</span>
-<span class="nc" id="L32">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
-<span class="nc" id="L33">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+<span class="nc" id="L27">    public UserController(){</span>
+<span class="nc" id="L28">        this.userService = new UserService();</span>
+<span class="nc" id="L29">        this.reimbursementService = new ReimbursementService();</span>
+<span class="nc" id="L30">        this.jwtService=JWTService.getInstance();</span>
+<span class="nc" id="L31">    }</span>
+<span class="nc" id="L32">    private Handler getAllUsers = ctx -&gt; {</span>
+<span class="nc" id="L33">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L34">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
 
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(1)){</span>
-<span class="nc" id="L36">            throw new UnauthorizedResponse(&quot;You must be logged in as a manager&quot;);</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(1)){</span>
+<span class="nc" id="L37">            throw new UnauthorizedResponse(&quot;You must be logged in as a manager&quot;);</span>
         }
-<span class="nc" id="L38">        ctx.json(userService.getAllUsers());</span>
-<span class="nc" id="L39">    };</span>
+<span class="nc" id="L39">        ctx.json(userService.getAllUsers());</span>
+<span class="nc" id="L40">    };</span>
 
-<span class="nc" id="L41">    private Handler getUserById = ctx -&gt; {</span>
-<span class="nc" id="L42">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
-<span class="nc" id="L43">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+<span class="nc" id="L42">    private Handler getUserById = ctx -&gt; {</span>
+<span class="nc" id="L43">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L44">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
 
-<span class="nc bnc" id="L45" title="All 2 branches missed.">        if(token == null){</span>
-<span class="nc" id="L46">            throw new UnauthorizedResponse(&quot;You must be logged in&quot;);</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if(token == null){</span>
+<span class="nc" id="L47">            throw new UnauthorizedResponse(&quot;You must be logged in&quot;);</span>
         }
-<span class="nc" id="L48">        String id = ctx.pathParam(&quot;user_id&quot;);</span>
-<span class="nc" id="L49">        User user = userService.getUserById(id);</span>
-<span class="nc" id="L50">        ctx.json(user);</span>
-<span class="nc" id="L51">    };</span>
+<span class="nc" id="L49">        String id = ctx.pathParam(&quot;user_id&quot;);</span>
+<span class="nc" id="L50">        User user = userService.getUserById(id);</span>
+<span class="nc" id="L51">        ctx.json(user);</span>
+<span class="nc" id="L52">    };</span>
 
-<span class="nc" id="L53">    private Handler addUser = ctx -&gt; {</span>
-<span class="nc" id="L54">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
-<span class="nc" id="L55">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+<span class="nc" id="L54">    private Handler addUser = ctx -&gt; {</span>
+<span class="nc" id="L55">        UserDTO userDTO = ctx.bodyAsClass(UserDTO.class);</span>
+<span class="nc" id="L56">        User user = userService.addUser(userDTO);</span>
+<span class="nc" id="L57">        ctx.status(201);</span>
+<span class="nc" id="L58">        ctx.json(&quot;User &quot;+user.getUserName()+&quot; has been registered&quot;);</span>
+<span class="nc" id="L59">    };</span>
 
-<span class="nc bnc" id="L57" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(1)){</span>
-<span class="nc" id="L58">            throw new UnauthorizedResponse(&quot;You must be logged in as a manager&quot;);</span>
+<span class="nc" id="L61">    private Handler removeUser = ctx -&gt; {</span>
+<span class="nc" id="L62">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L63">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(1)){</span>
+<span class="nc" id="L66">            throw new UnauthorizedResponse(&quot;You must be logged in as a manager&quot;);</span>
         }
-<span class="nc" id="L60">        UserDTO userDTO = ctx.bodyAsClass(UserDTO.class);</span>
-<span class="nc" id="L61">        User user = userService.addUser(userDTO);</span>
-<span class="nc" id="L62">        ctx.status(201);</span>
-<span class="nc" id="L63">        ctx.json(&quot;User &quot;+user.getUserName()+&quot; has been registered&quot;);</span>
-<span class="nc" id="L64">    };</span>
-
-<span class="nc" id="L66">    private Handler removeUser = ctx -&gt; {</span>
-<span class="nc" id="L67">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
-<span class="nc" id="L68">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
-
-<span class="nc bnc" id="L70" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(1)){</span>
-<span class="nc" id="L71">            throw new UnauthorizedResponse(&quot;You must be logged in as a manager&quot;);</span>
-        }
-<span class="nc" id="L73">        String id = ctx.pathParam(&quot;user_id&quot;);</span>
-<span class="nc bnc" id="L74" title="All 2 branches missed.">        if(userService.removeUser(id)){</span>
-<span class="nc" id="L75">            ctx.json(&quot;User with ID &quot;+id+&quot; has been removed&quot;);</span>
+<span class="nc" id="L68">        String id = ctx.pathParam(&quot;user_id&quot;);</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        if(userService.removeUser(id)){</span>
+<span class="nc" id="L70">            ctx.json(&quot;User with ID &quot;+id+&quot; has been removed&quot;);</span>
         }else{
-<span class="nc" id="L77">            ctx.json(&quot;User with ID &quot;+id+&quot; does not exist&quot;);</span>
+<span class="nc" id="L72">            ctx.json(&quot;User with ID &quot;+id+&quot; does not exist&quot;);</span>
         }
-<span class="nc" id="L79">    };</span>
+<span class="nc" id="L74">    };</span>
 
-<span class="nc" id="L81">    private Handler getReimbursementsByUserId = ctx -&gt; {</span>
-<span class="nc" id="L82">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
-<span class="nc" id="L83">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+<span class="nc" id="L76">    private Handler getReimbursementsByUserId = ctx -&gt; {</span>
+<span class="nc" id="L77">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L78">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
 
-<span class="nc bnc" id="L85" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(2)){</span>
-<span class="nc" id="L86">            throw new UnauthorizedResponse(&quot;You must be logged in as a associate&quot;);</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(2)){</span>
+<span class="nc" id="L81">            throw new UnauthorizedResponse(&quot;You must be logged in as a associate&quot;);</span>
         }
-<span class="nc" id="L88">        String id = ctx.pathParam(&quot;user_id&quot;);</span>
-<span class="nc" id="L89">        List&lt;ResponseReimbursementDTO&gt; reimbursements = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L83">        String id = ctx.pathParam(&quot;user_id&quot;);</span>
+<span class="nc" id="L84">        List&lt;ResponseReimbursementDTO&gt; reimbursements = new ArrayList&lt;&gt;();</span>
 
-<span class="nc" id="L91">        reimbursements = reimbursementService.getReimbursementsByUserId(id);</span>
-<span class="nc" id="L92">        ctx.json(reimbursements);</span>
-<span class="nc" id="L93">    };</span>
+<span class="nc" id="L86">        reimbursements = reimbursementService.getReimbursementsByUserId(id);</span>
+<span class="nc" id="L87">        ctx.json(reimbursements);</span>
+<span class="nc" id="L88">    };</span>
 
-<span class="nc" id="L95">    private Handler removeUserReimbursement = ctx -&gt;{</span>
-<span class="nc" id="L96">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
-<span class="nc" id="L97">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+<span class="nc" id="L90">    private Handler removeUserReimbursement = ctx -&gt;{</span>
+<span class="nc" id="L91">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L92">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
 
-<span class="nc bnc" id="L99" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(2)){</span>
-<span class="nc" id="L100">            throw new UnauthorizedResponse(&quot;You must be logged in as a associate&quot;);</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        if(!token.getBody().get(&quot;user_role&quot;).equals(2)){</span>
+<span class="nc" id="L95">            throw new UnauthorizedResponse(&quot;You must be logged in as a associate&quot;);</span>
         }
-<span class="nc" id="L102">        String id = ctx.pathParam(&quot;reimbursement_id&quot;);</span>
-<span class="nc" id="L103">        ctx.json(reimbursementService.removeReimbursement(id));</span>
-<span class="nc" id="L104">    };</span>
+<span class="nc" id="L97">        String id = ctx.pathParam(&quot;reimbursement_id&quot;);</span>
+<span class="nc" id="L98">        ctx.json(reimbursementService.removeReimbursement(id));</span>
+<span class="nc" id="L99">    };</span>
 
-<span class="nc" id="L106">    private Handler addReimbursementForUser = ctx -&gt; {</span>
-<span class="nc" id="L107">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
-<span class="nc" id="L108">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
+<span class="nc" id="L101">    private Handler addReimbursementForUser = ctx -&gt; {</span>
+<span class="nc" id="L102">        String jwt = ctx.header(&quot;Authorization&quot;).split(&quot; &quot;)[1];</span>
+<span class="nc" id="L103">        Jws&lt;Claims&gt; token = jwtService.parseJWT(jwt);</span>
 
-<span class="nc bnc" id="L110" title="All 2 branches missed.">        if(token == null){</span>
-<span class="nc" id="L111">            throw new UnauthorizedResponse(&quot;You must be logged in&quot;);</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">        if(token == null){</span>
+<span class="nc" id="L106">            throw new UnauthorizedResponse(&quot;You must be logged in&quot;);</span>
         }
-<span class="nc" id="L113">        String userId = ctx.pathParam(&quot;user_id&quot;);</span>
-        //AddReimbursementDTO reimbursementDTO = ctx.bodyAsClass(AddReimbursementDTO.class);
 
-<span class="nc" id="L116">        String description = ctx.formParam(&quot;description&quot;);</span>
-<span class="nc" id="L117">        String amount = ctx.formParam(&quot;amount&quot;);</span>
-<span class="nc" id="L118">        String author = ctx.formParam(&quot;author&quot;);</span>
-<span class="nc" id="L119">        String type = ctx.formParam(&quot;type&quot;);</span>
-<span class="nc" id="L120">        UploadedFile imageFile = ctx.uploadedFile(&quot;image&quot;);</span>
-<span class="nc" id="L121">        InputStream imageIs = imageFile.getContent();</span>
+<span class="nc" id="L109">        String userId = ctx.pathParam(&quot;user_id&quot;);</span>
 
-<span class="nc" id="L123">        String imageLink = GoogleStorageUtility.uploadImage(imageFile.getFilename(),imageIs,imageFile.getContentType());</span>
+<span class="nc" id="L111">        String description = ctx.formParam(&quot;description&quot;);</span>
+<span class="nc" id="L112">        String amount = ctx.formParam(&quot;amount&quot;);</span>
+<span class="nc" id="L113">        String author = ctx.formParam(&quot;author&quot;);</span>
+<span class="nc" id="L114">        String type = ctx.formParam(&quot;type&quot;);</span>
+<span class="nc" id="L115">        UploadedFile imageFile = ctx.uploadedFile(&quot;image&quot;);</span>
+<span class="nc" id="L116">        InputStream imageIs = imageFile.getContent();</span>
 
-<span class="nc" id="L125">        ResponseReimbursementDTO reimbursementDTO= reimbursementService.addReimbursementForUser(amount,author,description,imageLink,type);</span>
+<span class="nc" id="L118">        Tika tika = new Tika();</span>
+<span class="nc" id="L119">        String mimeType = tika.detect(imageIs);</span>
 
+<span class="nc bnc" id="L121" title="All 6 branches missed.">        if (!mimeType.equals(&quot;image/jpeg&quot;) &amp;&amp; !mimeType.equals(&quot;image/png&quot;) &amp;&amp; !mimeType.equals(&quot;image/gif&quot;)) {</span>
+<span class="nc" id="L122">            throw new Exception(&quot;Image must be a JPEG, PNG, or GIF&quot;);</span>
+        }
 
-<span class="nc" id="L128">        ctx.status(201);</span>
-<span class="nc" id="L129">        ctx.json(reimbursementDTO);</span>
+<span class="nc" id="L125">        String imageLink = GoogleStorageUtility.uploadImage(imageFile);</span>
 
+<span class="nc" id="L127">        ResponseReimbursementDTO reimbursementDTO= reimbursementService.addReimbursementForUser(amount,author,description,imageLink,type);</span>
 
-        //User user = userService.getUserById(userId);
-        //reimbursementDTO.setAuthor(user.getId());
-        //reimbursementService.addReimbursementForUser(reimbursementDTO);
-        //reimbursementDTO.toString();
-<span class="nc" id="L136">    };</span>
+<span class="nc" id="L129">        ctx.status(201);</span>
+<span class="nc" id="L130">        ctx.json(reimbursementDTO);</span>
+<span class="nc" id="L131">    };</span>
 
     @Override
     public void mapEndPoints(Javalin app) {
-<span class="nc" id="L140">        app.get(&quot;/project-1/users&quot;,getAllUsers);</span>
-<span class="nc" id="L141">        app.get(&quot;/project-1/users/{user_id}&quot;,getUserById);</span>
-<span class="nc" id="L142">        app.post(&quot;/project-1/users&quot;,addUser);</span>
-<span class="nc" id="L143">        app.delete(&quot;/project-1/users/{user_id}&quot;,removeUser);</span>
-<span class="nc" id="L144">        app.get(&quot;/project-1/users/{user_id}/reimbursements&quot;,getReimbursementsByUserId);</span>
-<span class="nc" id="L145">        app.delete(&quot;/project-1/users/{user_id}/reimbursements/{reimbursement_id}&quot;,removeUserReimbursement);</span>
-<span class="nc" id="L146">        app.post(&quot;/project-1/users/{user_id}/reimbursements&quot;, addReimbursementForUser);</span>
-<span class="nc" id="L147">    }</span>
+<span class="nc" id="L135">        app.get(&quot;/project-1/users&quot;,getAllUsers);</span>
+<span class="nc" id="L136">        app.get(&quot;/project-1/users/{user_id}&quot;,getUserById);</span>
+<span class="nc" id="L137">        app.post(&quot;/project-1/users&quot;,addUser);</span>
+<span class="nc" id="L138">        app.delete(&quot;/project-1/users/{user_id}&quot;,removeUser);</span>
+<span class="nc" id="L139">        app.get(&quot;/project-1/users/{user_id}/reimbursements&quot;,getReimbursementsByUserId);</span>
+<span class="nc" id="L140">        app.delete(&quot;/project-1/users/{user_id}/reimbursements/{reimbursement_id}&quot;,removeUserReimbursement);</span>
+<span class="nc" id="L141">        app.post(&quot;/project-1/users/{user_id}/reimbursements&quot;, addReimbursementForUser);</span>
+<span class="nc" id="L142">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
