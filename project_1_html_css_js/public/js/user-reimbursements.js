@@ -1,6 +1,6 @@
 
 //const url ="http://localhost:8080/";
-const url = "http://35.239.233.30:8080/";
+const url = "http://35.239.88.210:8080/";
 
 let userName = localStorage.getItem('userName');
 let userRole = localStorage.getItem('userRole');
@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         tr1.appendChild(th1);
         tr2.appendChild(th2);
         getAllReimbursements();
+        let associateFilter = document.querySelectorAll('.associate-filter');
+        
+        associateFilter.forEach(filter =>{
+            filter.style.display = 'inline';
+        })
     }else{
         getUserReimbursements();
     }
@@ -60,7 +65,9 @@ function getAllReimbursements(){
                 addTableRow(reimbursement);  
             }
             for(let reimbursement of reimbursements){
-                addAssociateToDropDown(reimbursement.author);
+                if(role == 'Manager'){
+                    addAssociateToDropDown(reimbursement.author);
+                }
                 addManagerToDropDown(reimbursement.resolver)  
             }            
         })
@@ -93,7 +100,9 @@ fetch(urlUserReimbursements, {
             for(let reimbursement of reimbursements){
                 fetchedReimbursements.push(reimbursement);
                 addTableRow(reimbursement);
-                addAssociateToDropDown(reimbursement.author);
+                if(role == 'Manager'){
+                    addAssociateToDropDown(reimbursement.author);
+                }
                 addManagerToDropDown(reimbursement.resolver);
             }
         })
@@ -130,7 +139,9 @@ function updateReimbursementStatus(radio){
                 for(let reimbursement of reimbursements){
                     fetchedReimbursements.push(reimbursement);
                     addTableRow(reimbursement);
-                    addAssociateToDropDown(reimbursement.author);
+                    if(role == 'Manager'){
+                        addAssociateToDropDown(reimbursement.author);
+                    }
                     addManagerToDropDown(reimbursement.resolver);
                 }
             })
@@ -145,14 +156,14 @@ function updateReimbursementStatus(radio){
 
 //resultSet on the backend casuing 400 error
 function submitReimbursement(){
-    let description = document.querySelector('#reimb-description').value; 
-    let amount=document.querySelector('#reimb-amount').value;
-    let imageData= document.querySelector('#reimb-image').files[0];
+    let description = document.querySelector('#reimb-description'); 
+    let amount=document.querySelector('#reimb-amount');
+    let imageData= document.querySelector('#reimb-image');
     let typeRadioButtons = document.querySelectorAll('.reimb-type-radio');
     let count = 1;
-    let typeId=1;
+    let typeId=0;
 
-    console.log(typeRadioButtons);
+    
     for (let button of typeRadioButtons){
         console.log(button);
         if(button.checked){
@@ -162,40 +173,56 @@ function submitReimbursement(){
         count++;
     }
 
-    let reimbursement = new FormData();
-    reimbursement.append("image",imageData);
-    reimbursement.append("description",description);
-    reimbursement.append("amount",amount);
-    reimbursement.append("author",userId);
-    reimbursement.append("type",typeId);
+    
+    if(description.value != "" && amount.value != "" && imageData.files[0] != undefined && typeId != 0){
+        let reimbursement = new FormData();
+        reimbursement.append("image",imageData);
+        reimbursement.append("description",description);
+        reimbursement.append("amount",amount);
+        reimbursement.append("author",userId);
+        reimbursement.append("type",typeId);
+    
+        const addReimbursementURL = url+ `project-1/users/${userId}/reimbursements`;
 
-    const addReimbursementURL = url+ `project-1/users/${userId}/reimbursements`;
-
-    fetch(addReimbursementURL, {
-        method: 'POST', 
-        body:reimbursement,
-        headers: {
-            'Authorization': `Bearer ${localStorage.getItem('jwt')}` // Include our JWT into the request
-        }
-    })
-    .then(response =>{
-        if(response.status === 201){
-        response.json()
-        .then(addedReimbursement =>{
-            fetchedReimbursements.push(addedReimbursement);
-            console.log(fetchedReimbursements.indexOf(addedReimbursement));
-            addTableRow(addedReimbursement);
-
-            if(filteredResults.length > 0){
-                filteredResults = [];
-                clearFilters();
+        fetch(addReimbursementURL, {
+            method: 'POST', 
+            body:reimbursement,
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('jwt')}` // Include our JWT into the request
             }
         })
-        .catch(errorMsg=>{
-            console.log(`You ran into an error: ${errorMsg}`);
-        })
-    }})
-    isActiveModal();
+        .then(response =>{
+            if(response.status === 201){
+            response.json()
+            .then(addedReimbursement =>{
+                fetchedReimbursements.push(addedReimbursement);
+                console.log(fetchedReimbursements.indexOf(addedReimbursement));
+                addTableRow(addedReimbursement);
+    
+                if(filteredResults.length > 0){
+                    filteredResults = [];
+                    clearFilters();
+                }
+            })
+            .catch(errorMsg=>{
+                console.log(`You ran into an error: ${errorMsg}`);
+            })
+        }})
+        for (let button of typeRadioButtons){
+            button.checked = false;
+        }
+        description.value= "";
+        amount.value= "";
+        imageData.value="";
+
+        isActiveModal();
+    }else{
+        let errorElement = document.querySelector('#error-msg');
+        errorElement.innerText = "Please ensure all feilds are set";
+        errorElement.style.color = 'red';
+    }
+
+    
 }
 
 
@@ -531,8 +558,10 @@ function clearFilters(){
 
 function isActiveModal(){
     let modal = document.querySelector('.modal');
+    let errorElement = document.querySelector('#error-msg');
+    errorElement.innerText = "";
+    errorElement.style.color = 'red';
     modal.classList.contains('is-active') ? modal.classList.remove('is-active') : modal.classList.add('is-active');
-    //modal.classList.contains('is-active') ? addFileName : removeFileName;
 }
 
 function hasResolver(resolver){

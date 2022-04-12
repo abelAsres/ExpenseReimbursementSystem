@@ -43,3 +43,7 @@
   .img-receipt{
     height: 5%;
   }
+
+  .associate-filter{
+    display: none;
+  }

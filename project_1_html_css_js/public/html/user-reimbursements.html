@@ -74,8 +74,8 @@
         <option value="Denied">Denied</option>
     </select>
 
-    <label for="associate">Associate:</label>
-    <select name="associate" id="associate" onchange="filterByAssociate(this)">
+    <label for="associate" class="associate-filter" >Associate:</label>
+    <select name="associate" class="associate-filter" id="associate" onchange="filterByAssociate(this)">
         <option value="">Select a Associate</option>
     </select>
 
@@ -162,6 +162,7 @@
                         <button class="button is-dark is-outlined" onclick="submitReimbursement()">
                             Submit
                         </button>
+                        <p id="error-msg"></p>
                     </div> 
                 </div>
             </div>

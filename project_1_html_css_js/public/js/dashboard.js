@@ -1,6 +1,6 @@
 
 //const url ="http://localhost:8080/";
-const url = "http://35.239.233.30:8080/";
+const url = "http://35.239.88.210:8080/";
 let token = localStorage.getItem("jwt");
 
 

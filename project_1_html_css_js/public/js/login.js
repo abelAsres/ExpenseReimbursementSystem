@@ -1,6 +1,6 @@
 
 //const url ="http://localhost:8080/project-1/login";
-const url = "http://35.239.233.30:8080/project-1/login";
+const url = "http://35.239.88.210:8080/project-1/login";
 
 async function signIn(){
     let userName = document.getElementById('user-name');
