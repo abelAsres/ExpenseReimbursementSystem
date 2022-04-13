@@ -92,3 +92,8 @@ You will also be able to sort through reimbursements by type, amount, status and
 You will also be able to submitt reimbursements by clicking Add Reimbursement
 
 ![addReimbursementButton](https://user-images.githubusercontent.com/55070709/163062939-f7c491ad-b837-42c4-b5fd-972eb5a28ca6.PNG)
+
+Provide reimbursement data and click submit
+
+![FillOutForm](https://user-images.githubusercontent.com/55070709/163201985-b2372748-4b94-4869-9811-8a02f45044c4.PNG)
+
