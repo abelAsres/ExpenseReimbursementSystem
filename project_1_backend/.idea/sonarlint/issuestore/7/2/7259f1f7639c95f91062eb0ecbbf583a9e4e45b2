@@ -1,0 +1,21 @@
+
+h
+java:S1104
+"RMake logger a static final constant or non-public and provide accessors if needed.(íûƒÅ
+B
+java:S1444
+",Make this "public static logger" field final(íûƒÅ
+O
+java:S1611"4Remove the parentheses around the "config" parameter(Ùº„–ıÿÿÿÿ
+G
+java:S1602",Remove useless curly braces around statement(Ùº„–ıÿÿÿÿ
+n
+java:S1612"SReplace this lambda with method reference 'JavalinConfig::enableCorsForAllOrigins'.(Ùº„–ıÿÿÿÿ
+G
+java:S1611"1Remove the parentheses around the "ctx" parameter(„šÅó
+B
+java:S1602",Remove useless curly braces around statement(„šÅó
+\
+java:S3457"AFormat specifiers should be used instead of string concatenation.(Üâıÿÿÿÿ
+N
+java:S1128"8Remove this unused import 'io.javalin.core.util.Header'.(¨÷¬

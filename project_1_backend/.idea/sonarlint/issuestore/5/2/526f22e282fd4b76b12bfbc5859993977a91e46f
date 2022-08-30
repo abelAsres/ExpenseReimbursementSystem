@@ -1,0 +1,28 @@
+
+h
+java:S1192 "MDefine a constant instead of duplicating this literal "user_role_id" 3 times.(¢¾†şıÿÿÿÿ
+f
+java:S1192"KDefine a constant instead of duplicating this literal "user_email" 3 times.(¥Ãåúÿÿÿÿÿ
+e
+java:S1192"PDefine a constant instead of duplicating this literal "user_first_name" 3 times.(§Á£
+e
+java:S1192"ODefine a constant instead of duplicating this literal "user_last_name" 3 times.(Ğú¡œ
+e
+java:S1192"JDefine a constant instead of duplicating this literal "user_name" 3 times.(…ãıñüÿÿÿÿ
+g
+java:S1192""LDefine a constant instead of duplicating this literal "profile_pic" 3 times.(ÕµØÿÿÿÿÿ
+h
+java:S1192"MDefine a constant instead of duplicating this literal "ers_password" 3 times.(³¨¦ºşÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
+j
+java:S2095R"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ş¥¾®ıÿÿÿÿ
+j
+java:S2095k"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
+j
+java:S2095,"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
+j
+java:S2095?"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ş¸³•
+Q	java:S125x"<This block of commented-out lines of code should be removed.(Îòè

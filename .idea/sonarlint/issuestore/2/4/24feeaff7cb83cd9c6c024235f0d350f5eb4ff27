@@ -1,0 +1,45 @@
+
+n
+java:S1192>"SDefine a constant instead of duplicating this literal "testuser@gmail.com" 4 times.(İğÔ®øÿÿÿÿ
+g
+java:S1192Q"LDefine a constant instead of duplicating this literal "description" 5 times.(ôÕÏ•şÿÿÿÿ
+s
+java:S1192P"XDefine a constant instead of duplicating this literal "2022-03-28 00:27:05.760" 5 times.(•ˆÿÿÿÿÿ
+b
+java:S1192Q"GDefine a constant instead of duplicating this literal "Travel" 5 times.(ôÕÏ•şÿÿÿÿ
+n
+java:S1192""SDefine a constant instead of duplicating this literal "testuser@umail.com" 4 times.(ÁÓı™ùÿÿÿÿ
+e
+java:S1192""JDefine a constant instead of duplicating this literal "password" 16 times.(ÁÓı™ùÿÿÿÿ
+o
+java:S1192¿"SDefine a constant instead of duplicating this literal "hjazz@revature.com" 5 times.(ƒÂæ˜ÿÿÿÿÿ
+e
+java:S1192""JDefine a constant instead of duplicating this literal "testUser" 20 times.(ÁÓı™ùÿÿÿÿ
+c
+java:S1192Q"HDefine a constant instead of duplicating this literal "Pending" 5 times.(ôÕÏ•şÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©¹ÜÉ
+c	java:S1006"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îª•†
+c	java:S100K"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê¦×
+h	java:S100f"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÈ¦ˆùÿÿÿÿ
+c	java:S100{"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â›™Õ
+d	java:S100Š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÌ¸™
+d	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æíÎ
+H
+java:S1602¤",Remove useless curly braces around statement(•ç®¼şÿÿÿÿ
+i	java:S100¼"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éñÃ­úÿÿÿÿ
+R	java:S125«"<This block of commented-out lines of code should be removed.(Êƒÿú
+i	java:S100È"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôáÃ¯úÿÿÿÿ
+H
+java:S1602Ñ",Remove useless curly braces around statement(›Öõúÿÿÿÿ
+i	java:S100×"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿé¨©ÿÿÿÿÿ
+H
+java:S1602ß",Remove useless curly braces around statement(›Öõúÿÿÿÿ
+i	java:S100å"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÚîóûÿÿÿÿ
+H
+java:S1602ñ",Remove useless curly braces around statement(›Öõúÿÿÿÿ
+i	java:S100÷"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áéç…øÿÿÿÿ
+H
+java:S1602ÿ",Remove useless curly braces around statement(›Öõúÿÿÿÿ
+c	java:S100†"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶¦Ç
+H
+java:S1602",Remove useless curly braces around statement(›Öõúÿÿÿÿ

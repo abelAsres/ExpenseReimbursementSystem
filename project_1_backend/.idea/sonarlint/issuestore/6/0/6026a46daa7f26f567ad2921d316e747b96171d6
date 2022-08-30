@@ -1,0 +1,49 @@
+
+m
+java:S1192"RDefine a constant instead of duplicating this literal "reimb_description" 5 times.(ÃòÎŞøÿÿÿÿ
+™
+java:S1192H"~Define a constant instead of duplicating this literal "JOIN ers_reimbursement_type ert ON ert.id = er.reimb_type_id " 3 times.(æÁ«•ùÿÿÿÿ
+e
+java:S1192"JDefine a constant instead of duplicating this literal "user_name" 4 times.(§åİ¤ÿÿÿÿÿ
+k
+java:S1192"PDefine a constant instead of duplicating this literal "reimb_submitted" 5 times.(Ëøêüÿÿÿÿ
+a
+java:S1192 "KDefine a constant instead of duplicating this literal "reimb_type" 4 times.(äÛÀÎ
+h
+java:S1192"MDefine a constant instead of duplicating this literal "reimb_status" 4 times.(§åİ¤ÿÿÿÿÿ
+j
+java:S1192"ODefine a constant instead of duplicating this literal "reimb_resolved" 4 times.(Ëøêüÿÿÿÿ
+h
+java:S1192"MDefine a constant instead of duplicating this literal "reimb_amount" 5 times.(™ºÔüÿÿÿÿ
+£
+java:S1192"ŒDefine a constant instead of duplicating this literal "SELECT er.id,reimb_amount,reimb_submitted,reimb_resolved,reimb_description," 4 times.(Å„·
+d
+java:S1192"IDefine a constant instead of duplicating this literal "resolver" 4 times.(§åİ¤ÿÿÿÿÿ
+i
+java:S1192"NDefine a constant instead of duplicating this literal "reimb_receipt" 6 times.(ÃòÎŞøÿÿÿÿ
+
+java:S1192"‚Define a constant instead of duplicating this literal "JOIN ers_reimbursement_status ers ON ers.id = er.reimb_status_id " 4 times.(¹ş°µüÿÿÿÿ
+Á
+java:S1192"ªDefine a constant instead of duplicating this literal "reimb_receipt,eu.user_name,(SELECT user_name FROM ers_users eu2 WHERE id= er.reimb_resolver) AS resolver," 4 times.(ŸÆª˜
+w
+java:S1192"aDefine a constant instead of duplicating this literal "ers.reimb_status,ert.reimb_type " 4 times.(Éñú¬
+Ÿ
+java:S1192"ˆDefine a constant instead of duplicating this literal "FROM ers_reimbursement er JOIN ers_users eu ON eu.id = er.reimb_author " 4 times.(½Š”ğ
+j
+java:S2095K"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
+j
+java:S2095h"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(”ÌÂæúÿÿÿÿ
+k
+java:S2095’"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ùù‡¡şÿÿÿÿ
+e
+java:S2095z"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ª‹ìå
+k
+java:S2095§"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
+k
+java:S2095¶"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(”ÌÂæúÿÿÿÿ
+j
+java:S2095_"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ùù‡¡şÿÿÿÿ
+j
+java:S2095*"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ
